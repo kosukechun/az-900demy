@@ -20,7 +20,7 @@ Q1〜Q6のスクリーンショットから転記した各70問、計420問を�
 PCでは `index.html` を直接開けます。ローカルサーバーを使う場合はNode.jsがあれば、依存パッケージのインストールなしで起動できます。
 
 ```powershell
-cd C:\Users\kosuk\script\az-900-app_udemy
+cd C:\Users\kosuk\script\az-900udemy
 npm start
 ```
 
@@ -46,12 +46,12 @@ Pagesにはサイト1GB、月間転送量100GBのソフト上限などがあり�
 
 ### 1. GitHubへアップロードする
 
-公開用のワークフローを `.github/workflows/pages.yml` に用意しています。実際のpushや公開はまだ行っていません。このリポジトリを無料で公開する場合は、GitHub上でPublicであることを確認します。
+公開用のワークフローは `.github/workflows/pages.yml` です。接続先は [kosukechun/az-900demy](https://github.com/kosukechun/az-900demy) で、`main` へのpushでチェック・テスト・ビルド後にGitHub Pagesへ自動公開します。
 
 このフォルダのターミナルで、次を実行します。すでにコミット済みなら `git push origin main` だけで構いません。
 
 ```powershell
-cd C:\Users\kosuk\script\az-900-app_udemy
+cd C:\Users\kosuk\script\az-900udemy
 git add -A
 git commit -m "Add AZ-900 practice app"
 git push origin main
@@ -59,7 +59,7 @@ git push origin main
 
 ### 2. Pagesの公開元を設定する
 
-1. [リポジトリのPages設定](https://github.com/dk-inouekosu/az-900-app_udemy/settings/pages)を開きます。
+1. [リポジトリのPages設定](https://github.com/kosukechun/az-900demy/settings/pages)を開きます。
 2. **Build and deployment → Source → GitHub Actions** を選びます。
 3. リポジトリの **Actions → Deploy quiz to GitHub Pages → Run workflow** を開きます。
 4. Branchを **main** にして、**Run workflow** を押します。
@@ -67,7 +67,7 @@ git push origin main
 
 `Source` にGitHub Actionsが出ない場合は、リポジトリの権限・プラン・公開設定を確認します。初回の実行がPages未設定で失敗していた場合は、設定後に再実行してください。
 
-このリポジトリの通常のURLは `https://dk-inouekosu.github.io/az-900-app_udemy/` です。これは公開完了を確認したURLではありません。実際のURLはデプロイ結果を確認してください。
+公開先は [AZ-900 問題集](https://kosukechun.github.io/az-900demy/) です。デプロイの進行状況は [Actions](https://github.com/kosukechun/az-900demy/actions) で確認できます。
 
 ### 3. iPadで開く・後から更新する
 
