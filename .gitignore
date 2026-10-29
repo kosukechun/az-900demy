@@ -1,0 +1,8 @@
+__pycache__/
+node_modules/
+dist/
+data/ocr.json
+.migration-ocr/
+data/empty-ocr.jpg
+data/qa-*.png
+*.log

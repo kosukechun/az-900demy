@@ -1,0 +1,11 @@
+{
+  "name": "az-900-practice",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node scripts/serve.cjs",
+    "check": "node --check app.js && node scripts/validate.cjs",
+    "test": "node scripts/interaction-test.cjs",
+    "build": "node scripts/package.cjs"
+  }
+}
