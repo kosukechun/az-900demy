@@ -6,15 +6,29 @@ const root = path.resolve(__dirname,'..');
 const ctx = {window:{}};
 vm.runInNewContext(fs.readFileSync(path.join(root,'data/questions.js'),'utf8'),ctx);
 const qs = ctx.window.AZ_QUESTIONS;
-assert.equal(qs.length,420);
-assert.equal(new Set(qs.map(q=>q.id)).size,420);
-for (let g=1;g<=6;g++) assert.equal(qs.filter(q=>q.group===`Q${g}`).length,70);
+const meta=JSON.parse(fs.readFileSync(path.join(root,'data/content-meta.json'),'utf8'));
+const expected=Object.values(meta.groups).reduce((a,b)=>a+b,0);
+assert.equal(qs.length,expected);
+assert.equal(new Set(qs.map(q=>q.id)).size,expected);
+for (const [group,total] of Object.entries(meta.groups)) assert.equal(qs.filter(q=>q.group===group).length,total);
 let choices = 0;
 for (const q of qs) {
   assert.ok(q.explanation.length>15,q.id+': explanation');
   assert.ok(q.choices.length>=2,q.id+': choices');
-  assert.ok(q.ungraded || q.accepted.length,q.id+': answer');
-  assert.equal(q.ungraded,q.accepted.length===0,q.id+': scoring mode');
+  assert.ok(q.accepted.length && !q.ungraded,q.id+': must be answerable');
+  assert.ok(q.terms.length>0&&q.terms.length<=3,q.id+': concise learning terms');
+  for(const t of q.terms) assert.ok(t.term&&t.role.length>15,q.id+': meaningful role');
+  if(meta.revisedIds.includes(q.id)) {
+    assert.equal(q.revision,2,q.id+': invalidate old answers');
+    assert.equal(q.checkedAt,meta.checkedAt);
+    assert.ok(q.sources.length,q.id+': verified source');
+  }
+  if(q.group==='Q7') {
+    assert.equal(q.origin.file,'mogimondai.pdf');
+    assert.equal(q.origin.question,q.number);
+    assert.ok(q.origin.page>=2&&q.origin.page<=16);
+    assert.ok(q.sources.length,q.id+': source');
+  }
   for (const set of q.accepted) {
     assert.equal(new Set(set).size,set.length,q.id+': duplicate accepted choice');
     for (const i of set) assert.ok(Number.isInteger(i) && i>=0 && i<q.choices.length,q.id+': answer index');
@@ -34,10 +48,10 @@ for (const q of qs) {
   assert.ok(!/[丨卩丿ⅣⅳⅥⅱ凵酣]|[A-Za-z]「|[A-Za-z]。/.test(q.prompt),q.id+': OCR artifact');
 }
 // TXT is the editable source of truth; the generated runtime strings must match it exactly.
-for(let g=1;g<=6;g++) {
-  const text=fs.readFileSync(path.join(root,`data/Q${g}.txt`),'utf8').replace(/\r\n/g,'\n');
-  const blocks=[...text.matchAll(/^=== (Q[1-6]-\d{2}) ===\r?\n([\s\S]*?)(?=^=== Q|$(?![\s\S]))/gm)];
-  assert.equal(blocks.length,70,`Q${g}: 70 text blocks`);
+for(const [group,total] of Object.entries(meta.groups)) {
+  const text=fs.readFileSync(path.join(root,`data/${group}.txt`),'utf8').replace(/\r\n/g,'\n');
+  const blocks=[...text.matchAll(/^=== (Q\d+-\d{2}) ===\r?\n([\s\S]*?)(?=^=== Q|$(?![\s\S]))/gm)];
+  assert.equal(blocks.length,total,`${group}: text blocks`);
   blocks.forEach((match,index)=>{
     const q=qs.find(q=>q.id===match[1]);
     assert.equal(q.number,index+1);
@@ -51,7 +65,7 @@ for(let g=1;g<=6;g++) {
 // Regression anchors: manually checked source screenshots and nontrivial exceptions.
 assert.equal(qs.find(q=>q.id==='Q1-07').accepted[0][0],1);
 assert.equal(qs.find(q=>q.id==='Q1-47').accepted[0][0],2);
-assert.ok(qs.find(q=>q.id==='Q3-06').ungraded);
+assert.deepEqual(Array.from(qs.find(q=>q.id==='Q3-06').accepted[0]),[0,4]);
 assert.ok(qs.find(q=>q.id==='Q1-70').multiple);
 assert.equal(qs.find(q=>q.id==='Q6-35').choices.length,3);
 assert.equal(qs.find(q=>q.id==='Q6-36').accepted[0][0],2);
@@ -60,4 +74,4 @@ for (const file of ['data/questions.js','app.js','style.css']) assert.ok(html.in
 assert.ok(!html.includes('https://'),'No external runtime dependencies');
 const app=fs.readFileSync(path.join(root,'app.js'),'utf8');
 assert.ok(!/<img|<picture|\.webp|\.png|assets\//.test(app),'App requires no screenshot assets');
-console.log(`Validated ${qs.length} text questions and ${choices} text choices, exact TXT/runtime agreement, no screenshot dependencies; ${qs.filter(q=>q.ungraded).length} explicit explanation-only exceptions.`);
+console.log(`Validated ${qs.length} answerable questions and ${choices} choices, learning terms, revised answer versions, PDF provenance, official references and exact TXT/runtime agreement.`);

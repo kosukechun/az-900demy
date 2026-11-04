@@ -109,14 +109,12 @@ C. Azure側でデータ内容を監視することができる。
 D. ユーザー側でデータセキュリティの対応をしなくても、保護が自動的に実施される。
 
 === Q1-14 ===
-次の空欄を埋める選択肢を選んでください。
-
-あなたの会社は__________を実装することで、クレジットカード情報を含むMicrosoft Word文書に透かしを自動的に追加することができる。
+クレジットカード情報を含むWord文書に秘密度ラベルを適用し、透かしや暗号化で保護したい。現在の製品名として適切なものを1つ選んでください。
 --- 選択肢 ---
-A. Azure Information Protection
+A. Azure Key Vault
 B. Azure DDoS Protection
 C. Microsoft Purview Information Protection
-D. Microsoft Entra Identity Protection
+D. Microsoft Entra ID Protection
 
 === Q1-15 ===
 あなたはARMテンプレートを利用して複数の仮想マシンを展開したいと考えています。その際にユーザー名やパスワードなどの資格情報をテンプレート外でセキュリティを強固にして保持することが必要です。最適なサービスを1つ選択してください。
@@ -177,12 +175,12 @@ C. 仮想ネットワーク
 D. ルートテーブル
 
 === Q1-22 ===
-あなたはオンプレミス環境からAzureへの移行を検討しています。Azureでソリューションを運用した場合にコストを節約できるのかを見積もることが必要です。そのために最適なソリューションはどれでしょうか。
+Azure Migrateで検出したサーバーの情報を使い、オンプレミスとAzureの総保有コストや移行による削減効果を比較したい。Azure Migrate内で使用する機能を1つ選んでください。
 --- 選択肢 ---
-A. Azure Migrateビジネスケース
-B. Azure TCO計算ツール
-C. Azure料金計算ツール
-D. Azure Reservations
+A. Azure Migrateのビジネスケース
+B. Azure料金計算ツール
+C. Azure Reservations
+D. Azure Cost Managementの予算
 
 === Q1-23 ===
 次の空欄を埋める選択肢を選んでください。

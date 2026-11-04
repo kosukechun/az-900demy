@@ -1,4 +1,4 @@
-"""Build the quiz from the editable Q1-Q6 UTF-8 text files and answer tables."""
+"""Build the quiz from editable UTF-8 question, answer and glossary files."""
 import json
 import re
 from pathlib import Path
@@ -14,18 +14,37 @@ SOURCES = {
     'backup': ('Azure Backupの概要', LEARN+'en-us/azure/backup/backup-overview'),
     'backup-policy': ('バックアップのAzure Policy', LEARN+'en-us/azure/backup/backup-azure-auto-enable-backup'),
     'support': ('サポートプランの比較', 'https://azure.microsoft.com/en-us/support/plans/'),
-    'files': ('Azure Filesの接続方式', LEARN+'en-us/azure/storage/files/storage-files-networking-overview'),
+    'files': ('Azure Filesの接続方式', LEARN+'en-us/azure/storage/files/storage-files-introduction'),
     'lifecycle': ('モダンライフサイクルポリシー', LEARN+'en-us/lifecycle/policies/modern'),
     'blueprints': ('Blueprintsの概要と移行案内', LEARN+'en-us/azure/governance/blueprints/overview'),
     'storage-limits': ('ストレージの制限', LEARN+'en-us/azure/storage/common/scalability-targets-standard-account'),
     'sla': ('AzureのSLA', 'https://azure.microsoft.com/en-us/support/legal/sla/'),
 }
+SOURCES.update(json.loads((ROOT/'data/reference-sources.json').read_text(encoding='utf-8')))
+META = json.loads((ROOT/'data/content-meta.json').read_text(encoding='utf-8'))
+GLOSSARY = []
+for line in (ROOT/'data/glossary.tsv').read_text(encoding='utf-8').splitlines():
+    term, patterns, role, source = line.split('|')
+    GLOSSARY.append(dict(term=term, patterns=patterns.split(','), role=role, source=source))
+
+def learning_terms(q):
+    # Prioritize the answer's role, then the context; never add unrelated distractors.
+    texts = [' '.join(q['choices'][i]['text'] for a in q['accepted'] for i in a), q['prompt'], q['explanation']]
+    found = []
+    for text in texts:
+        candidates = [g for g in GLOSSARY if any(re.search(p,text,re.I) for p in g['patterns'])]
+        # Specific product names should take precedence over generic parent concepts.
+        candidates.sort(key=lambda g: max(len(p) for p in g['patterns'] if re.search(p,text,re.I)),reverse=True)
+        for g in candidates:
+            if g['term'] not in [t['term'] for t in found]: found.append(g)
+            if len(found)==3: return found
+    return found
 def read_questions():
     questions = []
-    for group in range(1,7):
-        source = (ROOT/f'data/Q{group}.txt').read_text(encoding='utf-8')
-        blocks = re.split(r'^=== (Q[1-6]-\d{2}) ===\s*$',source,flags=re.M)
-        assert not blocks[0].strip(), f'Unexpected preamble in Q{group}.txt'
+    for group, total in META['groups'].items():
+        source = (ROOT/f'data/{group}.txt').read_text(encoding='utf-8')
+        blocks = re.split(r'^=== (Q\d+-\d{2}) ===\s*$',source,flags=re.M)
+        assert not blocks[0].strip(), f'Unexpected preamble in {group}.txt'
         for ident,body in zip(blocks[1::2],blocks[2::2]):
             prompt,choice_text=body.strip().split('\n--- 選択肢 ---\n',1)
             choices=[]
@@ -36,20 +55,20 @@ def read_questions():
                 assert text.strip(), f'{ident}: empty choice'
                 choices.append({'text':text})
             assert len(choices)>=2 and prompt.strip(), ident
-            questions.append(dict(id=ident,group=f'Q{group}',number=int(ident[-2:]),prompt=prompt.strip(),choices=choices))
-        assert sum(q['group']==f'Q{group}' for q in questions)==70, f'Q{group}: expected 70 questions'
+            questions.append(dict(id=ident,group=group,number=int(ident[-2:]),prompt=prompt.strip(),choices=choices))
+        assert sum(q['group']==group for q in questions)==total, f'{group}: expected {total} questions'
     return questions
 
 def build():
     questions = read_questions()
     answers = {}
-    for group in range(1,7):
-        lines = (ROOT/f'data/answers-Q{group}.tsv').read_text(encoding='utf-8').splitlines()
-        assert len(lines) == 70, f'Q{group}: expected 70 answers, got {len(lines)}'
+    for group, total in META['groups'].items():
+        lines = (ROOT/f'data/answers-{group}.tsv').read_text(encoding='utf-8').splitlines()
+        assert len(lines) == total, f'{group}: expected {total} answers, got {len(lines)}'
         for line in lines:
             fields = line.split('|')
             number, key, explanation = fields[:3]
-            ident = f'Q{group}-{number}'
+            ident = f'{group}-{number}'
             assert ident not in answers, f'Duplicate answer: {ident}'
             accepted = [] if key=='?' else [[int(v)-1 for v in a.split(',')] for a in key.split(';')]
             sources = [{'title':SOURCES[s][0], 'url':SOURCES[s][1]} for s in fields[3:] if s]
@@ -61,10 +80,25 @@ def build():
         assert q['choices'], q['id']
         assert all(0<=v<len(q['choices']) for a in q['accepted'] for v in a), q['id']
         assert all(c['text'] for c in q['choices']), f'Missing accessible choice text: {q["id"]}'
-        if q['id']=='Q3-06': q['notice'] = '元画像に下の選択肢が写っていないため、この問題は解説のみです。'
+        terms = learning_terms(q)
+        q['terms'] = [dict(term=g['term'],role=g['role']) for g in terms]
+        if not q['sources']:
+            for g in terms:
+                if g['source']:
+                    title,url=SOURCES[g['source']]
+                    q['sources']=[dict(title=title,url=url)]
+                    break
+        if q['id'] in META['revisedIds']:
+            q['revision']=2
+            q['checkedAt']=META['checkedAt']
+        if q['group']=='Q7':
+            q['checkedAt']=META['checkedAt']
+            pages=[2,2,3,3,4,4,4,5,5,5,6,6,6,6,7,7,7,8,8,8,9,9,9,10,10,11,11,11,12,12,13,13,14,14,15,15,15,16,16,16]
+            q['origin']=dict(file='mogimondai.pdf',question=q['number'],page=pages[q['number']-1])
         public.append(q)
-    assert len(public)==420 and len(answers)==420
-    (ROOT/'data/questions.js').write_text('/* Generated from Q1-Q6.txt and answers-Q1-Q6.tsv by scripts/build_data.py. */\nwindow.AZ_QUESTIONS = '+json.dumps(public,ensure_ascii=False,separators=(',',':'))+';\n', encoding='utf-8')
+    assert len(public)==sum(META['groups'].values()) and len(answers)==len(public)
+    assert all(q['accepted'] and not q['ungraded'] for q in public), 'All questions must be answerable'
+    (ROOT/'data/questions.js').write_text('/* Generated by scripts/build_data.py. */\nwindow.AZ_QUESTIONS = '+json.dumps(public,ensure_ascii=False,separators=(',',':'))+';\n', encoding='utf-8')
     ungraded = [q['id'] for q in public if q['ungraded']]
     print(f'Built {len(public)} questions: {len(public)-len(ungraded)} scored, {len(ungraded)} explanation-only.')
     print('Explanation-only:', ', '.join(ungraded))

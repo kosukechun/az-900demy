@@ -6,3 +6,4 @@ data/ocr.json
 data/empty-ocr.jpg
 data/qa-*.png
 *.log
+.tmp/

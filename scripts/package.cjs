@@ -13,5 +13,5 @@ for (const name of ['index.html','app.js','style.css','icon.svg','.nojekyll','da
   fs.copyFileSync(path.join(root,name),path.join(dest,name));
 }
 // Text sources are included for a portable, independently editable export.
-for (let g=1;g<=6;g++) fs.copyFileSync(path.join(root,`data/Q${g}.txt`),path.join(dest,`data/Q${g}.txt`));
+for (const group of Object.keys(JSON.parse(fs.readFileSync(path.join(root,'data/content-meta.json'),'utf8')).groups)) fs.copyFileSync(path.join(root,`data/${group}.txt`),path.join(dest,`data/${group}.txt`));
 console.log('Static app packaged in dist/');
