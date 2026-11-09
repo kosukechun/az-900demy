@@ -1,44 +1,410 @@
 {
- "migrate": ["Azure Migrateのビジネスケース", "https://learn.microsoft.com/en-us/azure/migrate/concepts-business-case-calculation"],
- "health": ["Service Healthの計画メンテナンス", "https://learn.microsoft.com/en-us/azure/service-health/service-health-planned-maintenance"],
- "vm": ["Azure VMと可用性", "https://learn.microsoft.com/en-us/azure/virtual-machines/overview"],
- "free": ["Azureアカウントと無料枠", "https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account"],
- "ea": ["EAの請求管理", "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/ea-direct-portal-get-started"],
- "disks": ["マネージドディスク", "https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview"],
- "iot": ["IoT Hubの役割", "https://learn.microsoft.com/en-us/azure/iot-hub/iot-concepts-and-iot-hub"],
- "defender": ["Defender for Cloudの概要", "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction"],
- "ase": ["App Service Environment", "https://learn.microsoft.com/en-us/azure/app-service/environment/overview"],
- "functions": ["Functionsのホスティングと制限", "https://learn.microsoft.com/en-us/azure/azure-functions/functions-scale"],
- "preview": ["Azureプレビューの利用条件", "https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/"],
- "cost-model": ["CapExからOpExへの移行", "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/inform/cost-efficiency"],
- "models": ["クラウドの共有責任", "https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility"],
- "scale": ["VM Scale Setsの概要", "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview"],
- "aks": ["Azure Kubernetes Service", "https://learn.microsoft.com/en-us/azure/aks/what-is-aks"],
- "regions": ["Azureのリージョンとゾーン", "https://learn.microsoft.com/en-us/azure/reliability/regions-overview"],
- "routing": ["仮想ネットワークのルーティング", "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"],
- "mobile": ["Azureモバイルアプリ", "https://learn.microsoft.com/en-us/azure/azure-portal/mobile-app/overview"],
- "groups": ["管理グループ", "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview"],
- "logic": ["Azure Logic Apps", "https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview"],
- "arm": ["ARMテンプレート", "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overview"],
- "alerts": ["Azure Monitorアラート", "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"],
- "avd": ["Azure Virtual Desktopの前提条件", "https://learn.microsoft.com/en-us/azure/virtual-desktop/prerequisites"],
- "peering": ["VNetピアリング", "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"],
- "nsg": ["ネットワークセキュリティグループ", "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"],
- "jit": ["JIT VMアクセス", "https://learn.microsoft.com/en-us/azure/defender-for-cloud/just-in-time-access-overview"],
- "hybrid-id": ["ハイブリッドID", "https://learn.microsoft.com/en-us/entra/identity/hybrid/whatis-hybrid-identity"],
- "mfa": ["多要素認証の仕組み", "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"],
- "private": ["プライベートエンドポイント", "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview"],
- "rbac": ["Azureの組み込みロール", "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"],
- "policy": ["Azure Policy", "https://learn.microsoft.com/en-us/azure/governance/policy/overview"],
- "tiers": ["Blobのアクセス層", "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"],
- "redundancy": ["ストレージの冗長性", "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"],
- "pricing": ["VM料金の見積もり", "https://azure.microsoft.com/en-us/pricing/calculator/"],
- "hybrid-benefit": ["Windows ServerのAzureハイブリッド特典", "https://learn.microsoft.com/en-us/windows-server/get-started/azure-hybrid-benefit"],
- "reservations": ["Azureの予約", "https://learn.microsoft.com/en-us/azure/cost-management-billing/reservations/save-compute-costs-reservations"],
- "shell": ["Azure Cloud Shell", "https://learn.microsoft.com/en-us/azure/cloud-shell/overview"],
- "arc": ["Azure Arc対応サーバー", "https://learn.microsoft.com/en-us/azure/azure-arc/servers/overview"],
- "monitor": ["Azure Monitor", "https://learn.microsoft.com/en-us/azure/azure-monitor/overview"],
- "keyvault": ["Azure Key Vault", "https://learn.microsoft.com/en-us/azure/key-vault/general/overview"],
- "cost": ["Cost Management", "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/overview-cost-management"],
- "app": ["Azure App Service", "https://learn.microsoft.com/en-us/azure/app-service/overview"]
+  "migrate": [
+    "Azure Migrateのビジネスケース",
+    "https://learn.microsoft.com/en-us/azure/migrate/concepts-business-case-calculation"
+  ],
+  "health": [
+    "Service Healthの計画メンテナンス",
+    "https://learn.microsoft.com/en-us/azure/service-health/service-health-planned-maintenance"
+  ],
+  "vm": [
+    "Azure VMと可用性",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/overview"
+  ],
+  "free": [
+    "Azureアカウントと無料枠",
+    "https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account"
+  ],
+  "ea": [
+    "EAの請求管理",
+    "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/ea-direct-portal-get-started"
+  ],
+  "disks": [
+    "マネージドディスク",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview"
+  ],
+  "iot": [
+    "IoT Hubの役割",
+    "https://learn.microsoft.com/en-us/azure/iot-hub/iot-concepts-and-iot-hub"
+  ],
+  "defender": [
+    "Defender for Cloudの概要",
+    "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction"
+  ],
+  "ase": [
+    "App Service Environment",
+    "https://learn.microsoft.com/en-us/azure/app-service/environment/overview"
+  ],
+  "functions": [
+    "Functionsのホスティングと制限",
+    "https://learn.microsoft.com/en-us/azure/azure-functions/functions-scale"
+  ],
+  "preview": [
+    "Azureプレビューの利用条件",
+    "https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/"
+  ],
+  "cost-model": [
+    "CapExからOpExへの移行",
+    "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/inform/cost-efficiency"
+  ],
+  "models": [
+    "クラウドの共有責任",
+    "https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility"
+  ],
+  "scale": [
+    "VM Scale Setsの概要",
+    "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview"
+  ],
+  "aks": [
+    "Azure Kubernetes Service",
+    "https://learn.microsoft.com/en-us/azure/aks/what-is-aks"
+  ],
+  "regions": [
+    "Azureのリージョンとゾーン",
+    "https://learn.microsoft.com/en-us/azure/reliability/regions-overview"
+  ],
+  "routing": [
+    "仮想ネットワークのルーティング",
+    "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+  ],
+  "mobile": [
+    "Azureモバイルアプリ",
+    "https://learn.microsoft.com/en-us/azure/azure-portal/mobile-app/overview"
+  ],
+  "groups": [
+    "管理グループ",
+    "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview"
+  ],
+  "logic": [
+    "Azure Logic Apps",
+    "https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview"
+  ],
+  "arm": [
+    "ARMテンプレート",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overview"
+  ],
+  "alerts": [
+    "Azure Monitorアラート",
+    "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
+  ],
+  "avd": [
+    "Azure Virtual Desktopの前提条件",
+    "https://learn.microsoft.com/en-us/azure/virtual-desktop/prerequisites"
+  ],
+  "peering": [
+    "VNetピアリング",
+    "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+  ],
+  "nsg": [
+    "ネットワークセキュリティグループ",
+    "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+  ],
+  "jit": [
+    "JIT VMアクセス",
+    "https://learn.microsoft.com/en-us/azure/defender-for-cloud/just-in-time-access-overview"
+  ],
+  "hybrid-id": [
+    "ハイブリッドID",
+    "https://learn.microsoft.com/en-us/entra/identity/hybrid/whatis-hybrid-identity"
+  ],
+  "mfa": [
+    "多要素認証の仕組み",
+    "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
+  ],
+  "private": [
+    "プライベートエンドポイント",
+    "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview"
+  ],
+  "rbac": [
+    "Azureの組み込みロール",
+    "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
+  ],
+  "policy": [
+    "Azure Policy",
+    "https://learn.microsoft.com/en-us/azure/governance/policy/overview"
+  ],
+  "tiers": [
+    "Blobのアクセス層",
+    "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
+  ],
+  "redundancy": [
+    "ストレージの冗長性",
+    "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
+  ],
+  "pricing": [
+    "VM料金の見積もり",
+    "https://azure.microsoft.com/en-us/pricing/calculator/"
+  ],
+  "hybrid-benefit": [
+    "Windows ServerのAzureハイブリッド特典",
+    "https://learn.microsoft.com/en-us/windows-server/get-started/azure-hybrid-benefit"
+  ],
+  "reservations": [
+    "Azureの予約",
+    "https://learn.microsoft.com/en-us/azure/cost-management-billing/reservations/save-compute-costs-reservations"
+  ],
+  "shell": [
+    "Azure Cloud Shell",
+    "https://learn.microsoft.com/en-us/azure/cloud-shell/overview"
+  ],
+  "arc": [
+    "Azure Arc対応サーバー",
+    "https://learn.microsoft.com/en-us/azure/azure-arc/servers/overview"
+  ],
+  "monitor": [
+    "Azure Monitor",
+    "https://learn.microsoft.com/en-us/azure/azure-monitor/overview"
+  ],
+  "keyvault": [
+    "Azure Key Vault",
+    "https://learn.microsoft.com/en-us/azure/key-vault/general/overview"
+  ],
+  "cost": [
+    "Cost Management",
+    "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/overview-cost-management"
+  ],
+  "app": [
+    "Azure App Service",
+    "https://learn.microsoft.com/en-us/azure/app-service/overview"
+  ],
+  "devtest": [
+    "Azure DevTest Labs",
+    "https://learn.microsoft.com/en-us/azure/devtest-labs/devtest-lab-overview"
+  ],
+  "trust": [
+    "Microsoft Trust Center",
+    "https://www.microsoft.com/en-us/trust-center"
+  ],
+  "composite": [
+    "複合SLAと依存関係",
+    "https://learn.microsoft.com/en-us/azure/well-architected/reliability/metrics"
+  ],
+  "subscription": [
+    "サブスクリプションと管理の階層",
+    "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/organize-resources"
+  ],
+  "express-pricing": [
+    "ExpressRouteの料金",
+    "https://azure.microsoft.com/en-us/pricing/details/expressroute/"
+  ],
+  "peering-pricing": [
+    "VNetピアリングの料金",
+    "https://azure.microsoft.com/en-us/pricing/details/virtual-network/"
+  ],
+  "billing-transfer": [
+    "Azureの課金所有権の譲渡",
+    "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/billing-subscription-transfer"
+  ],
+  "aci": [
+    "Azure Container Instances",
+    "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview"
+  ],
+  "sql-compare": [
+    "SQL DatabaseとSQL Managed Instanceの機能比較",
+    "https://learn.microsoft.com/en-us/azure/azure-sql/database/features-comparison"
+  ],
+  "functions-pricing": [
+    "Functions従量課金の計算",
+    "https://learn.microsoft.com/en-us/azure/azure-functions/functions-consumption-costs"
+  ],
+  "ai": [
+    "Foundry Tools",
+    "https://azure.microsoft.com/en-us/products/ai-foundry/tools/"
+  ],
+  "qa": [
+    "Microsoft Q&A",
+    "https://learn.microsoft.com/en-us/answers/"
+  ],
+  "app-scale": [
+    "App Serviceの自動スケール",
+    "https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up"
+  ],
+  "cloud-models": [
+    "クラウドの展開モデル",
+    "https://learn.microsoft.com/en-us/training/modules/describe-cloud-compute/5-define-cloud-models"
+  ],
+  "privacy": [
+    "Microsoftのプライバシーに関する声明",
+    "https://privacy.microsoft.com/en-us/privacystatement"
+  ],
+  "vnet": [
+    "Azure Virtual Network",
+    "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
+  ],
+  "powershell": [
+    "LinuxへのAzure PowerShellの導入",
+    "https://learn.microsoft.com/en-us/powershell/azure/install-azps-linux"
+  ],
+  "blueprints-retirement": [
+    "Azure Blueprintsの段階的廃止",
+    "https://learn.microsoft.com/en-us/azure/governance/blueprints/blueprint-retirement"
+  ],
+  "activity-log": [
+    "Azure Activity Log",
+    "https://learn.microsoft.com/en-us/azure/azure-monitor/platform/activity-log"
+  ],
+  "bandwidth": [
+    "Azureのデータ転送料金",
+    "https://azure.microsoft.com/en-us/pricing/details/bandwidth/"
+  ],
+  "move": [
+    "リソースの移動と制約",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription"
+  ],
+  "defense": [
+    "多層防御",
+    "https://learn.microsoft.com/en-us/training/modules/secure-network-connectivity-azure/2-what-is-defense-in-depth"
+  ],
+  "phs": [
+    "パスワードハッシュ同期",
+    "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-phs"
+  ],
+  "ddos": [
+    "Azure DDoS Protection",
+    "https://learn.microsoft.com/en-us/azure/ddos-protection/ddos-protection-overview"
+  ],
+  "cosmos": [
+    "Azure Cosmos DB",
+    "https://learn.microsoft.com/en-us/cosmos-db/overview"
+  ],
+  "region-pairs": [
+    "Azureのリージョンペア",
+    "https://learn.microsoft.com/en-us/azure/reliability/regions-paired"
+  ],
+  "scale-limits": [
+    "VMスケールセットの配置グループ",
+    "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-placement-groups"
+  ],
+  "workspace": [
+    "Log Analyticsワークスペース",
+    "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview"
+  ],
+  "policy-exemption": [
+    "Azure Policyの免除",
+    "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/exemption-structure"
+  ],
+  "role-differences": [
+    "EntraロールとAzureロールの違い",
+    "https://learn.microsoft.com/en-us/role-based-access-control/rbac-and-directory-admin-roles"
+  ],
+  "app-gateway": [
+    "Azure Application Gateway",
+    "https://learn.microsoft.com/en-us/azure/application-gateway/overview"
+  ],
+  "service-endpoint": [
+    "仮想ネットワークのサービスエンドポイント",
+    "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview"
+  ],
+  "file-sync": [
+    "Azure File Sync",
+    "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-introduction"
+  ],
+  "cloud-benefits": [
+    "クラウドの拡張性と可用性",
+    "https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/2-high-availability-scalability-cloud"
+  ],
+  "sentinel": [
+    "Microsoft Sentinel",
+    "https://learn.microsoft.com/en-us/sentinel/overview"
+  ],
+  "firewall": [
+    "Azure Firewall",
+    "https://learn.microsoft.com/en-us/azure/firewall/overview"
+  ],
+  "frontdoor": [
+    "Azure Front DoorとCDNの比較",
+    "https://learn.microsoft.com/en-us/azure/frontdoor/front-door-cdn-comparison"
+  ],
+  "private-dns": [
+    "Azure Private DNS",
+    "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
+  ],
+  "load-balancer": [
+    "Azure Load Balancer",
+    "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
+  ],
+  "vpn": [
+    "Azure VPN Gateway",
+    "https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways"
+  ],
+  "registry": [
+    "Azure Container Registry",
+    "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-intro"
+  ],
+  "stp": [
+    "Service Trust Portal",
+    "https://learn.microsoft.com/en-us/purview/get-started-with-service-trust-portal"
+  ],
+  "compliance-manager": [
+    "Microsoft Purview Compliance Manager",
+    "https://learn.microsoft.com/en-us/purview/compliance-manager"
+  ],
+  "managed-domain": [
+    "Microsoft Entra Domain Services",
+    "https://learn.microsoft.com/en-us/entra/identity/domain-services/overview"
+  ],
+  "storage-tools": [
+    "Azure Storage Explorer",
+    "https://learn.microsoft.com/en-us/azure/storage/storage-explorer/vs-azure-tools"
+  ],
+  "sql-mi": [
+    "Azure SQL Managed Instance",
+    "https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview"
+  ],
+  "devops": [
+    "Azure DevOps",
+    "https://learn.microsoft.com/en-us/azure/devops/user-guide/what-is-azure-devops"
+  ],
+  "marketplace": [
+    "Microsoft Marketplace",
+    "https://learn.microsoft.com/en-us/marketplace/overview"
+  ],
+  "hdinsight": [
+    "Azure HDInsight",
+    "https://learn.microsoft.com/en-us/azure/hdinsight/hdinsight-overview"
+  ],
+  "table": [
+    "Azure Table Storage",
+    "https://learn.microsoft.com/en-us/azure/storage/tables/table-storage-overview"
+  ],
+  "queue": [
+    "Azure Queue Storage",
+    "https://learn.microsoft.com/en-us/azure/storage/queues/storage-queues-introduction"
+  ],
+  "sas": [
+    "共有アクセス署名（SAS）",
+    "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+  ],
+  "pim": [
+    "Microsoft Entra PIM",
+    "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+  ],
+  "advisor": [
+    "Azure Advisor",
+    "https://learn.microsoft.com/en-us/azure/advisor/advisor-overview"
+  ],
+  "expressroute": [
+    "Azure ExpressRoute",
+    "https://learn.microsoft.com/en-us/azure/expressroute/expressroute-introduction"
+  ],
+  "sql": [
+    "Azure SQL Database",
+    "https://learn.microsoft.com/en-us/azure/azure-sql/database/sql-database-paas-overview"
+  ],
+  "government": [
+    "Azure Governmentの利用資格",
+    "https://learn.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure"
+  ],
+  "ai-tools": [
+    "Foundry Tools",
+    "https://azure.microsoft.com/en-us/products/ai-foundry/tools/"
+  ],
+  "ai-ml": [
+    "Azure Machine Learning",
+    "https://learn.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-machine-learning"
+  ],
+  "synapse": [
+    "Azure Synapse Analytics",
+    "https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is"
+  ]
 }

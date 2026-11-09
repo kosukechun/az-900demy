@@ -16,13 +16,17 @@ for (const q of qs) {
   assert.ok(q.explanation.length>15,q.id+': explanation');
   assert.ok(q.choices.length>=2,q.id+': choices');
   assert.ok(q.accepted.length && !q.ungraded,q.id+': must be answerable');
-  assert.ok(q.terms.length>0&&q.terms.length<=3,q.id+': concise learning terms');
-  for(const t of q.terms) assert.ok(t.term&&t.role.length>15,q.id+': meaningful role');
-  if(meta.revisedIds.includes(q.id)) {
-    assert.equal(q.revision,2,q.id+': invalidate old answers');
-    assert.equal(q.checkedAt,meta.checkedAt);
-    assert.ok(q.sources.length,q.id+': verified source');
-  }
+  assert.ok(q.focus.length>=20,q.id+': question-specific learning point');
+  assert.ok(q.terms.length>0&&q.terms.length<=4,q.id+': focused learning terms');
+  for(const t of q.terms) assert.ok(t.term&&t.role.length>=50,q.id+': definition, purpose and distinction');
+  const revision=meta.answerRevisions[q.id]||(meta.revisedIds.includes(q.id)?2:undefined);
+  assert.equal(q.revision,revision,q.id+': invalidate revised answers only');
+  assert.equal(q.checkedAt,meta.checkedAt);
+  assert.ok(q.sources.length,q.id+': official reference');
+  assert.ok(!/次の説明が真の場合|正しければ「はい」|説明が正しい場合/.test(q.prompt),q.id+': no repetitive instruction');
+  assert.ok(!/undefined|�/.test(JSON.stringify(q)),q.id+': complete UTF-8 content');
+  assert.equal(q.choices.filter(c=>c.text==='はい').length,q.choices.filter(c=>c.text==='いいえ').length,q.id+': yes/no pair');
+  if(q.choices.some(c=>c.text==='はい')) assert.deepEqual(Array.from(q.choices,c=>c.text),['はい','いいえ'],q.id+': fixed yes/no order');
   if(q.group==='Q7') {
     assert.equal(q.origin.file,'mogimondai.pdf');
     assert.equal(q.origin.question,q.number);
@@ -34,7 +38,7 @@ for (const q of qs) {
     for (const i of set) assert.ok(Number.isInteger(i) && i>=0 && i<q.choices.length,q.id+': answer index');
     if (set.length>1) assert.ok(q.multiple,q.id+': multiple choice');
   }
-  for (const src of q.sources) assert.ok(/^https:\/\/(learn\.microsoft\.com|azure\.microsoft\.com)\//.test(src.url),q.id+': official source');
+  for (const src of q.sources) assert.ok(/^https:\/\/(learn\.microsoft\.com|azure\.microsoft\.com|privacy\.microsoft\.com|www\.microsoft\.com)\//.test(src.url),q.id+': official source');
   assert.ok(typeof q.prompt==='string' && q.prompt.length>15,q.id+': text prompt');
   assert.ok(!Object.hasOwn(q,'image')&&!Object.hasOwn(q,'source'),q.id+': no image dependency');
   assert.equal(q.group,q.id.slice(0,2));

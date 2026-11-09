@@ -1,115 +1,133 @@
-Microsoft Entra ID Protection|Entra Identity Protection,Entra ID Protection|不審なサインインや漏えいした資格情報など、IDに関するリスクを検出する。|risk
-条件付きアクセス|条件付きアクセス|ユーザー・端末・場所・リスクなどを条件に、アクセス許可やMFA要求を決める。|risk
-MFA（多要素認証）|MFA,多要素認証|知識・所有・生体など、異なる種類の認証要素を組み合わせて本人を確認する。|mfa
-Microsoft Entra ID|Entra ID,Entraテナント|組織のユーザーやアプリのIDを管理し、認証とアクセス管理を提供する。|hybrid-id
-Microsoft Entra Connect|Entra Connect,PHS,パスワードハッシュ同期|オンプレミスのAD DSとEntra IDのユーザー情報などを同期する。|hybrid-id
-Microsoft Entra Domain Services|Domain Services|ドメイン参加、LDAP、Kerberos、グループポリシーなどをマネージドで提供する。|
-認証と認可|認証・認可,認証と認可,「認証」,「フェデレーション」|認証は本人の確認、認可は許可する操作の決定。フェデレーションは別のID基盤の認証を信頼して連携する仕組み。|rbac
-Azure RBAC|RBAC,ロールベース,共同作成者,閲覧者,複数ロール|誰が、どの範囲で、どのリソース操作を行えるかをロールで定める。|rbac
-Azure Policy|Azure Policy,Azureポリシー,Azure ポリシー,Denyポリシー,ポリシーイニシアチブ|組織の構成ルールに準拠しているかを評価し、作成の拒否や修復を構成する。イニシアチブは複数の定義をまとめる。|policy
-管理ロック|ロック,CanNotDelete,ReadOnly|削除や更新などの管理操作を制限し、権限を持つ利用者の誤操作も防ぐ。|locks
-管理グループ|管理グループ|複数サブスクリプションを階層でまとめ、ポリシーや権限を継承させる。|groups
-サブスクリプション|サブスクリプション|Azureリソースの作成、アクセス制御、利用料金を管理する境界となる。|groups
-リソースグループ|リソースグループ,RG1,ResourceGroup|関連するAzureリソースをまとめ、アクセスや削除などの管理を行う。|arm
-タグ|タグ|部門名や用途などのキーと値を付け、リソースや費用を分類する。|cost
-Azure Resource Manager|Resource Manager,ARMテンプレート,ARM テンプレート|Azureリソースの配置・更新・削除を共通の管理プレーンで処理する。|arm
-Infrastructure as Code|宣言的,構成をコード,Infrastructure as Code|必要な構成をコードに残し、再現可能なデプロイと変更管理を行う。|arm
-IaaS|IaaS,Infrastructure as a Service|計算・記憶・ネットワーク基盤を借り、ゲストOSやアプリは利用者が管理する。|models
-PaaS|PaaS,Platform as a Service|OSなどの基盤管理を事業者へ任せ、アプリやデータに集中できる実行環境を提供する。|models
-SaaS|SaaS,Software as a Service,Microsoft 365|完成したアプリをサービスとして提供し、利用者は主にデータや設定を管理する。|models
-共有責任モデル|共有責任,クラウド事業者,物理ホスト,ゲストOS|事業者と利用者の担当範囲を分ける。データ・ID・アクセスには利用者の責任が残る。|models
-CapEx（資本的支出）|CapEx,資本的支出,資本支出,資本的費用,初期費用,初期投資,導入コスト|サーバー購入や設備建設など、資産を取得するための初期投資を表す。|cost-model
-OpEx（運用支出）|OpEx,運用支出,運用費,運営費,従量課金|電力やクラウド利用料など、継続してサービスを使い運営するための支出を表す。|cost-model
-ハイブリッドクラウド|ハイブリッドクラウド,ハイブリッド クラウド|オンプレミスなどとパブリッククラウドを接続し、組み合わせて使う構成。|models
-パブリッククラウド|パブリッククラウド|事業者が広く提供するクラウド。データの公開範囲は認証やネットワーク設定で制御する。|models
-プライベートクラウド|プライベートクラウド|特定組織向けに専用化されたクラウド環境。配置場所だけで定義されるものではない。|models
-拡張性（スケーラビリティ）|スケーラビリティ,拡張性,スケーリング,スケールアップ|必要な処理能力を増減できる性質。台数や1台あたりの性能を変更する。|scale
-弾力性（伸縮性）|弾力性,伸縮性,自動スケール,需要変動|負荷の変化に応じて資源量を動的に調整し、性能と費用を釣り合わせる。|scale
-機敏性（アジリティ）|機敏性,俊敏性,アジリティ|新しい要求に合わせ、資源の準備や変更を素早く実現できる性質。|
-高可用性|高可用性,フォールトトレランス,耐障害性|冗長化や切り替えにより、障害があってもサービスの停止を抑える。|vm
-災害復旧|災害復旧,ディザスター,ディサスタ,ディザスタ|大規模障害の後に、別環境やバックアップから業務を再開するための設計・手順。|backup
-SLA|SLA,サービスレベル契約|サービスの可用性などに関する事業者の約束。対象範囲と適用条件を伴う。|sla
-リージョン|リージョン|Azureリソースを展開する地理的な地域。遅延、データ所在地、提供サービスに影響する。|regions
-可用性ゾーン|可用性ゾーン,Availability Zone|同一リージョン内で、電源・冷却・ネットワークを分離した障害境界を提供する。|vm
-可用性セット|可用性セット|VMを障害ドメインと更新ドメインへ分散し、共通障害や同時保守の影響を抑える。|vm
-Azure Virtual Machines|Azure VM,仮想マシン,Virtual Machine|ゲストOSから上を利用者が構成できる、IaaSの計算環境を提供する。|vm
-VM Scale Sets|Scale Sets,VMSS,スケールセット|複数VMのインスタンスをまとめて作成・管理し、台数を需要に応じて調整する。|scale
-割り当て解除|割り当て解除|VMの計算資源を解放する操作。保持するディスクなどの課金は別に残る。|pricing
-マネージドディスク|マネージドディスク,Standard SSD,Disk Storage|VMが使うブロックストレージを提供し、Azure側がディスク基盤を管理する。|disks
-Azure App Service|App Service,Webアプリの実行|WebアプリやAPIをホストするPaaSで、OSや実行基盤の管理をサービス側が担う。|app
-App Service Environment|App Service Environment|App Serviceのアプリを、専用で分離された環境に配置する。|ase
-Azure Functions|Azure Functions,AzureFunctions,サーバーレス|HTTP・キュー・タイマーなどのイベントを契機にコードを実行する。|functions
-Azure Logic Apps|Logic Apps|トリガーとコネクタで複数サービスの処理をつなぎ、ワークフローを自動化する。|logic
-Azure Kubernetes Service（AKS）|Kubernetes,AKS|Kubernetesを使い、多数のコンテナーの配置・復旧・スケーリングを管理する。|aks
-Azure Container Instances（ACI）|Container Instances,ACI|利用者がVMを直接構築せずに、コンテナーを実行する。|
-コンテナーレジストリ|Container Registry,ACR|実行するコンテナーのイメージを保管・配布する。実行環境そのものとは区別する。|
-Azure Virtual Desktop|Virtual Desktop,AVD|Azure上のセッションホストでWindowsデスクトップやアプリを実行し、端末へ配信する。|avd
-VNet|VNet,VNET,仮想ネットワーク|Azure上のネットワーク空間を分け、IPアドレス・サブネット・経路を構成する。|peering
-VNetピアリング|ピアリング|VNet同士をMicrosoftのバックボーンで接続する。アドレス重複やセキュリティ規則の確認が必要。|peering
-NSG|NSG,ネットワークセキュリティグループ|IPアドレス、ポート、プロトコルなどを条件に通信を許可・拒否する。|nsg
-ASG|ASG,アプリケーションセキュリティグループ|NSG規則で使う対象VMを論理グループにまとめ、IP列挙の手間を減らす。|nsg
-ユーザー定義ルート（UDR）|UDR,ユーザー定義ルート,NVA|通信先ごとの次のホップを指定し、NVAなどを経由する経路を構成する。|routing
-Azure Firewall|Azure Firewall|複数ネットワークの通信を、ネットワーク・アプリケーション規則などで集中制御する。|
-Azure DDoS Protection|DDoS|大量の不正な通信でサービスを使えなくするDDoS攻撃の影響を軽減する。|
-VPN Gateway|VPN Gateway,VPNゲートウェイ|インターネットなどを通る暗号化トンネルで、オンプレミスやVNetを接続する。|
-ローカルネットワークゲートウェイ|ローカルネットワークゲートウェイ|オンプレミスVPN装置のIPや、接続先ネットワークのアドレス範囲をAzureへ定義する。|
-ExpressRoute|ExpressRoute|接続プロバイダーを介するプライベート回線で、オンプレミスとMicrosoftクラウドを接続する。|
-プライベートエンドポイント|プライベートエンドポイント,Private Endpoint,Private Link|VNet内のプライベートIPを使って、対応するPaaSサービスへ接続する。|private
-サービスエンドポイント|サービスエンドポイント|対応サービスへVNetのIDと最適な経路を提供する。サービス用のプライベートIPは作らない。|private
-Azure Load Balancer|Load Balancer,ロードバランサー,負荷分散|複数のバックエンドへ通信を振り分け、負荷や障害の影響を分散する。|
-NATルール|NATルール|特定のフロントエンドポートに来た通信を、指定したVMのポートへ転送する。|
-Azure Blob Storage|Blob,BLOB,ブロブ|画像や文書などの非構造化データをオブジェクトとして保存する。|tiers
-Azure Files|Azure Files,SMB,NFS,FileREST|SMB・NFSやREST APIを使う、マネージドのファイル共有を提供する。|files
-SAS|SAS|許可する操作・対象・期限などを指定し、ストレージへの限定的なアクセスを委任する。|
-Azure File Sync|File Sync|Azure FilesとWindows Serverのファイルを同期し、ローカルキャッシュなどに使う。|files
-Queue Storage|Queue Storage,キューストレージ|メッセージを一時保存し、アプリの処理を非同期に受け渡す。|
-Table Storage|Table Storage,テーブルストレージ|キーと属性を持つ非リレーショナルデータを保存する。|
-アーカイブ層|アーカイブ,リハイドレート|低頻度の長期保管向け。読む前にオンライン層へ戻し、取り出しの完了を待つ。|tiers
-LRS・ZRS|LRS,ZRS|LRSは1つの物理的な場所、ZRSは同一リージョンの複数ゾーンへコピーを分散する。|redundancy
-GRS・GZRS|GRS,GZRS,geo冗長|別リージョンにも非同期でコピーを作る。RA付きはセカンダリからの読み取りにも対応する。|redundancy
-Azure Backup|Azure Backup,バックアップ|データのコピーと復元ポイントを保持し、誤削除や破損の後の復元を支援する。|backup
-Azure Site Recovery|Site Recovery|障害時に別環境へ切り替え、業務を再開するための複製と復旧の手順を管理する。|backup
-Azure Cosmos DB|Cosmos DB|分散データベースとして、低遅延の読み書きや複数リージョンへの展開を支援する。|
-Azure SQL Database|SQL Database|SQL Server系のデータベースをPaaSとして提供し、OSや基盤の運用を軽減する。|
-Azure Monitor|Azure Monitor,メトリック,監視データ|メトリックやログを集め、アプリやインフラの状態を監視・分析する。|monitor
-Azure Monitorアラート|アラート,しきい値|収集データやイベントを条件と照合し、必要な通知・処理を起動する。|alerts
-アクショングループ|アクショングループ|アラート発生時の通知先と、自動実行するアクションを定義する。|actions
-Application Insights|Application Insights|リクエスト時間、失敗、依存先、ブラウザー動作などアプリのテレメトリを分析する。|monitor
-Log Analytics|Log Analytics|収集したログをクエリで検索・集計し、問題の調査に使う。|monitor
-Azure Service Health|Service Health|利用中のAzureサービスに影響する障害、保守予定、勧告を確認する。|health
-Azure Advisor|Azure Advisor,Advisor|利用状況や構成を分析し、費用・信頼性・性能・セキュリティなどの改善を提案する。|
-Microsoft Defender for Cloud|Defender for Cloud,Security Center|クラウドのセキュリティ態勢を評価し、ワークロードへの脅威を検出・保護する。|defender
-Microsoft Sentinel|Microsoft Sentinel|多数のログを横断分析し、脅威の検出・調査・対応を行うSIEM/SOARを提供する。|
-JIT VMアクセス|JIT,Just-In-Time|管理ポートを常時開放せず、許可された要求に応じて範囲と期間を限定して開く。|jit
-Azure Key Vault|Key Vault|アプリが使うシークレット、暗号鍵、証明書を保管し、アクセスを制御する。|keyvault
-秘密度ラベル|秘密度ラベル,Information Protection|文書などを機密性に応じて分類し、透かし・暗号化などの保護を適用する。|labels
-Azure IoT Hub|IoT Hub|デバイスとクラウド間の安全な双方向メッセージ通信を仲介する。|iot
-IoT Edge|IoT Edge|クラウドで管理する処理をデバイス付近で動かし、通信量や応答時間を抑える。|
-Azure DevOps|DevOps,Azure Repos,Azure Pipelines|ソース管理、タスク管理、ビルド・テスト・デプロイの自動化などを支援する。|
-Azure DevTest Labs|DevTest Labs|開発・テスト用のVM環境を準備し、再利用や自動終了などを管理する。|
-Azure Arc|Azure Arc|Azure外のサーバーなどをAzureへ登録し、共通の管理・監視を構成できるようにする。|arc
-Azure Cloud Shell|Cloud Shell,CloudShell,クラウドシェル|ブラウザーからBashまたはPowerShellでAzureを操作できる管理用シェル。|shell
-Azure CLI・PowerShell|Azure CLI,Azure PowerShell,コマンドライン|Azureの管理操作をコマンドで実行し、繰り返し作業をスクリプト化する。|shell
-Cost Management|Cost Management,コストの管理,予算アラート|利用料金の分析、予算と通知、費用配分などで継続的な支出管理を支援する。|cost
-料金計算ツール|料金計算ツール|リージョンや構成、使用量を指定して、Azure利用料金を事前に見積もる。|pricing
-TCO|TCO,総保有コスト|機器だけでなく運用なども含む総費用。移行前後の費用比較で使う指標。|migrate
-Azure Migrate|Azure Migrate,ビジネスケース|既存環境の検出・評価・移行を支援し、ビジネスケースで移行効果を見積もる。|migrate
-Azure Reservations|Reservations,リザーブド,予約インスタンス,VM予約,コンピューティング予約|一定期間の利用を約束し、対象リソースの料金を割り引く仕組み。|reservations
-Azureハイブリッド特典|ハイブリッド特典,AHB|条件を満たす既存ライセンスをAzureで活用し、ライセンス関連の費用を削減する。|hybrid-benefit
-EA（Enterprise Agreement）|Enterprise Agreement,EAポータル,EAの|企業向けの契約体系。現在の登録・請求管理はAzure portalで行う。|ea
-プレビューとGA|プレビュー,一般提供,GA）|プレビューは一般提供前の評価段階、GAは一般提供。料金・利用条件・サポートは個別に確認する。|preview
-Azureサポート|サポート,クォータ,Quotas|プランに応じた技術支援や、変更可能な上限値の引き上げ申請などを提供する。|support
-コンプライアンス|コンプライアンス,GDPR,Trust Center,Trust Portal|法令や標準に沿うための取り組み。事業者の認証取得と利用者の運用上の準拠は別に確認する。|models
-データとアクセスの管理|データを完全に制御,データとアクセス管理|データを誰に公開するか、どの操作を認めるかを利用者が設計し、権限を設定する。|models
-多層防御|多層防御,物理的なセキュリティ層|ID、ネットワーク、OS、アプリ、データなど複数の層で対策し、1つの防御が破られても被害を抑える。|models
-物理セキュリティ|データセンターにアクセス|入退室や設備の保護を管理する。社員であっても業務上必要な承認なしに自由に入れるわけではない。|models
-Azure無料アカウント|無料アカウント,無料利用枠|条件付きのクレジットや無料枠でAzureを評価する仕組み。対象、期限、継続時の課金条件を確認する。|free
-AIサービス|インテリジェント,予測分析,Machine Learning,Cognitive|学習モデルやAPIを使い、予測、画像・言語などの認識処理をアプリへ組み込む。|
-Azure Storage Explorer|Storage Explorer,Azure Storageに保存|ストレージのデータを参照・アップロード・ダウンロードするための管理ツール。|
-セキュリティプリンシパル|セキュリティプリンシパル,サービスプリンシパル|ユーザー、グループ、アプリなど、認証してアクセス権を割り当てる対象を表す。|rbac
-Azure HDInsight|HDInsight,Hadoop|Apache Hadoopなどのオープンソースの分析基盤をマネージドクラスターとして提供する。|
-ストレージアカウント|エンティティとメッセージ,アカウント容量|ストレージの名前空間や構成の単位。個数の制限と、容量・性能・サイズの制限を区別する。|storage-limits
-Azure Marketplace|Marketplace|外部ベンダーなどがアプリやサービスを公開し、利用者が検索・導入できる市場。|
-Azure portal|Webブラウザー,Azure Portal,Azure portal|ブラウザーからAzureのリソースや設定を管理する画面。操作できる範囲は権限に従う。|shell
-Azureの独立したクラウド|AzureChina,Azure China,AzureGovernment,Azure Government|一般のAzureと分離された運用・提供条件を持つ。中国向けAzureの運営者は21Vianet。|
-プライバシーに関する声明|プライバシー,収集したデータ|事業者がどの情報を収集し、どの目的で利用するかを説明する文書。|
+Microsoft Entra ID Protection|Entra Identity Protection,Entra ID Protection|不審なサインインや漏えいした資格情報など、IDに関するリスクを検出する。検出されたユーザーリスクやサインインリスクを条件付きアクセスへ渡し、追加認証や修復に役立てる。|risk
+条件付きアクセス|条件付きアクセス|ユーザー・端末・場所・リスクなどを条件に、アクセス許可やMFA要求を決める。例えば社外からのサインインにMFAを要求する。リスク条件などには対応するライセンスが必要。|risk
+MFA（多要素認証）|MFA,多要素認証|知識・所有・生体など、異なる種類の認証要素を組み合わせて本人を確認する。パスワードと電話の確認などが例。パスワードを2回入力しても、要素の種類が同じならMFAにはならない。|mfa
+Microsoft Entra ID|Entra ID,Entraテナント,Entra参加,Entra登録|組織のユーザーやアプリのIDを管理し、認証とアクセス管理を提供する。Azureのリソース操作権限を決めるAzure RBACや、従来のAD DSのドメイン機能とは役割が異なる。|hybrid-id
+Microsoft Entra Connect|Entra Connect,PHS,パスワードハッシュ同期|オンプレミスのAD DSとEntra IDのユーザー情報などを同期する。PHSではパスワードから生成した派生ハッシュを同期する。平文のパスワードをクラウドへ送るものではない。|hybrid-id
+Microsoft Entra Domain Services|Domain Services|ドメイン参加、LDAP、Kerberos、グループポリシーなどをマネージドで提供する。利用者がドメインコントローラーのVMを構築・保守する負担を減らす。Entra ID単体とは提供機能が異なる。|managed-domain
+認証と認可|認証・認可,認証と認可,「認証」,「フェデレーション」|認証は本人の確認、認可は許可する操作の決定。フェデレーションは別のID基盤の認証を信頼して連携する仕組み。本人確認に成功しても、対象の操作を実行するには別途アクセス許可が必要。|rbac
+Azure RBAC|RBAC,ロールベース,共同作成者,閲覧者,複数ロール,Owner,Contributor,Reader,所有者ロール,閲覧権限|誰が、どの範囲で、どのリソース操作を行えるかをロールで定める。主体・ロール・スコープを組み合わせて割り当てる。上位のスコープに付与した権限は配下へ継承される。|rbac
+Azure Policy|Azure Policy,Azureポリシー,Azure ポリシー,Denyポリシー,ポリシーイニシアチブ,イニシアティブ,イニシアチブ|組織の構成ルールに準拠しているかを評価し、作成の拒否や修復を構成する。イニシアチブは複数の定義をまとめる。例として配置リージョンやVMサイズを制限できる。ユーザーへの閲覧者・共同作成者ロールの付与はRBACで行う。|policy
+管理ロック|ロック,CanNotDelete,ReadOnly|削除や更新などの管理操作を制限し、権限を持つ利用者の誤操作も防ぐ。CanNotDeleteは削除を、ReadOnlyは更新と削除を防ぐ。管理プレーンが対象で、データ自体の操作は別途制御する。|locks
+管理グループ|管理グループ|複数サブスクリプションを階層でまとめ、ポリシーや権限を継承させる。部署ごとに複数サブスクリプションをまとめる場合に使う。リソース自体を直接格納する入れ物ではない。|groups
+サブスクリプション|サブスクリプション|Azureリソースの作成、アクセス制御、利用料金を管理する境界となる。1つのEntraテナントに複数を関連付けられる。リソースグループはそれぞれ1つのサブスクリプションに属する。|groups
+リソースグループ|リソースグループ,RG1,ResourceGroup|関連するAzureリソースをまとめ、アクセスや削除などの管理を行う。同じライフサイクルのリソースをまとめる用途に適する。異なるリージョンのリソースも含められる。|arm
+タグ|タグ|部門名や用途などのキーと値を付け、リソースや費用を分類する。例はDepartment=Sales。リソースグループのタグは、設定なしで配下のリソースへ自動継承されるわけではない。|cost
+Azure Resource Manager|Resource Manager,ARMテンプレート,ARM テンプレート|Azureリソースの配置・更新・削除を共通の管理プレーンで処理する。portal、CLI、PowerShell、APIなどから共通で利用される。テンプレートによる構成の再利用にも対応する。|arm
+Infrastructure as Code|宣言的,構成をコード,Infrastructure as Code|必要な構成をコードに残し、再現可能なデプロイと変更管理を行う。同じ定義を再利用し、環境ごとの差分をパラメーターで管理できる。ARMテンプレートやBicepが例。|arm
+IaaS|IaaS,Infrastructure as a Service|計算・記憶・ネットワーク基盤を借り、ゲストOSやアプリは利用者が管理する。Azure VMが代表例。OSを自由に構成できる一方、OSの更新やアプリの保護などの運用責任が残る。|models
+PaaS|PaaS,Platform as a Service|OSなどの基盤管理を事業者へ任せ、アプリやデータに集中できる実行環境を提供する。App ServiceやSQL Databaseが例。OS管理を任せても、アプリ設定、データ、アクセス権の管理は必要。|models
+SaaS|SaaS,Software as a Service,Microsoft 365|完成したアプリをサービスとして提供し、利用者は主にデータや設定を管理する。Microsoft 365などが例。サービスの基盤や更新は事業者が管理し、利用者は自社のアカウントやアクセスを管理する。|models
+共有責任モデル|共有責任,クラウド事業者,物理ホスト,ゲストOS,物理サーバー,物理ハードウェア,インフラのメンテナンス|事業者と利用者の担当範囲を分ける。データ・ID・アクセスには利用者の責任が残る。IaaSではゲストOSを利用者が管理し、PaaSやSaaSでは事業者がOSを管理する。物理設備はどのモデルでも事業者側。|models
+CapEx（資本的支出）|CapEx,資本的支出,資本支出,資本的費用,初期費用,初期投資,導入コスト|サーバー購入や設備建設など、資産を取得するための初期投資を表す。クラウドの活用で設備購入を減らせるが、その後の利用料金までなくなるわけではない。|cost-model
+OpEx（運用支出）|OpEx,運用支出,運用費,運営費,従量課金|電力やクラウド利用料など、継続してサービスを使い運営するための支出を表す。使う量や期間に応じて変動するため、不要資源の解放や予算の監視による継続管理が重要。|cost-model
+ハイブリッドクラウド|ハイブリッドクラウド,ハイブリッド クラウド|オンプレミスなどとパブリッククラウドを接続し、組み合わせて使う構成。既存システムを残しながら一部を移行する構成に使う。接続・認証・運用を両環境で設計する。|models
+パブリッククラウド|パブリッククラウド|事業者が広く提供するクラウド。データの公開範囲は認証やネットワーク設定で制御する。利用者が事業者の物理設備を運用する必要を減らせる。「パブリック」はデータを一般公開する意味ではない。|models
+プライベートクラウド|プライベートクラウド|特定組織向けに専用化されたクラウド環境。配置場所だけで定義されるものではない。自社データセンターにも外部の専用環境にも構築できる。特定の組織だけが利用する点が特徴。|models
+拡張性（スケーラビリティ）|スケーラビリティ,拡張性,スケーリング,スケールアップ|必要な処理能力を増減できる性質。台数や1台あたりの性能を変更する。台数を増やすのがスケールアウト、1台のCPU・メモリを増やすのがスケールアップ。減らす変更も設計する。|scale
+弾力性（伸縮性）|弾力性,伸縮性,自動スケール,需要変動|負荷の変化に応じて資源量を動的に調整し、性能と費用を釣り合わせる。昼間はVMを増やし夜間は減らす構成が例。新要件を素早く実現する機敏性とは異なる。|scale
+機敏性（アジリティ）|機敏性,俊敏性,アジリティ|新しい要求に合わせ、資源の準備や変更を素早く実現できる性質。新しい環境を短時間で準備できることが例。負荷に合わせた資源量の自動調整は弾力性と呼ぶ。|cloud-benefits
+高可用性|高可用性|冗長化や切り替えにより、障害があってもサービスの停止を抑える。利用できる時間の割合を高める性質。災害後に復元するだけの構成や、単一VMの大型化とは異なる。|vm
+災害復旧|災害復旧,ディザスター,ディサスタ,ディザスタ|大規模障害の後に、別環境やバックアップから業務を再開するための設計・手順。復旧までの目標時間や、どの時点までのデータを戻すかも決める。複製だけでなく復旧手順の検証が必要。|backup
+SLA|SLA,サービスレベル契約|サービスの可用性などに関する事業者の約束。対象範囲と適用条件を伴う。目標を満たせない場合のサービスクレジットなども規定する。複数サービスを組み合わせた全体の保証とは別。|sla
+リージョン|リージョン|Azureリソースを展開する地理的な地域。遅延、データ所在地、提供サービスに影響する。1つ以上のデータセンターから成り、対応する場所では可用性ゾーンを使える。国と一対一の関係ではない。|regions
+可用性ゾーン|可用性ゾーン,Availability Zone|同一リージョン内で、電源・冷却・ネットワークを分離した障害境界を提供する。各ゾーンは1つ以上のデータセンターで構成される。別リージョンへの分散とは異なる障害対策。|vm
+可用性セット|可用性セット|VMを障害ドメインと更新ドメインへ分散し、共通障害や同時保守の影響を抑える。ラックなどの故障や保守の影響を分ける用途。データセンター全体の障害対策には可用性ゾーンを検討する。|vm
+Azure Virtual Machines|Azure VM,仮想マシン,Virtual Machine,(?<![A-Za-z])VM(?![A-Za-z])|ゲストOSから上を利用者が構成できる、IaaSの計算環境を提供する。WindowsやLinuxを実行し、必要なソフトを導入できる。物理ホストはAzure、ゲストOSは利用者が管理する。|vm
+VM Scale Sets|Scale Sets,VMSS,スケールセット|複数VMのインスタンスをまとめて作成・管理し、台数を需要に応じて調整する。Load Balancerなどを組み合わせ、追加したVMへ処理を分散できる。アプリ側にも複数台で動作する設計が必要。|scale
+割り当て解除|割り当て解除|VMの計算資源を解放する操作。保持するディスクなどの課金は別に残る。OS内のシャットダウンだけでは解放されない場合がある。ディスクや保持したパブリックIPなどは別途課金され得る。|pricing
+マネージドディスク|マネージドディスク,Standard SSD,Disk Storage|VMが使うブロックストレージを提供し、Azure側がディスク基盤を管理する。Standard SSDなどの種類を性能・費用に応じて選ぶ。Blobのアクセス層とは異なる分類。|disks
+Azure App Service|App Service,Webアプリの実行|WebアプリやAPIをホストするPaaSで、OSや実行基盤の管理をサービス側が担う。独自のコードや対応するコンテナーを配置できる。VMのようにゲストOSを管理者として自由に操作する基盤ではない。|app
+App Service Environment|App Service Environment|App Serviceのアプリを、専用で分離された環境に配置する。対応するWebアプリやFunctionsをホストする。Azure SQL Databaseをその環境内のアプリとして配置する仕組みではない。|ase
+Azure Functions|Azure Functions,AzureFunctions|HTTP・キュー・タイマーなどのイベントを契機にコードを実行する。短いバックエンド処理や定期ジョブに適する。従量課金プランでは実行回数と時間・メモリなどが料金に関係する。|functions
+Azure Logic Apps|Logic Apps|トリガーとコネクタで複数サービスの処理をつなぎ、ワークフローを自動化する。定期実行やメール通知などの連携処理に使う。状態を保持するワークフローも作成できる。|logic
+Azure Kubernetes Service（AKS）|Kubernetes,AKS|Kubernetesを使い、多数のコンテナーの配置・復旧・スケーリングを管理する。コンテナーの実行を調整するオーケストレーションを担う。イメージ保管庫のACRとは役割が異なる。|aks
+Azure Container Instances（ACI）|Container Instances,ACI|利用者がVMを直接構築せずに、コンテナーを実行する。コンテナーを直接起動する用途に使う。多数の実行単位の継続的な管理にはAKSなども検討する。|aci
+コンテナーレジストリ|Container Registry,ACR|実行するコンテナーのイメージを保管・配布する。実行環境そのものとは区別する。Azure Container Registryが例。保管したイメージをAKS、ACIなどの実行環境から取得する。|registry
+Azure Virtual Desktop|Virtual Desktop,AVD|Azure上のセッションホストでWindowsデスクトップやアプリを実行し、端末へ配信する。接続元端末のOSと、Azure側でデスクトップを動かすセッションホストのOSを区別する。|avd
+VNet|VNet,VNET,仮想ネットワーク|Azure上のネットワーク空間を分け、IPアドレス・サブネット・経路を構成する。初期状態では別のVNetと直接接続しない。ピアリングやゲートウェイなどで接続方法を構成する。|peering
+VNetピアリング|ピアリング|VNet同士をMicrosoftのバックボーンで接続する。アドレス重複やセキュリティ規則の確認が必要。同一リージョンでも異なるリージョンでも利用できる。接続後も各VNetは独立した管理単位として残る。|peering
+NSG|NSG,ネットワークセキュリティグループ|IPアドレス、ポート、プロトコルなどを条件に通信を許可・拒否する。サブネットやNICへ関連付ける。経路を変更するUDRや、アプリを負荷分散する機能とは異なる。|nsg
+ASG|ASG,アプリケーションセキュリティグループ|NSG規則で使う対象VMを論理グループにまとめ、IP列挙の手間を減らす。例えばWeb用VMとDB用VMに分けて規則を記述する。ASGだけでは通信のフィルター処理を行わない。|nsg
+ユーザー定義ルート（UDR）|UDR,ユーザー定義ルート,NVA|通信先ごとの次のホップを指定し、NVAなどを経由する経路を構成する。UDRは経路を決める設定であり、検査はNVAなどが行う。経路と許可・拒否の規則は別々に確認する。|routing
+Azure Firewall|Azure Firewall|複数ネットワークの通信を、ネットワーク・アプリケーション規則などで集中制御する。ハブに配置して複数VNetの通信を経由させられる。通信経路を設計しないと、すべての通信が自動で検査されるわけではない。|firewall
+Azure DDoS Protection|DDoS|大量の不正な通信でサービスを使えなくするDDoS攻撃の影響を軽減する。ネットワーク単位の保護とIP単位の保護などがある。アプリの認証や通常のアクセス権管理を代替しない。|ddos
+VPN Gateway|VPN Gateway,VPNゲートウェイ|インターネットなどを通る暗号化トンネルで、オンプレミスやVNetを接続する。Azure側でトンネルを終端する。オンプレミス側の装置情報を定義するローカルネットワークゲートウェイとは別。|vpn
+ローカルネットワークゲートウェイ|ローカルネットワークゲートウェイ|オンプレミスVPN装置のIPや、接続先ネットワークのアドレス範囲をAzureへ定義する。Azure内の設定用リソースであり、VPNの暗号化処理を実行する物理装置そのものではない。|vpn
+ExpressRoute|ExpressRoute|接続プロバイダーを介するプライベート回線で、オンプレミスとMicrosoftクラウドを接続する。インターネットを経由せず接続する方式。プライベート接続であることと、通信が暗号化されることは別の要件。|expressroute
+プライベートエンドポイント|プライベートエンドポイント,Private Endpoint,Private Link|VNet内のプライベートIPを使って、対応するPaaSサービスへ接続する。VPNなどでつないだオンプレミスからも到達させられる。DNSとサービス側の公開アクセス制限も確認する。|private
+サービスエンドポイント|サービスエンドポイント|対応サービスへVNetのIDと最適な経路を提供する。サービス用のプライベートIPは作らない。サービス側の接続口はパブリックのまま。Private Endpointのような専用のプライベートIPは割り当てない。|private
+Azure Load Balancer|Load Balancer,ロードバランサー,負荷分散|複数のバックエンドへ通信を振り分け、負荷や障害の影響を分散する。主にTCP・UDPのL4通信を扱う。URLパスを判断するApplication GatewayのL7負荷分散と区別する。|load-balancer
+NATルール|NATルール|特定のフロントエンドポートに来た通信を、指定したVMのポートへ転送する。例えば外部ポートを特定VMのRDPポートへ対応付ける。NSGなどで必要な通信を許可する設定も必要。|load-balancer
+Azure Blob Storage|Blob,BLOB,ブロブ|画像や文書などの非構造化データをオブジェクトとして保存する。REST APIやSDKなどからアクセスする。SMBのネットワークドライブとして使うAzure Filesとは異なる。|tiers
+Azure Files|Azure Files,SMB,NFS,FileREST|SMB・NFSやREST APIを使う、マネージドのファイル共有を提供する。対応プロトコルや認証方式は共有の種類による。Windowsのネットワークドライブや既存ファイル共有の移行に使う。|files
+SAS|SAS|許可する操作・対象・期限などを指定し、ストレージへの限定的なアクセスを委任する。URLなどに付ける署名付き情報であり、通信プロトコルではない。漏えいすると許可した範囲を他者に使われ得る。|sas
+Azure File Sync|File Sync|Azure FilesとWindows Serverのファイルを同期し、ローカルキャッシュなどに使う。頻繁に使うファイルをオンプレミスに残し、クラウド階層化で容量を節約する構成も可能。|file-sync
+Queue Storage|Queue Storage,キューストレージ|メッセージを一時保存し、アプリの処理を非同期に受け渡す。送信と受信の処理を切り離し、負荷変動を吸収する。ファイル共有やリレーショナルDBとは用途が異なる。|queue
+Table Storage|Table Storage,テーブルストレージ|キーと属性を持つ非リレーショナルデータを保存する。エンティティをパーティションキーと行キーで識別する。SQLのリレーショナルテーブルとは異なる。|table
+アーカイブ層|アーカイブ,リハイドレート|低頻度の長期保管向け。読む前にオンライン層へ戻し、取り出しの完了を待つ。保存料だけでなく、取り出し料金や最低保持期間も確認する。頻繁な読み書きや即時アクセスには向かない。|tiers
+LRS・ZRS|LRS,ZRS|LRSは1つの物理的な場所、ZRSは同一リージョンの複数ゾーンへコピーを分散する。どちらもプライマリリージョン内の冗長化であり、それだけでリージョン全体の災害へ備えるものではない。|redundancy
+GRS・GZRS|GRS,GZRS,geo冗長|別リージョンにも非同期でコピーを作る。RA付きはセカンダリからの読み取りにも対応する。非同期のため直近の更新が未複製の場合がある。障害時はフェールオーバーや接続先の切り替えを設計する。|redundancy
+Azure Backup|Azure Backup,バックアップ|データのコピーと復元ポイントを保持し、誤削除や破損の後の復元を支援する。取得頻度や保持期間をポリシーで指定する。サービスを使うだけで全データの保護が自動完成するわけではない。|backup
+Azure Site Recovery|Site Recovery|障害時に別環境へ切り替え、業務を再開するための複製と復旧の手順を管理する。切り替え先でシステムを起動して復旧する。過去時点のデータを取り出すバックアップとは役割が異なる。|backup
+Azure Cosmos DB|Cosmos DB|分散データベースとして、低遅延の読み書きや複数リージョンへの展開を支援する。JSONを扱うNoSQLの構成などで利用する。可用性や遅延の保証はAPI・構成・操作などの条件を確認する。|cosmos
+Azure SQL Database|SQL Database|SQL Server系のデータベースをPaaSとして提供し、OSや基盤の運用を軽減する。利用者はデータやアクセスを管理する。SQL CLRなど、通常のSQL Serverと同じ機能がすべて使えるわけではない。|sql
+Azure Monitor|Azure Monitor,メトリック,監視データ|メトリックやログを集め、アプリやインフラの状態を監視・分析する。収集した数値やイベントを使ってアラートを構成できる。Azureサービス基盤側の障害情報はService Healthで確認する。|monitor
+Azure Monitorアラート|アラート,しきい値|収集データやイベントを条件と照合し、必要な通知・処理を起動する。メトリック、ログ検索、管理操作のイベントなどを条件にできる。通知先はアクショングループなどで定義する。|alerts
+アクショングループ|アクショングループ|アラート発生時の通知先と、自動実行するアクションを定義する。例えばCPUアラートを担当者へメール通知する。条件を判定するアラートルールそのものとは異なる。|actions
+Application Insights|Application Insights|リクエスト時間、失敗、依存先、ブラウザー動作などアプリのテレメトリを分析する。Azure Monitorのアプリケーション監視機能。ブラウザー計測を含め、対象アプリ側への対応する計装・設定が必要。|monitor
+Log Analytics|Log Analytics|収集したログをクエリで検索・集計し、問題の調査に使う。KQLでログを検索する。ログを保存し、保持やアクセスを管理する単位がLog Analyticsワークスペース。|monitor
+Azure Service Health|Service Health|利用中のAzureサービスに影響する障害、保守予定、勧告を確認する。利用者向けの正常性イベントに対して通知も設定できる。個別アプリのCPUや処理エラーの監視とは区別する。|health
+Azure Advisor|Azure Advisor,Advisor|利用状況や構成を分析し、費用・信頼性・性能・セキュリティなどの改善を提案する。サービス自体の推奨提供は無料。助言に従った構成変更で追加サービスを使う場合、その料金は別に発生する。|advisor
+Microsoft Defender for Cloud|Defender for Cloud,Security Center|クラウドのセキュリティ態勢を評価し、ワークロードへの脅威を検出・保護する。規制コンプライアンスの評価なども提供する。無料の機能と有料プランがあり、対象機能の条件を確認する。|defender
+Microsoft Sentinel|Microsoft Sentinel|多数のログを横断分析し、脅威の検出・調査・対応を行うSIEM/SOARを提供する。SIEMはログの収集・関連分析、SOARは対応の連携・自動化を担う。利用するデータソースやルールの設定が必要。|sentinel
+JIT VMアクセス|JIT,Just-In-Time|管理ポートを常時開放せず、許可された要求に応じて範囲と期間を限定して開く。RDPやSSHの公開時間を短くする用途に使う。接続するユーザーの本人認証や、必要なプランの確認も別途行う。|jit
+Azure Key Vault|Key Vault|アプリが使うシークレット、暗号鍵、証明書を保管し、アクセスを制御する。アプリへ取得権限を付け、コード中の直接記載を避ける。Entraユーザーのサインインパスワードを読み出す機能ではない。|keyvault
+秘密度ラベル|秘密度ラベル,Information Protection|文書などを機密性に応じて分類し、透かし・暗号化などの保護を適用する。対応するWord文書やメールなどに適用する。SQLの暗号化やネットワーク通信の暗号化とは別の機能。|labels
+Azure IoT Hub|IoT Hub|デバイスとクラウド間の安全な双方向メッセージ通信を仲介する。測定値の受信やデバイスへのコマンド送信に使う。端末付近で処理するIoT Edgeとは役割が異なる。|iot
+IoT Edge|IoT Edge|クラウドで管理する処理をデバイス付近で動かし、通信量や応答時間を抑える。クラウドとの接続が不安定な場所でも一部の処理を継続する設計に使える。双方向通信のハブ自体とは別。|iot
+Azure DevOps|DevOps,Azure Repos,Azure Pipelines|ソース管理、タスク管理、ビルド・テスト・デプロイの自動化などを支援する。Reposはソース管理、PipelinesはCI/CDを担当する。配信後のWebアプリの実行基盤にはApp Serviceなどを使う。|devops
+Azure DevTest Labs|DevTest Labs|開発・テスト用のVM環境を準備し、再利用や自動終了などを管理する。開発者が使う環境の標準化や不要時の終了で、準備の手間と無駄な稼働費を抑える。|devtest
+Azure Arc|Azure Arc|Azure外のサーバーなどをAzureへ登録し、共通の管理・監視を構成できるようにする。管理対象へ登録した後、監視エージェントやポリシーなどを構成する。登録だけで全ログが収集されるわけではない。|arc
+Azure Cloud Shell|Cloud Shell,CloudShell,クラウドシェル|ブラウザーからBashまたはPowerShellでAzureを操作できる管理用シェル。端末へのCLI導入を不要にできる。中で操作するリソースや保存領域などの料金は、シェルの利用とは分けて確認する。|shell
+Azure CLI・PowerShell|Azure CLI,Azure PowerShell,コマンドライン|Azureの管理操作をコマンドで実行し、繰り返し作業をスクリプト化する。CLIはazコマンド、Azure PowerShellはAzモジュールを使う。どちらもローカルやCloud Shellから利用できる。|shell
+Cost Management|Cost Management,コストの管理,予算アラート|利用料金の分析、予算と通知、費用配分などで継続的な支出管理を支援する。予算の通知だけでリソースが自動停止するわけではない。CPUなどの性能監視にはAzure Monitorを使う。|cost
+料金計算ツール|料金計算ツール|リージョンや構成、使用量を指定して、Azure利用料金を事前に見積もる。将来の構成を見積もるためのツール。請求の確定額や、既存環境の移行効果を自動保証するものではない。|pricing
+TCO|TCO,総保有コスト|機器だけでなく運用なども含む総費用。移行前後の費用比較で使う指標。電力、保守、人件費など、比較範囲に含める前提をそろえる。個別サービスの利用料金だけの比較とは異なる。|migrate
+Azure Migrate|Azure Migrate,ビジネスケース|既存環境の検出・評価・移行を支援し、ビジネスケースで移行効果を見積もる。移行前の現状把握から移行の実行までを支援する。ビジネスケースは既存設備と移行後の費用比較に使う。|migrate
+Azure Reservations|Reservations,リザーブド,予約インスタンス,VM予約,コンピューティング予約|一定期間の利用を約束し、対象リソースの料金を割り引く仕組み。安定した長期利用に向く料金の割引。予約という名称だけで物理容量の確保が保証されるとは限らない。|reservations
+Azureハイブリッド特典|ハイブリッド特典,AHB|条件を満たす既存ライセンスをAzureで活用し、ライセンス関連の費用を削減する。Windows ServerやSQL Serverなど、対象ライセンスの資格・利用条件を確認する。コンピューティング予約と併用できる場合もある。|hybrid-benefit
+EA（Enterprise Agreement）|Enterprise Agreement,EAポータル,EAの|企業向けの契約体系。現在の登録・請求管理はAzure portalで行う。課金管理の権限と、Azureリソースを操作するRBAC権限は別のもの。|ea
+プレビューとGA|プレビュー,一般提供,GA）|プレビューは一般提供前の評価段階、GAは一般提供。料金・利用条件・サポートは個別に確認する。パブリックは広く評価を受け付け、プライベートは対象を限定する。無料やSLAの適用を一律に前提としない。|preview
+Azureサポート|サポート,クォータ,Quotas|プランに応じた技術支援や、変更可能な上限値の引き上げ申請などを提供する。請求管理の支援、技術支援、応答時間はプランで異なる。上限もすべてが変更可能なわけではない。|support
+コンプライアンス|コンプライアンス,GDPR,Trust Center,Trust Portal|法令や標準に沿うための取り組み。事業者の認証取得と利用者の運用上の準拠は別に確認する。監査資料の確認と、自社設定の評価、社内の改善活動の管理はそれぞれ別の用途。|models
+データとアクセスの管理|データを完全に制御,データとアクセス管理|データを誰に公開するか、どの操作を認めるかを利用者が設計し、権限を設定する。クラウド事業者が基盤を保護しても、利用者の公開設定や権限の設計ミスまで自動的に防げるわけではない。|models
+多層防御|多層防御,物理的なセキュリティ層|ID、ネットワーク、OS、アプリ、データなど複数の層で対策し、1つの防御が破られても被害を抑える。MFA、DDoS対策、NSG、パッチ適用などを異なる層へ組み合わせる。OSI参照モデルの層とは別の分類。|defense
+物理セキュリティ|データセンターにアクセス|入退室や設備の保護を管理する。社員であっても業務上必要な承認なしに自由に入れるわけではない。監視カメラ、入退室の承認、機器や電源設備の保護などが例。ソフトウェアのアクセス許可とは異なる。|models
+Azure無料アカウント|無料アカウント,無料利用枠|条件付きのクレジットや無料枠でAzureを評価する仕組み。対象、期限、継続時の課金条件を確認する。通常の新規利用者向け試用クレジットは200米ドル相当・30日間。継続にはアップグレード条件を確認する。|free
+AIサービス|インテリジェント,予測分析,Machine Learning,Cognitive|学習モデルやAPIを使い、予測、画像・言語などの認識処理をアプリへ組み込む。独自モデルを学習するMachine Learningと、学習済み機能をAPIで使うFoundry Toolsを用途で選び分ける。|ai
+Azure Storage Explorer|Storage Explorer,AzCopy|ストレージのデータを参照・アップロード・ダウンロードするための管理ツール。対応する認証と権限でデータを扱うGUIツール。大量転送をコマンドで行う場合はAzCopyも使える。|storage-tools
+セキュリティプリンシパル|セキュリティプリンシパル,サービスプリンシパル|ユーザー、グループ、アプリなど、認証してアクセス権を割り当てる対象を表す。RBACでは、この主体にロールを割り当てる。アプリが使うマネージドIDも対象になる。|rbac
+Azure HDInsight|HDInsight,Hadoop|Apache Hadoopなどのオープンソースの分析基盤をマネージドクラスターとして提供する。既存のHadoop系処理をAzureで扱う用途に使う。利用するクラスターのバージョンと提供条件を確認する。|hdinsight
+ストレージアカウント|エンティティとメッセージ,アカウント容量,ストレージアカウント,ストレージの制限|ストレージの名前空間や構成の単位。個数の制限と、容量・性能・サイズの制限を区別する。標準アカウントの既定最大容量は5PiB。個数に固定上限がない対象でも、容量や性能の制約は残る。|storage-limits
+Azure Marketplace|Marketplace|外部ベンダーなどがアプリやサービスを公開し、利用者が検索・導入できる市場。発行者が提供内容や価格を設定する。利用料金にはAzure基盤の費用と発行者の費用が含まれる場合がある。|marketplace
+Azure portal|Webブラウザー,Azure Portal,Azure portal|ブラウザーからAzureのリソースや設定を管理する画面。操作できる範囲は権限に従う。対応ブラウザーから利用でき、Windows端末専用ではない。Cloud Shellを起動する入口にもなる。|shell
+Azureの独立したクラウド|Azure China,Azure Government|一般のAzureと分離された運用・提供条件を持つ。中国向けAzureの運営者は21Vianet。Azure GovernmentはMicrosoftが運営し、米国政府関連の利用資格を審査する。|government
+プライバシーに関する声明|プライバシー,収集したデータ|事業者がどの情報を収集し、どの目的で利用するかを説明する文書。SLAの可用性条件や製品の料金表を説明する文書とは目的が異なる。|privacy
+サーバーレス|サーバーレス|サーバーの準備やOS管理をサービス側へ任せ、コードや処理の流れに集中する運用モデル。内部では物理サーバーが動いており、無料という意味ではない。|functions
+フォールトトレランス|フォールトトレランス,耐障害性|一部の構成要素が故障しても処理を続けられる性質。冗長化や障害の分離によって実現し、需要変動へ追従する弾力性とは区別する。|cloud-benefits
+Azure SQL Managed Instance|Managed Instance,SQL CLR|OSなどの基盤管理を任せつつ、SQL Serverとの高い互換性を持つデータベース。SQL CLRなど、SQL Databaseでは利用できない機能を必要とする移行で検討する。|sql-mi
+Azure Private DNS|プライベートDNS,Private DNS|VNetにリンクして内部用の名前解決を提供するDNS。独自ゾーンやレコードを管理でき、パブリックDNSとしてインターネットへ公開する設定とは異なる。|private-dns
+Azure Activity Log|Activity Log,アクティビティログ,操作履歴,管理操作の履歴|リソースの作成・更新・停止など、Azureの管理操作と実行者を記録するログ。VM内のアプリログやCPUメトリックとは異なり、操作の監査やイベント通知に使う。|activity-log
+Service Trust Portal|Service Trust Portal,マイライブラリ,監査報告書,監査レポート|Microsoftの監査報告書や認証・コンプライアンス資料を確認するポータル。自社Azureリソースの設定を評価するDefender for Cloudとは用途が異なる。|stp
+Microsoft Trust Center|Trust Center,トラストセンター|Microsoftのセキュリティ、プライバシー、コンプライアンスへの取り組みをまとめたサイト。個々の監査報告書はService Trust Portalなどで確認する。|trust
+Microsoft Purview Compliance Manager|コンプライアンスマネージャー,Compliance Manager|組織のコンプライアンス評価、改善アクション、対応状況の記録を管理する機能。Microsoft側の監査資料を読むことや、Azure構成の評価とは分けて使う。|compliance-manager
+PIM（特権ID管理）|Privileged Identity Management,特権ID管理,PIM|管理者権限を常時付与せず、必要な時間だけ有効化する運用を支援する。有効化時のMFAや承認などを構成でき、危険なサインインの検出自体はID Protectionが担う。|pim
+Azure Application Gateway|Application Gateway,アプリケーションゲートウェイ|HTTPやHTTPSの要求を、ホスト名やURLパスに基づいて振り分けるL7ロードバランサー。基本のIP・ポートによるNSGの許可規則や、任意のL4通信の負荷分散とは役割が異なる。|app-gateway
+CDN・Azure Front Door|CDN,Front Door|コンテンツを利用者に近いエッジへキャッシュして配信する仕組み。Azure Front Door Standard／PremiumではCDN機能などを利用でき、配信元の負荷と遅延を減らす。|frontdoor
+Azure Machine Learning|Machine Learning,予測モデル|データから独自の機械学習モデルを学習・評価し、運用するためのサービス。学習済みの画像・音声・言語機能をAPIで使うFoundry Toolsとは用途が異なる。|ai-ml
+Foundry Tools|Foundry Tools,Cognitive Services,Azure AI Services|画像・音声・言語などの学習済み機能をAPIでアプリへ組み込むサービス群。旧Azure Cognitive Services／Azure AI Servicesの系譜で、独自モデルの学習だけを行うサービスではない。|ai-tools
+Azure Synapse Analytics|Synapse,データウェアハウス|データの統合や大規模な分析、データウェアハウス用途を支援するサービス。日々のアプリの個別データ読み書きと、大量データを集約した分析は用途を分けて設計する。|synapse
+Azure Blueprintsと移行|Blueprints,Deployment Stacks,テンプレートスペック|Blueprintsはポリシー・RBAC・テンプレートなどをまとめて展開する従来の機能。段階的廃止中のため、新規設計ではDeployment Stacksやテンプレートスペックなどの移行先を検討する。|blueprints-retirement
+クール層|クール層,クール|低頻度でアクセスするデータ向けのオンラインのBlobアクセス層。汎用v2アカウントでは一般に30日の最低保持期間があり、早期の削除・移動で追加料金が生じ得る。|tiers
+リージョンペア|リージョンペア|一部のリージョンに定められた別リージョンとの対応関係。対応するサービスの複製や復旧の調整に使い、すべてのデータが設定なしで自動複製される意味ではない。|region-pairs
+Log Analyticsワークスペース|Log Analyticsワークスペース,Log Analytics Workspace|Azure Monitorのログを格納し、保持やアクセスを管理する単位。KQLで検索・分析できるが、全メトリックが設定なしで格納されるわけではない。|workspace
