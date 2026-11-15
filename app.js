@@ -7,6 +7,8 @@
   const KEY = 'az900-study-v1';
   const byId = new Map(questions.map(q => [q.id, q]));
   const groups = [...new Set(questions.map(q => q.group))];
+  const mixedCounts = [...Array.from({length: Math.floor(questions.length / 30)}, (_, i) => (i + 1) * 30), questions.length]
+    .filter((n, i, values) => values.indexOf(n) === i);
   let state;
   try { state = JSON.parse(localStorage.getItem(KEY)) || {}; } catch { state = {}; }
   if (!state || typeof state !== 'object' || Array.isArray(state)) state = {};
@@ -39,7 +41,7 @@
   function choiceOrder(q) {
     const indices = q.choices.map((_, i) => i);
     if (q.choices.length === 2 && q.choices[0].text === 'はい' && q.choices[1].text === 'いいえ') return indices;
-    const orders = reviewing ? state.review.choiceOrders : state.choiceOrders;
+    const orders = activeSession()?.choiceOrders || state.choiceOrders;
     if (!validOrder(orders[q.id], indices)) { orders[q.id] = shuffle(indices); save(); }
     return orders[q.id];
   }
@@ -48,7 +50,7 @@
     (q.multiple || a.selected.length === 1) && (!q.revision || a.revision === q.revision);
   const answer = q => validAnswer(q, state.answers[q.id]) ? state.answers[q.id] : null;
   const isCorrect = (q, values) => q.accepted.some(set => set.length === values.length && set.every(i => values.includes(i)));
-  const wrong = scope => questions.filter(q => (scope === 'all' || q.group === scope) && state.mistakes[q.id]);
+  const wrong = scope => questions.filter(q => (scope === 'all' || (scope === 'mixed' ? state.mixed?.ids.includes(q.id) : q.group === scope)) && state.mistakes[q.id]);
   const count = group => list(group).filter(q => answer(q)).length;
   // Preserve old progress. Revised questions invalidate only their old answers.
   if (state.version !== 2) {
@@ -59,36 +61,57 @@
     state.version = 2;
     save();
   }
-  if (state.review !== undefined && (!object(state.review) || !Array.isArray(state.review.ids) || !object(state.review.answers) ||
-      !['all', ...groups].includes(state.review.scope) || !state.review.ids.length ||
-      new Set(state.review.ids).size !== state.review.ids.length || state.review.ids.some(id => !byId.has(id)))) delete state.review;
+  const validSession = value => object(value) && Array.isArray(value.ids) && object(value.answers) && value.ids.length > 0 &&
+    new Set(value.ids).size === value.ids.length && value.ids.every(id => byId.has(id));
+  if (state.mixed !== undefined && (!validSession(state.mixed) || !mixedCounts.includes(state.mixed.ids.length))) delete state.mixed;
+  if (state.mixed && !object(state.mixed.choiceOrders)) state.mixed.choiceOrders = {};
+  if (state.review !== undefined && (!validSession(state.review) ||
+      !['all', ...groups, ...(state.mixed ? ['mixed'] : [])].includes(state.review.scope))) delete state.review;
   if (state.review && !object(state.review.choiceOrders)) state.review.choiceOrders = {};
-  let selected = [], current, reviewing = false;
+  let selected = [], current, reviewing = false, mixing = false;
+  const activeSession = () => reviewing ? state.review : mixing ? state.mixed : null;
+  const sessionAnswer = (session, q) => validAnswer(q, session?.answers[q.id]) ? session.answers[q.id] : null;
   const reviewSet = () => (state.review?.ids || []).map(id => byId.get(id));
-  const currentSet = () => reviewing ? reviewSet() : orderedList(current.group);
-  const activeAnswer = q => reviewing ? (validAnswer(q, state.review.answers[q.id]) ? state.review.answers[q.id] : null) : answer(q);
+  const mixedSet = () => (state.mixed?.ids || []).map(id => byId.get(id));
+  const currentSet = () => reviewing ? reviewSet() : mixing ? mixedSet() : orderedList(current.group);
+  const activeAnswer = q => activeSession() ? sessionAnswer(activeSession(), q) : answer(q);
   function go(id) { if (location.hash === `#${id}`) route(); else location.hash = id; }
-  const questionRoute = id => `${reviewing ? 'review-' : ''}${id}`;
+  const questionRoute = id => `${reviewing ? 'review-' : mixing ? 'mixed-' : ''}${id}`;
   function route() {
     selected = [];
-    const match = location.hash.match(/^#(review-)?(Q\d+-\d{2})$/);
+    const match = location.hash.match(/^#(review-|mixed-)?(Q\d+-\d{2})$/);
     current = match ? byId.get(match[2]) : null;
-    reviewing = !!match?.[1];
+    reviewing = match?.[1] === 'review-';
+    mixing = match?.[1] === 'mixed-';
     if (current && reviewing && !state.review?.ids.includes(current.id)) current = null;
+    if (current && mixing && !state.mixed?.ids.includes(current.id)) current = null;
     if (current) {
       state.last = questionRoute(current.id); save(); renderQuestion();
     } else if (location.hash === '#done-review' && state.review) renderDone(state.review.scope, true);
+    else if (location.hash === '#done-mixed' && state.mixed) renderDone('mixed');
     else if (location.hash.startsWith('#done-') && groups.includes(location.hash.slice(6))) renderDone(location.hash.slice(6));
     else renderHome();
     window.scrollTo(0, 0);
   }
   function start(group) { const set = orderedList(group); go((set.find(q => !answer(q)) || set[0]).id); }
   function restart(group) {
+    if (group === 'mixed') { startMixed(state.mixed.ids.length); return; }
     delete state.orders[group];
     const set = orderedList(group);
     set.forEach(q => { delete state.answers[q.id]; delete state.choiceOrders[q.id]; });
     // The mistake list is independent, so restarting never loses work to review.
     save(); go(set[0].id);
+  }
+  function startMixed(size) {
+    if (!mixedCounts.includes(size)) return;
+    const ids = shuffle(questions.map(q => q.id)).slice(0, size);
+    state.mixed = {ids, answers: {}, choiceOrders: {}};
+    if (state.review?.scope === 'mixed') delete state.review;
+    save(); go(`mixed-${ids[0]}`);
+  }
+  function continueMixed() {
+    const set = mixedSet();
+    go(`mixed-${(set.find(q => !sessionAnswer(state.mixed, q)) || set[0]).id}`);
   }
   function startReview(scope) {
     const ids = shuffle(wrong(scope).map(q => q.id));
@@ -99,17 +122,23 @@
   function renderHome() {
     document.title = 'AZ-900 問題集';
     const nWrong = wrong('all').length;
-    const lastId = state.last?.replace(/^review-/, '');
-    const canResume = byId.has(lastId) && (!state.last.startsWith('review-') || state.review?.ids.includes(lastId));
+    const lastId = state.last?.replace(/^(review-|mixed-)/, '');
+    const canResume = byId.has(lastId) && (!state.last.startsWith('review-') || state.review?.ids.includes(lastId)) &&
+      (!state.last.startsWith('mixed-') || state.mixed?.ids.includes(lastId));
+    const mixedAnswered = mixedSet().filter(q => sessionAnswer(state.mixed, q)).length;
     app.innerHTML = `<section class="hero"><div><p class="eyebrow">AZURE FUNDAMENTALS / PRACTICE</p><h1>一問ずつ、理解を深める。</h1><p>答え合わせ、理由、用語の役割まで。<br>間違えた問題を繰り返して、理解を定着させましょう。</p></div><div class="total"><strong>${questions.length}</strong> 問収録</div></section>
+      <section class="mixed-banner" aria-labelledby="mixed-heading"><div><p class="eyebrow">ALL QUESTIONS / RANDOM</p><h2 id="mixed-heading">統合問題</h2><p>Q1〜Q7の全${questions.length}問から、重複なしでランダム出題。<br>出題数を選んで、セットを横断して力試し。</p></div><div class="mixed-controls"><label for="mixed-count">出題数</label><select class="question-select" id="mixed-count">${mixedCounts.map(n => `<option value="${n}"${n === (state.mixed?.ids.length || 30) ? ' selected' : ''}>${n === questions.length ? `全${n}問` : `${n}問`}</option>`).join('')}</select><button class="primary" id="mixed-start">ランダムで開始 →</button>${state.mixed ? `<p class="mixed-progress">前回：${mixedAnswered} / ${state.mixed.ids.length} 問回答</p><button class="secondary" id="mixed-continue">${mixedAnswered < state.mixed.ids.length ? '統合問題の続きから' : '統合問題の解答を見直す'}</button><button class="text-button" id="mixed-result">前回の結果を見る</button>` : ''}</div></section>
       <section class="review-banner" aria-label="間違えた問題の復習"><div><p class="eyebrow">REVIEW</p><h2>間違えた問題だけ、もう一度。</h2><p>${nWrong ? `未克服の問題は ${nWrong} 問。正解すると復習リストから外れます。` : '間違えた問題はここにたまります。正解すると復習リストから外れます。'}</p></div><button class="primary" data-review="all"${nWrong ? '' : ' disabled'}>誤答のみ ${nWrong}問を演習 →</button></section>
-      ${canResume ? `<div class="resume"><p>前回の続き <strong>${state.last.startsWith('review-') ? '誤答復習・' : ''}${esc(lastId)}</strong></p><button class="text-button" id="resume">続きから解く →</button></div>` : ''}
+      ${canResume ? `<div class="resume"><p>前回の続き <strong>${state.last.startsWith('review-') ? '誤答復習・' : state.last.startsWith('mixed-') ? '統合問題・' : ''}${esc(lastId)}</strong></p><button class="text-button" id="resume">続きから解く →</button></div>` : ''}
       <div class="section-heading"><h2>問題セットを選ぶ</h2><span>Q1〜Q6 各70問 / Q7 40問・ランダム出題</span></div><div class="sets">${groups.map((group, i) => {
         const n = count(group), total = list(group).length, mistakes = wrong(group).length;
         return `<article class="set" aria-label="${group} 演習問題"><div class="set-top"><span class="set-number">${group}</span><span class="set-count">${total}問</span></div><p class="set-title">${group === 'Q7' ? '総仕上げ / mogimondai.pdf' : `AZ-900 演習問題 ${String(i+1).padStart(2, '0')}`}</p><div class="meter"><span style="width:${n/total*100}%"></span></div><p class="set-bottom">${n} / ${total} 問回答 <span>・未克服 ${mistakes}問</span></p><div class="set-actions"><button class="primary" data-start="${group}">最初から解く <span aria-hidden="true">→</span></button>${n ? `<button class="secondary" data-group="${group}">${n < total ? '続きから解く' : '解答を見直す'}</button>` : ''}<button class="secondary review-button" data-review="${group}"${mistakes ? '' : ' disabled'}>間違えた問題のみ ${mistakes}問</button></div>${n ? '<p class="set-reset-note">「最初から」で回答をリセット。誤答リストは残ります。</p>' : ''}</article>`;
       }).join('')}</div><p class="home-note">Q7は提供された総仕上げ40問を基に、現行仕様と回答形式に合わせて再構成しています。<br>正解・解説は学習用です。回答・誤答履歴はこの端末の同じブラウザーに保存されます。</p>`;
     app.querySelectorAll('[data-group]').forEach(b => b.addEventListener('click', () => start(b.dataset.group)));
     app.querySelectorAll('[data-start]').forEach(b => b.addEventListener('click', () => restart(b.dataset.start)));
+    document.getElementById('mixed-start').addEventListener('click', () => startMixed(Number(document.getElementById('mixed-count').value)));
+    document.getElementById('mixed-continue')?.addEventListener('click', continueMixed);
+    document.getElementById('mixed-result')?.addEventListener('click', () => go('done-mixed'));
     bindReviews();
     document.getElementById('resume')?.addEventListener('click', () => go(state.last));
   }
@@ -117,9 +146,9 @@
   function renderQuestion() {
     const q = current, saved = activeAnswer(q), set = currentSet(), index = set.findIndex(x => x.id === q.id), order = choiceOrder(q);
     const answered = set.filter(x => activeAnswer(x)).length;
-    document.title = `${reviewing ? '誤答復習・' : ''}${q.group}・問題${q.number} | AZ-900 問題集`;
-    app.innerHTML = `<div class="quiz-top"><button class="back" id="home">← 問題セット</button><div class="quiz-tools"><button class="text-button" id="density" aria-pressed="${state.roomy === true}">${state.roomy ? 'ゆったり表示' : 'コンパクト表示'}</button><select class="question-select" id="jump" aria-label="問題を選ぶ">${set.map(x => `<option value="${x.id}"${x.id === q.id ? ' selected' : ''}>${reviewing ? `${x.group}・` : ''}問題 ${x.number}${activeAnswer(x) ? ' 回答済み' : ''}</option>`).join('')}</select></div></div>
-      <div class="quiz-meta"><h1><span class="pill">${reviewing ? '誤答復習' : q.group}</span> ${reviewing ? `${q.group}・` : ''}問題 ${String(q.number).padStart(2, '0')}</h1><span class="count">${index+1} / ${set.length}</span></div><div class="quiz-progress" aria-label="${set.length}問中${index+1}問目"><span style="width:${(index+1)/set.length*100}%"></span></div>
+    document.title = `${reviewing ? '誤答復習・' : mixing ? '統合問題・' : ''}${q.group}・問題${q.number} | AZ-900 問題集`;
+    app.innerHTML = `<div class="quiz-top"><button class="back" id="home">← 問題セット</button><div class="quiz-tools"><button class="text-button" id="density" aria-pressed="${state.roomy === true}">${state.roomy ? 'ゆったり表示' : 'コンパクト表示'}</button><select class="question-select" id="jump" aria-label="問題を選ぶ">${set.map(x => `<option value="${x.id}"${x.id === q.id ? ' selected' : ''}>${reviewing || mixing ? `${x.group}・` : ''}問題 ${x.number}${activeAnswer(x) ? ' 回答済み' : ''}</option>`).join('')}</select></div></div>
+      <div class="quiz-meta"><h1><span class="pill">${reviewing ? '誤答復習' : mixing ? '統合問題' : q.group}</span> ${reviewing || mixing ? `${q.group}・` : ''}問題 ${String(q.number).padStart(2, '0')}</h1><span class="count">${index+1} / ${set.length}</span></div><div class="quiz-progress" aria-label="${set.length}問中${index+1}問目"><span style="width:${(index+1)/set.length*100}%"></span></div>
       <div class="quiz-body${saved ? ' has-feedback' : ''}${state.roomy ? ' roomy' : ''}"><section class="question-card" aria-label="問題と回答"><div class="prompt-text">${esc(q.prompt)}</div>
       <p class="answer-hint">${q.multiple ? '複数選択：選んでから下の「回答する」をタップ' : '1つ選択：タップして答え合わせ'}</p><div class="choices" role="group" aria-label="回答の選択肢">${order.map((i, position) => {
         const c = q.choices[i];
@@ -143,9 +172,9 @@
     }));
     document.getElementById('submit')?.addEventListener('click', submit);
     document.getElementById('prev').addEventListener('click', () => go(questionRoute(set[index-1].id)));
-    document.getElementById('next').addEventListener('click', () => go(index === set.length-1 ? reviewing ? 'done-review' : `done-${q.group}` : questionRoute(set[index+1].id)));
+    document.getElementById('next').addEventListener('click', () => go(index === set.length-1 ? reviewing ? 'done-review' : mixing ? 'done-mixed' : `done-${q.group}` : questionRoute(set[index+1].id)));
     document.getElementById('retry')?.addEventListener('click', () => {
-      if (reviewing) delete state.review.answers[q.id]; else delete state.answers[q.id];
+      if (activeSession()) delete activeSession().answers[q.id]; else delete state.answers[q.id];
       selected = []; save(); renderQuestion();
     });
   }
@@ -159,7 +188,7 @@
     if (activeAnswer(current) || !selected.length) return;
     const a = {selected: [...selected].sort((x, y) => x-y), revision: current.revision || 1};
     state.answers[current.id] = a;
-    if (reviewing) state.review.answers[current.id] = a;
+    if (activeSession()) activeSession().answers[current.id] = a;
     if (isCorrect(current, selected)) delete state.mistakes[current.id]; else state.mistakes[current.id] = true;
     selected = []; save(); renderQuestion();
     const fb = document.getElementById('feedback');
@@ -168,15 +197,16 @@
     }
   }
   function renderDone(group, review = false) {
-    const set = review ? reviewSet() : orderedList(group);
-    const getAnswer = q => review ? (validAnswer(q, state.review.answers[q.id]) ? state.review.answers[q.id] : null) : answer(q);
+    const mixed = group === 'mixed';
+    const set = review ? reviewSet() : mixed ? mixedSet() : orderedList(group);
+    const getAnswer = q => review ? sessionAnswer(state.review, q) : mixed ? sessionAnswer(state.mixed, q) : answer(q);
     const answered = set.filter(q => getAnswer(q)), correct = answered.filter(q => isCorrect(q, getAnswer(q).selected)).length;
     const mistakes = wrong(group).length;
     document.title = '演習結果 | AZ-900 問題集';
-    app.innerHTML = `<section class="done-card"><p class="eyebrow">${review ? 'REVIEW' : esc(group)} / RESULT</p><h1>${answered.length === set.length ? 'おつかれさまでした。' : 'ここまでの結果'}</h1><p>${set.length}問中 ${answered.length}問を回答しました。</p><div class="done-score">${correct}<span> / ${answered.length} 問正解</span></div><p>${mistakes ? `この範囲の未克服は ${mistakes} 問。誤答のみの演習で確かめましょう。` : 'この範囲に未克服の問題はありません。'}</p><div class="done-actions"><button class="secondary" id="done-home">問題セットへ</button><button class="primary" data-review="${esc(group)}"${mistakes ? '' : ' disabled'}>間違えた問題のみ ${mistakes}問</button>${review ? '<button class="secondary" id="continue">復習の回答を見直す</button>' : `<button class="secondary" id="continue">${answered.length < set.length ? '未回答の問題へ' : '解答を見直す'}</button><button class="secondary" id="restart">最初から解く</button>`}</div></section>`;
+    app.innerHTML = `<section class="done-card"><p class="eyebrow">${review ? 'REVIEW' : mixed ? '統合問題' : esc(group)} / RESULT</p><h1>${answered.length === set.length ? 'おつかれさまでした。' : 'ここまでの結果'}</h1><p>${set.length}問中 ${answered.length}問を回答しました。</p><div class="done-score">${correct}<span> / ${answered.length} 問正解</span></div><p>${mistakes ? `この範囲の未克服は ${mistakes} 問。誤答のみの演習で確かめましょう。` : 'この範囲に未克服の問題はありません。'}</p><div class="done-actions"><button class="secondary" id="done-home">問題セットへ</button><button class="primary" data-review="${esc(group)}"${mistakes ? '' : ' disabled'}>間違えた問題のみ ${mistakes}問</button>${review ? '<button class="secondary" id="continue">復習の回答を見直す</button>' : `<button class="secondary" id="continue">${answered.length < set.length ? '未回答の問題へ' : '解答を見直す'}</button><button class="secondary" id="restart">最初から解く</button>`}</div></section>`;
     document.getElementById('done-home').addEventListener('click', () => go(''));
     document.getElementById('restart')?.addEventListener('click', () => restart(group));
-    document.getElementById('continue').addEventListener('click', () => review ? go(`review-${set[0].id}`) : start(group));
+    document.getElementById('continue').addEventListener('click', () => review ? go(`review-${set[0].id}`) : mixed ? continueMixed() : start(group));
     bindReviews();
   }
   window.addEventListener('hashchange', route);

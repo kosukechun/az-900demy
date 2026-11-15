@@ -22,6 +22,10 @@ function session(hash='',storageFails=false,seed=13579) {
       const attrs={};for(const a of match[2].matchAll(/([\w-]+)(?:="([^"]*)")?/g)) attrs[a[1]]=a[2]??'';
       const el=new Element(attrs);rendered.push(el);if(attrs.id) elements.set(attrs.id,el);
     }
+    for(const match of html.matchAll(/<select\b[^>]*id="([^"]+)"[^>]*>([\s\S]*?)<\/select>/g)) {
+      const options=[...match[2].matchAll(/<option value="([^"]+)"([^>]*)>/g)];
+      elements.get(match[1]).value=(options.find(option=>option[2].includes('selected'))||options[0])?.[1]||'';
+    }
   }});
   app.querySelectorAll=sel=>rendered.filter(el=>Object.hasOwn(el.attrs,sel.slice(1,-1)));
   elements.set('app',app);let currentHash=hash;
@@ -126,4 +130,62 @@ for(const value of ['{bad json','null','[]',JSON.stringify({answers:[],last:{},r
   sharedStorage.set(KEY,value);ui=session();assert.equal(ui.data('start').length,7);
 }
 ui=session('',true);ui.go('Q7-01');choose(ui,[0]);assert.ok(ui.app.innerHTML.includes('✓ 正解です'));
+// Integrated quizzes sample every group without replacement and keep independent answers.
+function startMixed(ui,size){ui.go('');ui.get('mixed-count').change(String(size));ui.get('mixed-start').click();}
+const samples=new Set();
+for(const size of [...Array.from({length:15},(_,i)=>(i+1)*30),460]) {
+  sharedStorage.clear();ui=session();startMixed(ui,size);
+  const ids=ui.saved().mixed.ids;
+  assert.equal(ids.length,size);assert.equal(new Set(ids).size,size);
+  assert.ok(ids.every(id=>ui.ctx.window.AZ_QUESTIONS.some(q=>q.id===id)));
+  assert.ok(ui.app.innerHTML.includes('統合問題'));
+  assert.equal(ui.ctx.location.hash,'#mixed-'+ids[0]);
+  if(size===460)sameMembers(ids,ui.ctx.window.AZ_QUESTIONS.map(q=>q.id));
+}
+for(let seed=1;seed<=20;seed++) {
+  sharedStorage.clear();ui=session('',false,seed);startMixed(ui,30);
+  samples.add([...ui.saved().mixed.ids].sort().join());
+}
+assert.equal(samples.size,20,'Integrated subsets vary across runs');
+sharedStorage.clear();ui=session();ui.get('mixed-start').click();
+assert.equal(ui.saved().mixed.ids.length,30,'Default integrated count is 30');
+const mixedIds=ui.saved().mixed.ids,first=mixedIds[0];
+wrong(ui,first);ui.get('next').click();right(ui,mixedIds[1]);
+const mixedSnapshot=ui.saved().mixed;
+const outside=ui.ctx.window.AZ_QUESTIONS.find(q=>!mixedIds.includes(q.id)).id;
+ui.go(outside);wrong(ui,outside);
+ui=session('#mixed-'+first);
+assert.ok(ui.app.innerHTML.includes('× 不正解です'));
+assert.deepEqual(ui.saved().mixed,mixedSnapshot,'Integrated order, answers and choices persist');
+ui.get('next').click();assert.equal(ui.ctx.location.hash,'#mixed-'+mixedIds[1]);
+ui.get('prev').click();assert.equal(ui.ctx.location.hash,'#mixed-'+first);
+ui.get('jump').change(mixedIds.at(-1));ui.get('next').click();
+assert.equal(ui.ctx.location.hash,'#done-mixed');
+assert.ok(ui.app.innerHTML.includes('done-score">1<span> / 2 問正解'));
+ui.get('continue').click();assert.equal(ui.ctx.location.hash,'#mixed-'+mixedIds[2]);
+ui.go('');ui.get('mixed-result').click();review(ui,'mixed');
+assert.deepEqual(ui.saved().review.ids,[first],'Integrated review excludes mistakes outside the sample');
+right(ui,first);ui.get('next').click();assert.ok(ui.data('review','mixed')[0].disabled);
+ui.go('');ui.get('mixed-continue').click();assert.equal(ui.ctx.location.hash,'#mixed-'+mixedIds[2]);
+ui.go('done-mixed');ui.get('restart').click();
+assert.equal(ui.saved().mixed.ids.length,30);assert.deepEqual(ui.saved().mixed.answers,{});
+assert.notDeepEqual(ui.saved().mixed.ids,mixedIds,'Restart draws a new sample');
+assert.ok(ui.saved().answers[outside],'Integrated restart preserves other answers');
+assert.ok(ui.saved().mistakes[outside],'Integrated restart preserves mistakes');
+assert.ok(ui.data('choice').every(c=>!c.disabled),'New integrated attempt starts unanswered');
+// Complete an attempt even after the same questions were answered in ordinary sets.
+for(const id of ui.saved().mixed.ids){ui.go(id);right(ui,id);}
+for(const id of ui.saved().mixed.ids){ui.go('mixed-'+id);assert.ok(ui.data('choice').every(c=>!c.disabled));right(ui,id);}
+ui.get('next').click();assert.ok(ui.app.innerHTML.includes('done-score">30<span> / 30 問正解'));
+ui.get('continue').click();assert.equal(ui.ctx.location.hash,'#mixed-'+ui.saved().mixed.ids[0]);
+ui.get('retry').click();assert.ok(ui.data('choice').every(c=>!c.disabled));
+assert.ok(ui.saved().answers[ui.saved().mixed.ids[0]],'Integrated retry preserves normal history');
+for(const mixed of [false,{ids:['bad'],answers:{}},{ids:['Q1-01'],answers:{}},{ids:Array(30).fill('Q1-01'),answers:{}}]) {
+  sharedStorage.set(KEY,JSON.stringify({mixed,last:'mixed-Q1-01'}));ui=session('#mixed-Q1-01');
+  assert.ok(ui.get('mixed-start'));assert.ok(!ui.get('mixed-continue'));
+}
+sharedStorage.clear();ui=session('',true);ui.get('mixed-count').change('60');ui.get('mixed-start').click();
+assert.ok(ui.app.innerHTML.includes('1 / 60'));right(ui,ui.ctx.location.hash.slice(7));
+assert.ok(ui.app.innerHTML.includes('✓ 正解です'),'Integrated quiz works with storage blocked');
 console.log('Passed 460 correct and 460 incorrect answer flows, shuffled labels, fixed yes/no, all 7 group permutations, restart/review randomization, persistence, legacy answer migration, reset, navigation and storage recovery.');
+console.log('Passed all 16 integrated quiz sizes, unique sampling, full pool coverage, independent grading, results, retry, review, resume, restart and storage recovery.');
