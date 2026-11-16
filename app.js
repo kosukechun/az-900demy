@@ -7,6 +7,7 @@
   const KEY = 'az900-study-v1';
   const byId = new Map(questions.map(q => [q.id, q]));
   const groups = [...new Set(questions.map(q => q.group))];
+  const groupRange = `${groups[0]}〜${groups.at(-1)}`;
   const mixedCounts = [...Array.from({length: Math.floor(questions.length / 30)}, (_, i) => (i + 1) * 30), questions.length]
     .filter((n, i, values) => values.indexOf(n) === i);
   let state;
@@ -63,7 +64,12 @@
   }
   const validSession = value => object(value) && Array.isArray(value.ids) && object(value.answers) && value.ids.length > 0 &&
     new Set(value.ids).size === value.ids.length && value.ids.every(id => byId.has(id));
-  if (state.mixed !== undefined && (!validSession(state.mixed) || !mixedCounts.includes(state.mixed.ids.length))) delete state.mixed;
+  if (state.mixed !== undefined && (!validSession(state.mixed) || state.mixed.ids.length < Math.min(30, questions.length))) delete state.mixed;
+  // A previous full-pool attempt can have a nonstandard size after questions are added.
+  if (state.mixed && !mixedCounts.includes(state.mixed.ids.length)) {
+    mixedCounts.push(state.mixed.ids.length);
+    mixedCounts.sort((a,b) => a-b);
+  }
   if (state.mixed && !object(state.mixed.choiceOrders)) state.mixed.choiceOrders = {};
   if (state.review !== undefined && (!validSession(state.review) ||
       !['all', ...groups, ...(state.mixed ? ['mixed'] : [])].includes(state.review.scope))) delete state.review;
@@ -127,12 +133,12 @@
       (!state.last.startsWith('mixed-') || state.mixed?.ids.includes(lastId));
     const mixedAnswered = mixedSet().filter(q => sessionAnswer(state.mixed, q)).length;
     app.innerHTML = `<section class="hero"><div><p class="eyebrow">AZURE FUNDAMENTALS / PRACTICE</p><h1>一問ずつ、理解を深める。</h1><p>答え合わせ、理由、用語の役割まで。<br>間違えた問題を繰り返して、理解を定着させましょう。</p></div><div class="total"><strong>${questions.length}</strong> 問収録</div></section>
-      <section class="mixed-banner" aria-labelledby="mixed-heading"><div><p class="eyebrow">ALL QUESTIONS / RANDOM</p><h2 id="mixed-heading">統合問題</h2><p>Q1〜Q7の全${questions.length}問から、重複なしでランダム出題。<br>出題数を選んで、セットを横断して力試し。</p></div><div class="mixed-controls"><label for="mixed-count">出題数</label><select class="question-select" id="mixed-count">${mixedCounts.map(n => `<option value="${n}"${n === (state.mixed?.ids.length || 30) ? ' selected' : ''}>${n === questions.length ? `全${n}問` : `${n}問`}</option>`).join('')}</select><button class="primary" id="mixed-start">ランダムで開始 →</button>${state.mixed ? `<p class="mixed-progress">前回：${mixedAnswered} / ${state.mixed.ids.length} 問回答</p><button class="secondary" id="mixed-continue">${mixedAnswered < state.mixed.ids.length ? '統合問題の続きから' : '統合問題の解答を見直す'}</button><button class="text-button" id="mixed-result">前回の結果を見る</button>` : ''}</div></section>
+      <section class="mixed-banner" aria-labelledby="mixed-heading"><div><p class="eyebrow">ALL QUESTIONS / RANDOM</p><h2 id="mixed-heading">統合問題</h2><p>${groupRange}の全${questions.length}問から、重複なしでランダム出題。<br>出題数を選んで、セットを横断して力試し。</p></div><div class="mixed-controls"><label for="mixed-count">出題数</label><select class="question-select" id="mixed-count">${mixedCounts.map(n => `<option value="${n}"${n === (state.mixed?.ids.length || 30) ? ' selected' : ''}>${n === questions.length ? `全${n}問` : `${n}問`}</option>`).join('')}</select><button class="primary" id="mixed-start">ランダムで開始 →</button>${state.mixed ? `<p class="mixed-progress">前回：${mixedAnswered} / ${state.mixed.ids.length} 問回答</p><button class="secondary" id="mixed-continue">${mixedAnswered < state.mixed.ids.length ? '統合問題の続きから' : '統合問題の解答を見直す'}</button><button class="text-button" id="mixed-result">前回の結果を見る</button>` : ''}</div></section>
       <section class="review-banner" aria-label="間違えた問題の復習"><div><p class="eyebrow">REVIEW</p><h2>間違えた問題だけ、もう一度。</h2><p>${nWrong ? `未克服の問題は ${nWrong} 問。正解すると復習リストから外れます。` : '間違えた問題はここにたまります。正解すると復習リストから外れます。'}</p></div><button class="primary" data-review="all"${nWrong ? '' : ' disabled'}>誤答のみ ${nWrong}問を演習 →</button></section>
       ${canResume ? `<div class="resume"><p>前回の続き <strong>${state.last.startsWith('review-') ? '誤答復習・' : state.last.startsWith('mixed-') ? '統合問題・' : ''}${esc(lastId)}</strong></p><button class="text-button" id="resume">続きから解く →</button></div>` : ''}
-      <div class="section-heading"><h2>問題セットを選ぶ</h2><span>Q1〜Q6 各70問 / Q7 40問・ランダム出題</span></div><div class="sets">${groups.map((group, i) => {
+      <div class="section-heading"><h2>問題セットを選ぶ</h2><span>${groups.length}セット / 全${questions.length}問・ランダム出題</span></div><div class="sets">${groups.map((group, i) => {
         const n = count(group), total = list(group).length, mistakes = wrong(group).length;
-        return `<article class="set" aria-label="${group} 演習問題"><div class="set-top"><span class="set-number">${group}</span><span class="set-count">${total}問</span></div><p class="set-title">${group === 'Q7' ? '総仕上げ / mogimondai.pdf' : `AZ-900 演習問題 ${String(i+1).padStart(2, '0')}`}</p><div class="meter"><span style="width:${n/total*100}%"></span></div><p class="set-bottom">${n} / ${total} 問回答 <span>・未克服 ${mistakes}問</span></p><div class="set-actions"><button class="primary" data-start="${group}">最初から解く <span aria-hidden="true">→</span></button>${n ? `<button class="secondary" data-group="${group}">${n < total ? '続きから解く' : '解答を見直す'}</button>` : ''}<button class="secondary review-button" data-review="${group}"${mistakes ? '' : ' disabled'}>間違えた問題のみ ${mistakes}問</button></div>${n ? '<p class="set-reset-note">「最初から」で回答をリセット。誤答リストは残ります。</p>' : ''}</article>`;
+        return `<article class="set" aria-label="${group} 演習問題"><div class="set-top"><span class="set-number">${group}</span><span class="set-count">${total}問</span></div><p class="set-title">${group === 'Q7' ? '総仕上げ / mogimondai.pdf' : ['Q13','Q14'].includes(group) ? '追加演習 / Web教材の論点' : `AZ-900 演習問題 ${String(i+1).padStart(2, '0')}`}</p><div class="meter"><span style="width:${n/total*100}%"></span></div><p class="set-bottom">${n} / ${total} 問回答 <span>・未克服 ${mistakes}問</span></p><div class="set-actions"><button class="primary" data-start="${group}">最初から解く <span aria-hidden="true">→</span></button>${n ? `<button class="secondary" data-group="${group}">${n < total ? '続きから解く' : '解答を見直す'}</button>` : ''}<button class="secondary review-button" data-review="${group}"${mistakes ? '' : ' disabled'}>間違えた問題のみ ${mistakes}問</button></div>${n ? '<p class="set-reset-note">「最初から」で回答をリセット。誤答リストは残ります。</p>' : ''}</article>`;
       }).join('')}</div><p class="home-note">Q7は提供された総仕上げ40問を基に、現行仕様と回答形式に合わせて再構成しています。<br>正解・解説は学習用です。回答・誤答履歴はこの端末の同じブラウザーに保存されます。</p>`;
     app.querySelectorAll('[data-group]').forEach(b => b.addEventListener('click', () => start(b.dataset.group)));
     app.querySelectorAll('[data-start]').forEach(b => b.addEventListener('click', () => restart(b.dataset.start)));

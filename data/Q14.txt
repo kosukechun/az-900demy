@@ -1,0 +1,559 @@
+=== Q14-01 ===
+Web層が依頼を入れ、後でワーカーが取り出して処理する非同期連携を作ります。候補を選んでください。
+--- 選択肢 ---
+A. Azure Queue Storage
+B. Azure DNS
+C. Azure Key Vaultの証明書
+D. Azure Reservations
+
+=== Q14-02 ===
+対応リージョン内の3つの可用性ゾーンへ同期複製するAzure Storageの冗長化はどれですか。
+--- 選択肢 ---
+A. LRS
+B. GRSの副リージョンだけ
+C. 単一コピー
+D. ZRS
+
+=== Q14-03 ===
+SQL Server系のマネージドなリレーショナルDBを、OS更新を任せて使いたい。候補を選んでください。
+--- 選択肢 ---
+A. Azure DNS
+B. Azure Queue Storage
+C. Azure SQL Database
+D. Azure VMのOSディスク
+
+=== Q14-04 ===
+複数地域に分散するJSONデータベースで、要求に応じた整合性設定も使いたい。候補を選んでください。
+--- 選択肢 ---
+A. Azure Resource Managerのタグだけ
+B. Azure Cosmos DB
+C. Azure Filesだけ
+D. Azure DNSだけ
+
+=== Q14-05 ===
+VMを削除せずに永続OS・データディスクを管理したい。Azureのディスク用サービスを選んでください。
+--- 選択肢 ---
+A. Azure Managed Disks
+B. Azure Queue Storage
+C. Azure DNS
+D. Azure Monitorのアラートだけ
+
+=== Q14-06 ===
+SQL Serverのインスタンス機能との高い互換性を保って、管理をサービス側へ任せたい。候補を選んでください。
+--- 選択肢 ---
+A. Azure Table Storage
+B. Azure Files
+C. Azure Queue Storage
+D. Azure SQL Managed Instance
+
+=== Q14-07 ===
+帯域が足りない拠点から大量データを物理デバイスでAzureへ運びます。サービスを選んでください。
+--- 選択肢 ---
+A. Azure Monitor
+B. Azure App Service
+C. Azure Data Box
+D. Azure DNS
+
+=== Q14-08 ===
+移行前にVMの検出と評価を行い、Azureへの移行をまとめて管理したい。ハブを選んでください。
+--- 選択肢 ---
+A. Azure Key Vaultだけ
+B. Azure Migrate
+C. Azure Policyだけ
+D. Azure Reposだけ
+
+=== Q14-09 ===
+頻繁に読むDB検索結果をメモリへキャッシュして負荷を減らしたい。新規構成で検討するサービスはどれですか。
+--- 選択肢 ---
+A. Azure Managed Redis
+B. Azure DNS
+C. Azure Data Box
+D. Azure Reservations
+
+=== Q14-10 ===
+注文と明細を表で管理し、JOINを使って検索したい。保存先の候補を選んでください。
+--- 選択肢 ---
+A. Azure Queue Storage
+B. Azure DNS
+C. Azure Key Vaultの証明書
+D. Azure SQL Database
+
+=== Q14-11 ===
+スキーマを固定しない属性をキーで保存する、単純なNoSQLストアを選んでください。
+--- 選択肢 ---
+A. Azure Load Balancer
+B. Azure App Serviceの証明書
+C. Azure Table Storage
+D. Azure DNS
+
+=== Q14-12 ===
+PostgreSQLを使うアプリで、DBサーバーの基盤保守を減らしたい。候補を選んでください。
+--- 選択肢 ---
+A. Azure Queue Storage
+B. Azure Database for PostgreSQL
+C. Azure DNS
+D. Azure Managed Disksだけ
+
+=== Q14-13 ===
+各地のアプリへJSONのセンサーデータを低遅延で提供します。DBのグローバル分散を重視するときの候補はどれですか。
+--- 選択肢 ---
+A. Azure Cosmos DB
+B. Azure Filesだけ
+C. Azure DNSだけ
+D. Azure Data Boxだけ
+
+=== Q14-14 ===
+社員のクラウドIDとサインインを統一管理したい。中心となるサービスを選んでください。
+--- 選択肢 ---
+A. Azure Queue Storage
+B. Azure Load Balancer
+C. Azure Data Box
+D. Microsoft Entra ID
+
+=== Q14-15 ===
+パスワードとセキュリティキーを使う本人確認について正しいものを選んでください。
+--- 選択肢 ---
+A. データのバックアップを行う
+B. VMの可用性ゾーンを変える
+C. 異なる種類の要素を使うMFAになり得る
+D. 同じパスワードの2回入力と同じ
+
+=== Q14-16 ===
+取引先の担当者を組織のアプリへ安全に招待したい。Entraの仕組みを選んでください。
+--- 選択肢 ---
+A. OSディスクの複製
+B. B2Bコラボレーション等の外部ID
+C. 全員で同じ管理者パスワード
+D. 匿名の公開共有だけ
+
+=== Q14-17 ===
+社外からのサインイン時だけMFAを要求したい。必要なライセンスがある場合の機能を選んでください。
+--- 選択肢 ---
+A. 条件付きアクセス
+B. Azure DNS
+C. Azure Reservations
+D. リソースの名前変更
+
+=== Q14-18 ===
+運用担当に、指定グループのVMだけを操作する権限を与えます。使う仕組みを選んでください。
+--- 選択肢 ---
+A. Blobのアクセス層
+B. 可用性ゾーン
+C. TCO計算ツール
+D. Azure RBAC
+
+=== Q14-19 ===
+侵害を想定し毎回アクセスを検証しつつ、端末・ネットワーク・データにも防御を置きます。説明を選んでください。
+--- 選択肢 ---
+A. 認証をなくしている
+B. 暗号化の代わりに課金を使う
+C. ゼロトラストと多層防御を組み合わせている
+D. 境界内なら無条件で信頼する
+
+=== Q14-20 ===
+クラウド構成のセキュリティ態勢と推奨改善を確認したい。候補を選んでください。
+--- 選択肢 ---
+A. Azure Repos
+B. Microsoft Defender for Cloud
+C. Azure DNS
+D. Azure Data Box
+
+=== Q14-21 ===
+アプリのDBパスワードをソースコードに直接書かず保管したい。候補を選んでください。
+--- 選択肢 ---
+A. Azure Key Vault
+B. Azure DNS
+C. Azure Load Balancer
+D. Azure Resource Managerの名前だけ
+
+=== Q14-22 ===
+利用開始後の費用を部門やサービス別に分析したい。使うものを選んでください。
+--- 選択肢 ---
+A. Azure DNS
+B. Azure Firewallの規則だけ
+C. Azure Data Box
+D. Azure Cost Management
+
+=== Q14-23 ===
+利用前のVM台数、地域、稼働時間から予定額を見積もります。使うツールを選んでください。
+--- 選択肢 ---
+A. Resource Health
+B. Azure Repos
+C. 料金計算ツール
+D. Activity Log
+
+=== Q14-24 ===
+自社設備を維持する場合とAzureへ移る場合の長期費用を比較したい。考え方を選んでください。
+--- 選択肢 ---
+A. 初月の通信量だけで断定する
+B. 総保有コスト（TCO）を比較する
+C. VMのホスト名の長さだけを比較する
+D. 管理者の人数だけを必ずゼロにする
+
+=== Q14-25 ===
+長期に使う特定の計算資源について、利用の確約で割引を受けたい。選択肢を選んでください。
+--- 選択肢 ---
+A. Azure Reservations
+B. Azure DNS
+C. Azure Queue Storage
+D. 秘密度ラベル
+
+=== Q14-26 ===
+適格なWindows ServerライセンスをAzureの対応サービスで活用したい。制度を選んでください。
+--- 選択肢 ---
+A. Azure DDoS Protection
+B. Azure DNS
+C. Azure Data Box
+D. Azure Hybrid Benefit
+
+=== Q14-27 ===
+途中で停止されても再開できるバッチを、余剰容量で割安に実行します。選択肢を選んでください。
+--- 選択肢 ---
+A. 専用ホストの無期限無料利用
+B. DNSレコードの追加
+C. Azure Spot VM
+D. 常時稼働の保証がある無料VM
+
+=== Q14-28 ===
+VM料金の見積もりで直接の価格要因ではないものを選んでください。
+--- 選択肢 ---
+A. 利用するリージョン
+B. VMに付けた表示名の文字数
+C. VMサイズ
+D. 稼働時間
+
+=== Q14-29 ===
+研究部門と営業部門のリソースが混在しています。コスト集計に使う分類情報を選んでください。
+--- 選択肢 ---
+A. 部門名のタグ
+B. 管理者の共通パスワード
+C. DNSのTTL
+D. ディスクのパーティション名だけ
+
+=== Q14-30 ===
+Azure無料アカウントの無料枠を使う際の正しい確認方法はどれですか。
+--- 選択肢 ---
+A. すべてのサービスを無制限に使う
+B. SLAも常に全プラン同一とみなす
+C. 請求を一切確認しない
+D. 対象サービス・数量・期限と超過時の料金を確認する
+
+=== Q14-31 ===
+月末の予測コストが上限に近付いたら担当者へ通知したい。機能を選んでください。
+--- 選択肢 ---
+A. Azure Repos
+B. 可用性セット
+C. Cost Managementの予算アラート
+D. Azure DNS
+
+=== Q14-32 ===
+通常の帯域料金で、Azureへ入るデータ転送そのものの扱いを選んでください。
+--- 選択肢 ---
+A. すべての処理操作も無料
+B. 一般に受信転送は無料
+C. すべての送信も無制限に無料
+D. 回線とGatewayも必ず無料
+
+=== Q14-33 ===
+VMサイズや地域の変化がある計算利用に、一定の時間当たり支出を確約して割引を受けたい。候補を選んでください。
+--- 選択肢 ---
+A. Azure savings plan for compute
+B. Azure DNS
+C. Microsoft Purview
+D. Azure File Sync
+
+=== Q14-34 ===
+開発・テスト用途だけに使う環境の費用を抑える方法を選んでください。
+--- 選択肢 ---
+A. 本番利用も無条件でDev/Test扱いにする
+B. すべてのVMを最大サイズに固定する
+C. 使用量の記録を止める
+D. 対象となるDev/Test価格と停止スケジュールを検討する
+
+=== Q14-35 ===
+一時的に不要な従量課金VMの計算料金を止めたい。ディスクは残します。操作を選んでください。
+--- 選択肢 ---
+A. VMの名前だけを変える
+B. タグだけを削除する
+C. 停止して割り当て解除する
+D. ゲストOSだけでログアウトする
+
+=== Q14-36 ===
+同サイズのVM2台の月額料金を比較します。直接の違いにならないものを選んでください。
+--- 選択肢 ---
+A. OSや割引の条件
+B. リソース名の長さ
+C. 実際の稼働時間
+D. 利用リージョン
+
+=== Q14-37 ===
+予算額を超過したときのCost Management予算の基本動作を選んでください。
+--- 選択肢 ---
+A. 通知できるが、それだけで全リソースを自動停止しない
+B. 必ず全VMを即座に削除する
+C. すべての請求を取り消す
+D. サブスクリプションを自動移管する
+
+=== Q14-38 ===
+承認した地域以外でのリソース作成を防ぎたい。構成を評価・制御する機能を選んでください。
+--- 選択肢 ---
+A. Azure DNS
+B. Azure Repos
+C. Azure Files
+D. Azure Policy
+
+=== Q14-39 ===
+リソースの管理操作を保護する2種類のロックの組み合わせを選んでください。
+--- 選択肢 ---
+A. ReaderとOwner
+B. BashとPowerShell
+C. CanNotDeleteとReadOnly
+D. HotとArchive
+
+=== Q14-40 ===
+同じ準拠目標のポリシー定義をまとめて割り当てたい。機能を選んでください。
+--- 選択肢 ---
+A. ゲートウェイ
+B. イニシアチブ
+C. 可用性ゾーン
+D. サービスプリンシパル
+
+=== Q14-41 ===
+構成ルールに違反する新しいリソースの作成を拒否したい。Policyの効果を選んでください。
+--- 選択肢 ---
+A. Deny
+B. Audit
+C. Disabled
+D. Appendだけ
+
+=== Q14-42 ===
+ReadOnlyロックが有効なストレージアカウントで、通常の管理操作として拒否されるものを選んでください。
+--- 選択肢 ---
+A. アカウント名の閲覧
+B. 管理用プロパティの読み取り
+C. 既存ロック情報の閲覧
+D. アカウントの構成更新
+
+=== Q14-43 ===
+社内外に散在するデータの発見・分類を進めたい。ガバナンスのサービスを選んでください。
+--- 選択肢 ---
+A. Azure Load Balancer
+B. Azure Data Box
+C. Microsoft Purview
+D. Azure DNS
+
+=== Q14-44 ===
+Azure環境の利用状況から、費用や信頼性の改善案を受け取りたい。サービスを選んでください。
+--- 選択肢 ---
+A. Azure Data Box
+B. Azure Advisor
+C. Azure Files
+D. Azure DNS
+
+=== Q14-45 ===
+Microsoftクラウドの監査レポート等を調達審査の資料として確認したい。参照先を選んでください。
+--- 選択肢 ---
+A. Service Trust Portal
+B. Azure Reposの自社ブランチだけ
+C. VMのシリアルコンソールだけ
+D. Azure DNSだけ
+
+=== Q14-46 ===
+配置地域の制約と誤削除防止を同時に実施します。適切な組み合わせを選んでください。
+--- 選択肢 ---
+A. 地域制約はDNS、削除防止はタグ
+B. どちらもVM名だけ
+C. どちらもMFAだけ
+D. 地域制約はPolicy、削除防止はロック
+
+=== Q14-47 ===
+リソースグループへCostCenterタグを付けました。配下リソースへの扱いとして正しいものはどれですか。
+--- 選択肢 ---
+A. すべての通信が遮断される
+B. 全リソースが読み取り専用になる
+C. 既定では自動継承されない
+D. 必ず自動で全資源へコピーされる
+
+=== Q14-48 ===
+自社がAzureを使う場合、Microsoftが保護する物理的な対象を選んでください。
+--- 選択肢 ---
+A. 自社の契約判断
+B. データセンターの設備
+C. 自社が公開した共有URLの範囲
+D. 自社アプリの誤った権限
+
+=== Q14-49 ===
+Microsoftの製品利用で個人データがどう収集・使用されるかを確認したい。参照先を選んでください。
+--- 選択肢 ---
+A. Microsoft Privacy Statement
+B. VMサイズ一覧だけ
+C. DNSのゾーン一覧だけ
+D. 予約購入画面だけ
+
+=== Q14-50 ===
+管理グループに割り当てたPolicyやRBACが子階層へ及ぶことを何と呼びますか。
+--- 選択肢 ---
+A. 圧縮
+B. 暗号化
+C. リハイドレーション
+D. 継承
+
+=== Q14-51 ===
+違反するリソースも作成は許可し、後で不適合として確認したい。Policyの効果を選んでください。
+--- 選択肢 ---
+A. Disabled
+B. ReadOnlyロック
+C. Audit
+D. Deny
+
+=== Q14-52 ===
+所有者ロールを持つユーザーが削除ロック付きの資源を削除します。必要な対応を選んでください。
+--- 選択肢 ---
+A. タグを外すだけ
+B. 権限を使って先にロックを解除する
+C. 所有者ならロックを自動的に無視する
+D. 資源名を短くする
+
+=== Q14-53 ===
+Purviewでクラウドとオンプレミスをまたいだ情報を把握します。対象となるものを選んでください。
+--- 選択肢 ---
+A. 対応する複数環境のデータ
+B. Azure VMのCPUだけ
+C. DNSレコードだけ
+D. 1台のNICだけ
+
+=== Q14-54 ===
+インストール不要のGUIからVMやネットワークを管理したい。操作画面を選んでください。
+--- 選択肢 ---
+A. Azure Data Box
+B. Azure Reservations
+C. SMB共有だけ
+D. Azure portal
+
+=== Q14-55 ===
+WindowsとLinuxで同じazコマンドを使って管理を自動化したい。ツールを選んでください。
+--- 選択肢 ---
+A. Azure Data Box
+B. Azure Files
+C. Azure CLI
+D. Azure DNS
+
+=== Q14-56 ===
+ローカルに管理ツールを入れられない端末から、BashでAzureを操作したい。選択肢を選んでください。
+--- 選択肢 ---
+A. DNSのTTLを変える
+B. ブラウザーからCloud Shellを使う
+C. VM名を変更する
+D. ロックを付ける
+
+=== Q14-57 ===
+必要なVNetやVMをJSONで宣言し、同じ構成を繰り返し展開します。使うものを選んでください。
+--- 選択肢 ---
+A. ARMテンプレート
+B. Activity Log
+C. 予算
+D. 秘密度ラベル
+
+=== Q14-58 ===
+Azure向けIaCを簡潔な専用言語で記述し、ARMへ展開したい。言語を選んでください。
+--- 選択肢 ---
+A. KQLだけ
+B. SQLだけ
+C. CSSだけ
+D. Bicep
+
+=== Q14-59 ===
+性能メトリックとログを集め、障害の分析と通知へつなげたい。基盤を選んでください。
+--- 選択肢 ---
+A. Azure Data Box
+B. Azure DNS
+C. Azure Monitor
+D. Azure Reservations
+
+=== Q14-60 ===
+利用リージョンのAzureサービスに計画メンテナンスがあります。影響情報を確認するものを選んでください。
+--- 選択肢 ---
+A. Azure Files
+B. Azure Service Health
+C. Azure Repos
+D. Azure Pricing Calculator
+
+=== Q14-61 ===
+Web APIで特定の呼び出しだけ遅い原因を、要求と依存先の情報から追いたい。使うものを選んでください。
+--- 選択肢 ---
+A. Application Insights
+B. Azure DNS
+C. Azure Reservations
+D. Azure Data Box
+
+=== Q14-62 ===
+portalやCLIからの操作が共通して呼び出す、Azureリソースの管理レイヤーを選んでください。
+--- 選択肢 ---
+A. ゲストOSのファイルシステム
+B. Azure Blobのアクセス層
+C. 自社DNSのTTL
+D. Azure Resource Manager
+
+=== Q14-63 ===
+毎週の定型運用をPowerShellのRunbookで実行したい。サービスを選んでください。
+--- 選択肢 ---
+A. Azure Data Box
+B. Azure Reservations
+C. Azure Automation
+D. Azure DNS
+
+=== Q14-64 ===
+複数のクラウド提供者を含むインフラを、対応するプロバイダーで宣言的に管理したい。ツールを選んでください。
+--- 選択肢 ---
+A. Azure DNSのTTL
+B. Terraform
+C. KQL
+D. Microsoft Word
+
+=== Q14-65 ===
+コマンド操作を使わず、ブラウザーの画面からリソースを日常管理したい。選択肢を選んでください。
+--- 選択肢 ---
+A. Azure portal
+B. ローカルのazコマンドだけ
+C. Bashのスクリプトだけ
+D. ARMのREST APIを直接記述する
+
+=== Q14-66 ===
+収集ログをKQLで検索し、長期間の傾向を調べたい。保存・分析の単位を選んでください。
+--- 選択肢 ---
+A. 可用性セット
+B. Azure DNSのゾーン
+C. 予約の注文だけ
+D. Log Analyticsワークスペース
+
+=== Q14-67 ===
+CPUがしきい値を超えたらメールとWebhookへ通知したい。適切な構成を選んでください。
+--- 選択肢 ---
+A. DNSとSMBだけ
+B. 予約と割引だけ
+C. Azure Monitorアラートとアクショングループ
+D. タグとVM名だけ
+
+=== Q14-68 ===
+azコマンドとAz PowerShellモジュールについて適切な説明を選んでください。
+--- 選択肢 ---
+A. どちらもDBの保存専用である
+B. 別の管理ツールだが、どちらも複数OSで利用できる
+C. どちらもWindows専用である
+D. CLIを入れればPowerShellも必ず入る
+
+=== Q14-69 ===
+Azureサービス全体の問題と、特定VMの正常性を区別して確認したい。適切な組み合わせを選んでください。
+--- 選択肢 ---
+A. Service HealthとResource Health
+B. Azure FilesとQueue
+C. 予約とタグ
+D. DNSとBlobの層
+
+=== Q14-70 ===
+Advisorの5つの推奨カテゴリの組み合わせを選んでください。
+--- 選択肢 ---
+A. 法務・採用・営業・人事・税務
+B. CPU・RAM・DNS・NIC・ディスク名
+C. 国・都市・住所・郵便番号・電話番号
+D. 信頼性・セキュリティ・性能・コスト・オペレーショナルエクセレンス

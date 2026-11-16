@@ -344,8 +344,8 @@
     "https://learn.microsoft.com/en-us/entra/identity/domain-services/overview"
   ],
   "storage-tools": [
-    "Azure Storage Explorer",
-    "https://learn.microsoft.com/en-us/azure/storage/storage-explorer/vs-azure-tools"
+    "Storage Explorerでのデータ管理",
+    "https://learn.microsoft.com/en-us/azure/vs-azure-tools-storage-manage-with-storage-explorer"
   ],
   "sql-mi": [
     "Azure SQL Managed Instance",
@@ -406,5 +406,73 @@
   "synapse": [
     "Azure Synapse Analytics",
     "https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is"
+  ],
+  "dedicated-host": [
+    "Azure Dedicated Hostの概要",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/dedicated-hosts"
+  ],
+  "disk-encryption": [
+    "Azure Disk Encryptionからの移行",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption-migrate"
+  ],
+  "quotas": [
+    "Azureの制限とクォータ",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits"
+  ],
+  "community": [
+    "NISTによるクラウドの定義",
+    "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf"
+  ],
+  "cdn": [
+    "Azure Front Doorとコンテンツ配信",
+    "https://learn.microsoft.com/en-us/azure/frontdoor/front-door-cdn-comparison"
+  ],
+  "redis": [
+    "Azure Cache for Redisの廃止と移行",
+    "https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/retirement-faq"
+  ],
+  "oss-db": [
+    "Azure Database for PostgreSQL",
+    "https://learn.microsoft.com/en-us/azure/postgresql/overview"
+  ],
+  "external-id": [
+    "Microsoft Entra External ID",
+    "https://learn.microsoft.com/en-us/entra/external-id/external-identities-overview"
+  ],
+  "savings-plan": [
+    "Azureコンピューティング節約プラン",
+    "https://learn.microsoft.com/en-us/azure/cost-management-billing/savings-plan/savings-plan-compute-overview"
+  ],
+  "purview": [
+    "Microsoft Purviewの概要",
+    "https://learn.microsoft.com/en-us/purview/purview"
+  ],
+  "privacy-statement": [
+    "Microsoftのプライバシーに関する声明",
+    "https://privacy.microsoft.com/en-us/privacystatement"
+  ],
+  "bicep": [
+    "Bicepの概要",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview"
+  ],
+  "automation": [
+    "Azure Automationの概要",
+    "https://learn.microsoft.com/en-us/azure/automation/overview"
+  ],
+  "terraform": [
+    "TerraformとAzure",
+    "https://learn.microsoft.com/en-us/azure/developer/terraform/overview"
+  ],
+  "resource-health": [
+    "Azure Resource Health",
+    "https://learn.microsoft.com/en-us/azure/service-health/resource-health-overview"
+  ],
+  "gdpr": [
+    "MicrosoftのGDPR対応ガイダンス",
+    "https://learn.microsoft.com/en-us/compliance/regulatory/gdpr"
+  ],
+  "cloud-bursting": [
+    "Azureへ処理を拡張するハイブリッド構成",
+    "https://learn.microsoft.com/en-us/azure/batch/batch-rendering-architectures"
   ]
 }

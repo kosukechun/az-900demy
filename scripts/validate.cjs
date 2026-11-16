@@ -15,13 +15,14 @@ let choices = 0;
 for (const q of qs) {
   assert.ok(q.explanation.length>15,q.id+': explanation');
   assert.ok(q.choices.length>=2,q.id+': choices');
+  assert.equal(new Set(q.choices.map(c=>c.text)).size,q.choices.length,q.id+': distinct choice text');
   assert.ok(q.accepted.length && !q.ungraded,q.id+': must be answerable');
   assert.ok(q.focus.length>=20,q.id+': question-specific learning point');
   assert.ok(q.terms.length>0&&q.terms.length<=4,q.id+': focused learning terms');
   for(const t of q.terms) assert.ok(t.term&&t.role.length>=50,q.id+': definition, purpose and distinction');
   const revision=meta.answerRevisions[q.id]||(meta.revisedIds.includes(q.id)?2:undefined);
   assert.equal(q.revision,revision,q.id+': invalidate revised answers only');
-  assert.equal(q.checkedAt,meta.checkedAt);
+  assert.equal(q.checkedAt,meta.groupCheckedAt?.[q.group] || meta.checkedAt);
   assert.ok(q.sources.length,q.id+': official reference');
   assert.ok(!/次の説明が真の場合|正しければ「はい」|説明が正しい場合/.test(q.prompt),q.id+': no repetitive instruction');
   assert.ok(!/undefined|�/.test(JSON.stringify(q)),q.id+': complete UTF-8 content');
@@ -38,11 +39,11 @@ for (const q of qs) {
     for (const i of set) assert.ok(Number.isInteger(i) && i>=0 && i<q.choices.length,q.id+': answer index');
     if (set.length>1) assert.ok(q.multiple,q.id+': multiple choice');
   }
-  for (const src of q.sources) assert.ok(/^https:\/\/(learn\.microsoft\.com|azure\.microsoft\.com|privacy\.microsoft\.com|www\.microsoft\.com)\//.test(src.url),q.id+': official source');
+  for (const src of q.sources) assert.ok(/^https:\/\/(learn\.microsoft\.com|azure\.microsoft\.com|privacy\.microsoft\.com|www\.microsoft\.com|nvlpubs\.nist\.gov)\//.test(src.url),q.id+': official source');
   assert.ok(typeof q.prompt==='string' && q.prompt.length>15,q.id+': text prompt');
   assert.ok(!Object.hasOwn(q,'image')&&!Object.hasOwn(q,'source'),q.id+': no image dependency');
-  assert.equal(q.group,q.id.slice(0,2));
-  assert.equal(q.number,Number(q.id.slice(3)));
+  assert.equal(q.group,q.id.split('-')[0]);
+  assert.equal(q.number,Number(q.id.split('-')[1]));
   for(const c of q.choices) {
     assert.ok(typeof c.text==='string'&&c.text.trim().length,q.id+': choice text');
     assert.ok(!Object.hasOwn(c,'image'),q.id+': text-only choice');
@@ -51,6 +52,22 @@ for (const q of qs) {
   }
   assert.ok(!/[丨卩丿ⅣⅳⅥⅱ凵酣]|[A-Za-z]「|[A-Za-z]。/.test(q.prompt),q.id+': OCR artifact');
 }
+const transcriptions=JSON.parse(fs.readFileSync(path.join(root,'data/screenshot-transcriptions.json'),'utf8')).items;
+assert.equal(transcriptions.length,350,'350 screenshot transcriptions');
+assert.equal(new Set(transcriptions.map(item=>item.id)).size,350);
+for(const item of transcriptions) {
+  const q=qs.find(q=>q.id===item.id);
+  assert.ok(q,item.id+': transcribed question exists');
+  assert.match(item.sha256,/^[a-f0-9]{64}$/);
+  assert.equal(q.origin.type,'transcribed-screenshot');
+  assert.equal(q.origin.file,item.file);
+  assert.equal(item.textFile,`data/${q.group}.txt`);
+  assert.ok(!fs.existsSync(path.join(root,item.file)),item.id+': original screenshot removed after transcription');
+}
+const webQuestions=qs.filter(q=>q.origin?.type==='original-topic-exercise');
+assert.equal(webQuestions.length,140,'140 Web-topic exercises');
+assert.deepEqual(Array.from(webQuestions,q=>q.origin.question),Array.from({length:140},(_,i)=>i+1));
+assert.ok(webQuestions.every(q=>q.origin.url===meta.sourceGroups[q.group].url));
 // TXT is the editable source of truth; the generated runtime strings must match it exactly.
 for(const [group,total] of Object.entries(meta.groups)) {
   const text=fs.readFileSync(path.join(root,`data/${group}.txt`),'utf8').replace(/\r\n/g,'\n');

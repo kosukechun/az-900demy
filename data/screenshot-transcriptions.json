@@ -1,0 +1,2105 @@
+{
+  "description": "提供された350枚を文字起こしし、誤認識・図・条件に依存する問題を学習用に整理。元画像は照合後に削除。",
+  "items": [
+    {
+      "id": "Q8-01",
+      "file": "Q8/スクリーンショット (756).png",
+      "sha256": "d6fe22ffcdfd50a1adb5bd2ab303acddbe4e54ed65882b88542bcaa39d20fab4",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-02",
+      "file": "Q8/スクリーンショット (757).png",
+      "sha256": "5234e5c8a25caf54b708fe83692d22118310333f6dff08638d17d9cd842251c2",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-03",
+      "file": "Q8/スクリーンショット (758).png",
+      "sha256": "fd4f754fb29881e4c54daa992efa3d3bb58f10e131c9722a294370f06612f5a4",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-04",
+      "file": "Q8/スクリーンショット (759).png",
+      "sha256": "7d2358b032b8f8f2fd54059a036be589deb8f7290940f058e864de406a92a1ee",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-05",
+      "file": "Q8/スクリーンショット (760).png",
+      "sha256": "cf73d93fbbacbf71021c7768e046f6e057eb45a6c1bdfab6d550d2e9051256d1",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-06",
+      "file": "Q8/スクリーンショット (761).png",
+      "sha256": "4c7015dfbca8af7c7ee223087bf1a41b3c3a62e9ed9322d61e7d3657b8dd4dd7",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-07",
+      "file": "Q8/スクリーンショット (762).png",
+      "sha256": "8142f288c937695215e832cf4d5cd48caf2b70ef7ffd6730c38b967d9b23e6e2",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-08",
+      "file": "Q8/スクリーンショット (763).png",
+      "sha256": "fd2b5c3a861a7bb6840dc11dca7538d0de32d6edeac50b1eadabd883b9255257",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-09",
+      "file": "Q8/スクリーンショット (764).png",
+      "sha256": "76a2711451cbf70b7505694b25b98d3e228dca76272b6c6e00dbbb3fa55d41c4",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-10",
+      "file": "Q8/スクリーンショット (765).png",
+      "sha256": "2f7c131ff794552781a19f2ad8b7acd0cff851782eecfbf559aed6ab6f3d2493",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-11",
+      "file": "Q8/スクリーンショット (766).png",
+      "sha256": "36d41b4c1f1e47b76ff626c90b3a2d94158c48000b01d79427f9a00ded619b1f",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-12",
+      "file": "Q8/スクリーンショット (767).png",
+      "sha256": "f610421d7d43832a2ec2a5a4300063192b993aa7883195b1830926f55717a7cb",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-13",
+      "file": "Q8/スクリーンショット (768).png",
+      "sha256": "071707f9d40c53ada5bdbb33b7a9ca7080e4d03ee69f2f0064c2e05fb66227c7",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-14",
+      "file": "Q8/スクリーンショット (769).png",
+      "sha256": "0c920b5c1ae5ae5fd36061d1826cdf53ae1d704e91d0a58aa7607159c0dfc65b",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-15",
+      "file": "Q8/スクリーンショット (770).png",
+      "sha256": "c0bb6f9e0c86c26f601c20ebbba166e19ffbf5eff2c5c76ecbcfe04c439c6836",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-16",
+      "file": "Q8/スクリーンショット (771).png",
+      "sha256": "719c4827e63dc5dccf73ca8127bb38a6f6e00f7239318b8637ff157445131c94",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-17",
+      "file": "Q8/スクリーンショット (772).png",
+      "sha256": "0a99361a8266f4a4695e5f44dd83625a5cee4f9f9e01d8ba650f3825f5f91bae",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-18",
+      "file": "Q8/スクリーンショット (773).png",
+      "sha256": "3291cd93e666738d5c8bd4bece92b0f7ef0d7b79a4f0c626211a9d6a6d11b964",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-19",
+      "file": "Q8/スクリーンショット (774).png",
+      "sha256": "77116358e04d9743499a4978f3d59219ade4f854d616d200ae78f930684266e4",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-20",
+      "file": "Q8/スクリーンショット (775).png",
+      "sha256": "744e816a357d6dd9ad2c0ec05e390135ba22a8a0dd708abbfab1188d214d7b53",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-21",
+      "file": "Q8/スクリーンショット (776).png",
+      "sha256": "bb5c6d0ce4fe1ca0e0b68a6f45d1b33463d15356e3b0c3d8506ff476aeab0fa9",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-22",
+      "file": "Q8/スクリーンショット (777).png",
+      "sha256": "d10c6ad8253b4e583a3e40ab54be0fabce17b860457d4d9467489bb0fa112caa",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-23",
+      "file": "Q8/スクリーンショット (778).png",
+      "sha256": "8d4d4828ebe043e73c31f6da4b8ee6e9fbd93d7f6d54b5ea3c1a33f93462d59a",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-24",
+      "file": "Q8/スクリーンショット (779).png",
+      "sha256": "5f3e707e205a6aa36927df787a69e03a912c0782b3fe699858b988636a5fb3c8",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-25",
+      "file": "Q8/スクリーンショット (780).png",
+      "sha256": "c6b254b2872e7e7272410ef38d2f7b924db64da381aab8f294fc07b04f617924",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-26",
+      "file": "Q8/スクリーンショット (781).png",
+      "sha256": "116fa0c146be11dba7dbf47d24de23a39594e5876450c10afc4c36ad59f3dec6",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-27",
+      "file": "Q8/スクリーンショット (782).png",
+      "sha256": "74d04b87e470499448f909c68812e4cf71748c20c9980a7e373224519e9b1ec3",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-28",
+      "file": "Q8/スクリーンショット (783).png",
+      "sha256": "06b500c128fb880d1c9d200b8fdccecf4555b562e29eb0df78f91f28aba3ce7c",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-29",
+      "file": "Q8/スクリーンショット (784).png",
+      "sha256": "f8655475784336009823a5a9e0fb1d3b2f10776b86bfbb5802cbdda0f7046b96",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-30",
+      "file": "Q8/スクリーンショット (785).png",
+      "sha256": "a133baa6e9b9215c1030ea8758892407d4b33e8f15c13505d888fe41b5bcd29d",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-31",
+      "file": "Q8/スクリーンショット (786).png",
+      "sha256": "6c7ae783004e68b61ec1905cf3bdcd33637dfb3e84200cb3aa57e5e15d77a55f",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-32",
+      "file": "Q8/スクリーンショット (787).png",
+      "sha256": "037e8c080fb274cd16c4086e7a3bb49471e3071c0d35c8a3f1d250099d72fdc2",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-33",
+      "file": "Q8/スクリーンショット (788).png",
+      "sha256": "66b69bcf2d4a78bc25ae1f159b6f1fab4151453bd873943bfd70a645c18980f5",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-34",
+      "file": "Q8/スクリーンショット (789).png",
+      "sha256": "4b6b5ac0960d2ec282bd4279177139d8f486360b6afe20f51ee78f2e959ef2e6",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-35",
+      "file": "Q8/スクリーンショット (790).png",
+      "sha256": "37bfc061fe2161762fadf6157f33137882bbb959f76f96827ce4ad37281ad30e",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-36",
+      "file": "Q8/スクリーンショット (791).png",
+      "sha256": "6634ead80410836ac4b3c6d30acda8ebad999096ae7493e9440c4dce40cb76d7",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-37",
+      "file": "Q8/スクリーンショット (792).png",
+      "sha256": "64a00e4b9be67f0f15be5b2acd5293bd148e8ee190102ba06e2518a80612724f",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-38",
+      "file": "Q8/スクリーンショット (793).png",
+      "sha256": "dac7c5a5df3550e6f8b77e05baba2e78a17bb30d2c80ffa2bcdcb5f81877a508",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-39",
+      "file": "Q8/スクリーンショット (794).png",
+      "sha256": "005e9688fda8d3cd7ff11837ffc255d9eb7ef4dd4c3a97bf39f41f966d0cbb6c",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-40",
+      "file": "Q8/スクリーンショット (795).png",
+      "sha256": "92c58a79a20ba6a3d0bc1898aa5f6f4c84eb0439facd22658145f43b8d8a149c",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-41",
+      "file": "Q8/スクリーンショット (796).png",
+      "sha256": "02c91d4b9b71c3b9ca97c9446923de658b32edb4faed938930038ae35432d307",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-42",
+      "file": "Q8/スクリーンショット (797).png",
+      "sha256": "0e07da866b9702fb78cd2f6bb164cca8e3d84d6eb8f4c2cb141ec640028bd6b8",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-43",
+      "file": "Q8/スクリーンショット (798).png",
+      "sha256": "53129727b8b4b8d2c25c899c21533d354538b60df369de216603f33b98ecdcbb",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-44",
+      "file": "Q8/スクリーンショット (799).png",
+      "sha256": "144dbca65c8eb5263ede2060ef9aabca8063cb24771b59696acf26b850088858",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-45",
+      "file": "Q8/スクリーンショット (800).png",
+      "sha256": "e5ce08168d20618a4a5332586a3f83b17d434c50eb0e518d6f0b30ee148ceae0",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-46",
+      "file": "Q8/スクリーンショット (801).png",
+      "sha256": "68cf03d1cce7463fa5ff78879a4bdcd0834249085eceee2c8f9811a7a58ef9f3",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-47",
+      "file": "Q8/スクリーンショット (802).png",
+      "sha256": "a087de4ba5cce48b029a2343c695a6b2d82de079d70adc1d7b91c474c7e82531",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-48",
+      "file": "Q8/スクリーンショット (803).png",
+      "sha256": "5ff2048c6595d80b603dadb5490e841f9fe75251f41f9bc97e8c0b47483b5523",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-49",
+      "file": "Q8/スクリーンショット (804).png",
+      "sha256": "64f729bc9fef5223e73b66f7e1319240caa5c81ebbaf0a7c278226589d236359",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-50",
+      "file": "Q8/スクリーンショット (805).png",
+      "sha256": "cedcb10170efea55adfea6b89320d09584d737d0332625b0e6f7f9b6c21d6b5a",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-51",
+      "file": "Q8/スクリーンショット (806).png",
+      "sha256": "d926658feb31a8849fbcf6cde07b0d77232f1e64f3afa03f132d304b43b292e3",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-52",
+      "file": "Q8/スクリーンショット (807).png",
+      "sha256": "efa055dc83749c64160b92eef8fad6d72e553ace5f0cb0d7189d16c0206283b1",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-53",
+      "file": "Q8/スクリーンショット (808).png",
+      "sha256": "68fa5eec0c762ce21e03b72ac23eb6e29fe8433ae72c3c3b06f3f956a115c00a",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-54",
+      "file": "Q8/スクリーンショット (809).png",
+      "sha256": "26afc91603285b76395dbcbbae7cc568354e8805f2c893861326a2eda8ae5b8e",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-55",
+      "file": "Q8/スクリーンショット (810).png",
+      "sha256": "30b4993e419aa9885bc22c7190b599b07b47889fa2c01cbb6236130486811e95",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-56",
+      "file": "Q8/スクリーンショット (811).png",
+      "sha256": "37ea7979349e04e2012f9d0a61f304c1215cb542f288e7eb3820fe602c069c07",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-57",
+      "file": "Q8/スクリーンショット (812).png",
+      "sha256": "66df4e796917b86498905846272a979624198c4beef2c28054edb8a270b5a10c",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-58",
+      "file": "Q8/スクリーンショット (813).png",
+      "sha256": "87d3a123ae60ff4abf9da6baa7023beaa44a90c5f0d4a994284e7870f4500c99",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-59",
+      "file": "Q8/スクリーンショット (814).png",
+      "sha256": "8d1c877a245830586cc740be32741af2b787775b5ef1489030daf6849827b040",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-60",
+      "file": "Q8/スクリーンショット (815).png",
+      "sha256": "253c51d353150846e921d5a8cfc61fd30ddd72a34a0b0f3ecdf4c45ffbb7ab10",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-61",
+      "file": "Q8/スクリーンショット (816).png",
+      "sha256": "51af48d3c0ec382fe59d265c89adfa09478f1f65f90ec5e378420b8601eb8689",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-62",
+      "file": "Q8/スクリーンショット (817).png",
+      "sha256": "a24d84c85acc8c51d0123c57879e4a77be2c720ccee2e3571b8c26177e5d952f",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-63",
+      "file": "Q8/スクリーンショット (818).png",
+      "sha256": "a94807d929fb628b232d5749bb33cfdbc4ea69aa570764ae2ffa7e54b9e893d7",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-64",
+      "file": "Q8/スクリーンショット (819).png",
+      "sha256": "e65d1b92d89b10e00c82af426a3640eed895639a9665ce9905e3df913307e0c9",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-65",
+      "file": "Q8/スクリーンショット (820).png",
+      "sha256": "1e6d1b34107f7c8791a50275e73bc8b4fdd6e7709fe027684c0b786ffba9f12a",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-66",
+      "file": "Q8/スクリーンショット (821).png",
+      "sha256": "826d4e0eeb6d2c39cd818050c6cbe90f2dc8f032a580e14558cbbb7f601f50e1",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-67",
+      "file": "Q8/スクリーンショット (822).png",
+      "sha256": "b433d32bd18e6d825f28047fb12030efb5478e6267ad01e88e0c629e84262c98",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-68",
+      "file": "Q8/スクリーンショット (823).png",
+      "sha256": "8f71ec4b9384d6de6bcd28f35bdcddbe6b4d869163d47156dbef5d1a15f50793",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-69",
+      "file": "Q8/スクリーンショット (824).png",
+      "sha256": "ba9fb251231d87ad2f8b211a490f8689859a93a01a8c13cc9423009ac27136a3",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q8-70",
+      "file": "Q8/スクリーンショット (825).png",
+      "sha256": "5ef3bc70496310ba7e07977e1ce0e57c6fea47086fc122ff8824f3613c02c153",
+      "textFile": "data/Q8.txt"
+    },
+    {
+      "id": "Q9-01",
+      "file": "Q9/スクリーンショット (826).png",
+      "sha256": "636789b609a3c517d37644d9a417ab96f3b36df31b8bf0f1a1722a5aa085f863",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-02",
+      "file": "Q9/スクリーンショット (827).png",
+      "sha256": "2f84d9071f1baff0d4c5871fb6f694ededebcdb744d7b3be73da9d43a78c88fc",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-03",
+      "file": "Q9/スクリーンショット (828).png",
+      "sha256": "b82ee9be6c01cf9e57dc0aad87478b87a45983f938211eb587d0765eef5aa7ae",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-04",
+      "file": "Q9/スクリーンショット (829).png",
+      "sha256": "3e691240688ce2b39233098e097ee22d2513239875dbb7b1a916f3523291321e",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-05",
+      "file": "Q9/スクリーンショット (830).png",
+      "sha256": "4f5dd455ecd15b2087d29d6f9f6cd78d4083f8b5b77f0061c43e221e3b7b1647",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-06",
+      "file": "Q9/スクリーンショット (831).png",
+      "sha256": "821ad51d6c8aeaa33cefa2341bf313801f0cd3eb3d1efc19cb08536a6e8e305d",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-07",
+      "file": "Q9/スクリーンショット (832).png",
+      "sha256": "09a52c70aacb291c7eccb0d36f1156a8beaee9348f26870f7fce8bbf0371c75d",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-08",
+      "file": "Q9/スクリーンショット (833).png",
+      "sha256": "aee300a307041d640145fc6362efa45e41359625a658d8124a53c8c4a843d812",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-09",
+      "file": "Q9/スクリーンショット (834).png",
+      "sha256": "2a5f678ee7ed84503086f9113a6f4d65a265a09d14dcbb7aa8054482d2a578c0",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-10",
+      "file": "Q9/スクリーンショット (835).png",
+      "sha256": "c70e3d9f9276760ad5de56bf5d8726641e37d79365aa5d3b60d45b4116a4a3a3",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-11",
+      "file": "Q9/スクリーンショット (836).png",
+      "sha256": "5bc45b77147f2bbe7089d9dcae3979640f9be2b1a75427627ade5bb2d205b94a",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-12",
+      "file": "Q9/スクリーンショット (837).png",
+      "sha256": "3a5e384172b7cc898ccf5a973a034d914f52ed5fd22c9b34fc44178118c2c739",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-13",
+      "file": "Q9/スクリーンショット (838).png",
+      "sha256": "eb918250574212c6f4a2a0a3c594fa5800160c6b6dfff7c6912f25105f06ed14",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-14",
+      "file": "Q9/スクリーンショット (839).png",
+      "sha256": "dddf65124b350c8859c74b16b3194186d5216699c9842a94b86df8100b0c8858",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-15",
+      "file": "Q9/スクリーンショット (840).png",
+      "sha256": "a6f5929e77ba339d2e8f9fba6053bfcd83358fde1565601bbe7eddc6d2161bdc",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-16",
+      "file": "Q9/スクリーンショット (841).png",
+      "sha256": "ab617c94ce7729461fe18bf78762aa2a583d87f8e7b6cd8a7481888ad8e823d9",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-17",
+      "file": "Q9/スクリーンショット (842).png",
+      "sha256": "0e2e5aff8730439bfd363387b7df47fa0b676175113e710aba5c99edab15b2d1",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-18",
+      "file": "Q9/スクリーンショット (843).png",
+      "sha256": "100de55a97d75f7eae7ca6e0525b3dc94ba12c7097e7b9c41e9cd52bba09723a",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-19",
+      "file": "Q9/スクリーンショット (844).png",
+      "sha256": "004eff4cc0ea89bab5bea77498ed349e1c0907a8a804c8ae6d2948f0ef2e79b3",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-20",
+      "file": "Q9/スクリーンショット (845).png",
+      "sha256": "c113756ce2be017cdac4aa1b03d313094190e21935ce30dc2dc2af37ea0e23d9",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-21",
+      "file": "Q9/スクリーンショット (846).png",
+      "sha256": "fbc1f63d4834d1bdc86b617110617bfa27bd44c79b981cf177c0628a1171b3dd",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-22",
+      "file": "Q9/スクリーンショット (847).png",
+      "sha256": "8a514c64c607896b93686dd8100fa6b158efe31069fdd8eaa6261dc229497da8",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-23",
+      "file": "Q9/スクリーンショット (848).png",
+      "sha256": "3900474d21f31d335b551962b930e7f5af8d10616ce1bcdde09491b9346d45d0",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-24",
+      "file": "Q9/スクリーンショット (849).png",
+      "sha256": "653301375d206af21d5c140604cef3fec59e45ad4e3b4deb11366535386df972",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-25",
+      "file": "Q9/スクリーンショット (850).png",
+      "sha256": "9b438b7d590d356ccabeafdddfeed8d8c67611b63bf0e195c27e1439320c6641",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-26",
+      "file": "Q9/スクリーンショット (851).png",
+      "sha256": "e9d8c5a256e474638a8f47d5053897af82533eef2916b5312482d29bb3800451",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-27",
+      "file": "Q9/スクリーンショット (852).png",
+      "sha256": "898f675807ee5d82ebfea4e3b33b44bffc3ece81dcd4ccace93e651d5862bb5c",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-28",
+      "file": "Q9/スクリーンショット (853).png",
+      "sha256": "9c5ae9aa0543483b05eb7e361877cee770a639e23fff105ed6e65d828c001c20",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-29",
+      "file": "Q9/スクリーンショット (854).png",
+      "sha256": "d3deb9cebe7fc72c86762b674eeff35613339452c186c9b3cd313cb7a96d47a4",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-30",
+      "file": "Q9/スクリーンショット (855).png",
+      "sha256": "5c1b7b0790f4f4037aee6a9aca5c6aa2152d16d3a34256dd736c07f723587588",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-31",
+      "file": "Q9/スクリーンショット (856).png",
+      "sha256": "f027332bb482dd23427f42cecdeda54ad2918a5966e9646242860cddf34ce4d3",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-32",
+      "file": "Q9/スクリーンショット (857).png",
+      "sha256": "8ef6f58f5d37fc9c2a8f848cfe5fa9458a8e1bb32ae9b7c8733efd4ff39aa82a",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-33",
+      "file": "Q9/スクリーンショット (858).png",
+      "sha256": "b360e75d1e8e947f69002ccc706e26db7ef9ab194fa539d3aa7768ea72d5cd96",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-34",
+      "file": "Q9/スクリーンショット (859).png",
+      "sha256": "a1fe1817ad6c99918c7e5263a2c08bc9d4bcee67b44f2d2d59783f9ad964bf13",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-35",
+      "file": "Q9/スクリーンショット (860).png",
+      "sha256": "d4786c46517321a702ed8d66068c7a513c2434384a5970c95d43606993fbab12",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-36",
+      "file": "Q9/スクリーンショット (861).png",
+      "sha256": "b292a798f98a614112edf21a48b4047ad858bf552fca5c39ac06b6716c5e4c31",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-37",
+      "file": "Q9/スクリーンショット (862).png",
+      "sha256": "e5f9f8f38357a2da4002a4c8382e2e1da608e7ec809e339e6aad7d8289654760",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-38",
+      "file": "Q9/スクリーンショット (863).png",
+      "sha256": "a63583d7317ad2d20d3a1aef85b1ba182812024247e9284a085a55ab64271e70",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-39",
+      "file": "Q9/スクリーンショット (864).png",
+      "sha256": "3bbe66f97868e17d9c2d0518628be316e72481751d8f8b3e88b94fef0fb2fd96",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-40",
+      "file": "Q9/スクリーンショット (865).png",
+      "sha256": "5be8f625f1caf1199d06e30c76997c4654898a0e9086f038e5bbc0a317fabc50",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-41",
+      "file": "Q9/スクリーンショット (866).png",
+      "sha256": "6c0a3115d5012c11bbd1534c71a2cdd1509626ec3ff3a315317827232240285f",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-42",
+      "file": "Q9/スクリーンショット (867).png",
+      "sha256": "1182bb3b52df494338cedcf725b69d71f5d50a3b7570736e0f9508e6cb50d7ce",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-43",
+      "file": "Q9/スクリーンショット (868).png",
+      "sha256": "c3047906d8f21630e1b3c9276a416e5eb558813c2219c521608c44e090595148",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-44",
+      "file": "Q9/スクリーンショット (869).png",
+      "sha256": "63ee2dc6b76688b4723de7e7f59f3289dcf88e9427da4f0d7c485a30632a35d0",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-45",
+      "file": "Q9/スクリーンショット (870).png",
+      "sha256": "deb8ac5f04713e19d0c7a7fd374c5ea2172b2ada2d37cd51279d42252577635a",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-46",
+      "file": "Q9/スクリーンショット (871).png",
+      "sha256": "bb3d0e3b5453a20933386deca3da096daef2012192a655f66646d8dcf25fafde",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-47",
+      "file": "Q9/スクリーンショット (872).png",
+      "sha256": "7db92f1d86d75d7637ce952b7da96bf1bd8b4276c313fccc011b0837ec1f3f74",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-48",
+      "file": "Q9/スクリーンショット (873).png",
+      "sha256": "ad3bf2717158f67e06ff8f57966ebc9aea1d480777cbd06796f147e1e5bd099c",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-49",
+      "file": "Q9/スクリーンショット (874).png",
+      "sha256": "6d436a6a19961df893521f786835ca408c8ceda58b88f836ccc873ddbe85696a",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-50",
+      "file": "Q9/スクリーンショット (875).png",
+      "sha256": "e79e359729e95d3cc9508b10b1cc895a1f0eaf323dec4bf03f25cb5eed5ec892",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-51",
+      "file": "Q9/スクリーンショット (876).png",
+      "sha256": "67155d6d6160b76f6c07f2b509794c981dfb6fee83d7343faa396e805b212d0a",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-52",
+      "file": "Q9/スクリーンショット (877).png",
+      "sha256": "57bb68824f3e5c2c98d9be143e9ede03945a4c162e925022a060e900bae6f1e9",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-53",
+      "file": "Q9/スクリーンショット (878).png",
+      "sha256": "2bf1a6b7a42906fa90a599ae18f682a200e592e18288c45be23806c7fa26fda5",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-54",
+      "file": "Q9/スクリーンショット (879).png",
+      "sha256": "e2e041dfcfaa9b09b79b88e0393dc7ad48ef0917316205b1c9016f17e0ff864a",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-55",
+      "file": "Q9/スクリーンショット (880).png",
+      "sha256": "e575a0dbd279d6f11244aabe03e953f5910b8a5271554edcbab7d6f27df844d3",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-56",
+      "file": "Q9/スクリーンショット (881).png",
+      "sha256": "c0ef89a42a0f855befd18ff632d4601e51e15e44f474dd26a2782e777480b769",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-57",
+      "file": "Q9/スクリーンショット (882).png",
+      "sha256": "3429fbf55f3766df951e665a4b3185fb47f5f3c1c1a6b51cf60fd9568996b0ce",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-58",
+      "file": "Q9/スクリーンショット (883).png",
+      "sha256": "e422e8e45cca160ff4178c917f06eb574dc40de53a2222581ae2595827cbffa0",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-59",
+      "file": "Q9/スクリーンショット (884).png",
+      "sha256": "74700589d7a1db3b03711e69af6f992f4427018a66b5e0a7872a4f784a999978",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-60",
+      "file": "Q9/スクリーンショット (885).png",
+      "sha256": "a262e32df786dbf503626e206f95f42d2004786ad38184d5648f84100a177231",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-61",
+      "file": "Q9/スクリーンショット (886).png",
+      "sha256": "c315825fa7f6adbe1aef2bd0ca441430f724c168ee02df3f4b970251df96d949",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-62",
+      "file": "Q9/スクリーンショット (887).png",
+      "sha256": "adc9957be99d387ddbca024b9c4f61692d8bac2319ff07f12eecf74116c5138d",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-63",
+      "file": "Q9/スクリーンショット (888).png",
+      "sha256": "08357ecada385bb6482eeace0ad9d74c48527b1511021351c0cb4f2a61241123",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-64",
+      "file": "Q9/スクリーンショット (889).png",
+      "sha256": "e22390f866bb4166ecdf822aed34b42dbbbda4d689b10de83ad647da697ec7f1",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-65",
+      "file": "Q9/スクリーンショット (890).png",
+      "sha256": "67403728def82e2a4eca47bcfb9e716b8ee31a17afe6a45478d9e860b10a2053",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-66",
+      "file": "Q9/スクリーンショット (891).png",
+      "sha256": "dd473ad48577eb3f8f62db9cfbe043335d47bd52d373bc9012a8d8b8d38c3743",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-67",
+      "file": "Q9/スクリーンショット (892).png",
+      "sha256": "50287b401912c35cffe24ae9f0bc62f182e12ee974a21dfe8a947ce9a936e4ae",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-68",
+      "file": "Q9/スクリーンショット (893).png",
+      "sha256": "157d975ef83b8874d4d1f564dc13f4b283283b0e29583faa9c112043b4c51b6c",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-69",
+      "file": "Q9/スクリーンショット (894).png",
+      "sha256": "a970e2d3348662d909ded950836e320a1981a96c39b2321f94a73b5f7ff08489",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q9-70",
+      "file": "Q9/スクリーンショット (895).png",
+      "sha256": "6602ae96c30b3b43d00faf490e0db683e54a3c8305c7dfa8a414a3657298a86d",
+      "textFile": "data/Q9.txt"
+    },
+    {
+      "id": "Q10-01",
+      "file": "Q10/スクリーンショット (896).png",
+      "sha256": "cb7de2dedaa1807958bef5162443a1381eefca4f402f958335ba56893a9e25df",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-02",
+      "file": "Q10/スクリーンショット (897).png",
+      "sha256": "8a47ba771cc00ed3393adf787ad45fbc0fe1b2ab091781497761660ca96cd3b5",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-03",
+      "file": "Q10/スクリーンショット (898).png",
+      "sha256": "6d0e0cd5da15a445943017d41e8636f9ebff59109ffc83de213b6be0f4806bf4",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-04",
+      "file": "Q10/スクリーンショット (899).png",
+      "sha256": "0ad48bb0dc525d8979ea002bf63b09dc700ede57ae92fd51f63cac8e6665978d",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-05",
+      "file": "Q10/スクリーンショット (900).png",
+      "sha256": "8a0a93ac43024fedf4ae6b2bec0a8122e2e64a9d962ebb87e58e5c61a841728d",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-06",
+      "file": "Q10/スクリーンショット (901).png",
+      "sha256": "bd658900bb71f0f31d3a2c70dec43f6050dbc607175509ef2b4a210931932eae",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-07",
+      "file": "Q10/スクリーンショット (902).png",
+      "sha256": "00a14ce27390758f8bc1170efb2955f96121f6c53b7a5a28486b9ad4a7209078",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-08",
+      "file": "Q10/スクリーンショット (903).png",
+      "sha256": "c86e7a990b6d84498db1fce87fcf6b3890cb4a52abda726ca30689fb35704bfe",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-09",
+      "file": "Q10/スクリーンショット (904).png",
+      "sha256": "8a620f3330e15b9c0a823af9b80dc9cd589fccdc7fa789b2abd4cfa2709cba93",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-10",
+      "file": "Q10/スクリーンショット (905).png",
+      "sha256": "f83274e08581f90174c23d6b84d33a3dedf691bdad520388df84ee7261988489",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-11",
+      "file": "Q10/スクリーンショット (906).png",
+      "sha256": "6658bba6145070bff4d60b8b2b93a4328bd919d6a3f3c5fd6232b6972a437e94",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-12",
+      "file": "Q10/スクリーンショット (907).png",
+      "sha256": "a065c7ff5e28079a00d0a930257919a185b078428bf3dd55b7d6bdb6fa63a3eb",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-13",
+      "file": "Q10/スクリーンショット (908).png",
+      "sha256": "4dc9ce374566c1cdf473ddc982a6faafb2f874babd150ddfcb527a4a2f63b593",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-14",
+      "file": "Q10/スクリーンショット (909).png",
+      "sha256": "e77296656cb220bd7db33f18f6d98b24d4233e6988e5863f3192dee84054677b",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-15",
+      "file": "Q10/スクリーンショット (910).png",
+      "sha256": "c87af45f20ffc71c6e9a04a5b67db46e644bcdd3cea0d6dd86123da7c4b02ae1",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-16",
+      "file": "Q10/スクリーンショット (911).png",
+      "sha256": "8fc657a25b304789b3a53f25edd93303c12e47e107d72efbbfb6fe415ed6cac2",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-17",
+      "file": "Q10/スクリーンショット (912).png",
+      "sha256": "807a33430b8d22d873cfac3f1f646d8e6aa6203449ea7ba71fe52438b027e143",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-18",
+      "file": "Q10/スクリーンショット (913).png",
+      "sha256": "47ca2cee6f2cdddf3a828afd32a5435746d82cd4ace4d7416defa8ff0de1808b",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-19",
+      "file": "Q10/スクリーンショット (914).png",
+      "sha256": "3a3b3c3d43790e7fe3a51f5660ccacb07cb076d9afe6460fe3e22a085917ca4c",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-20",
+      "file": "Q10/スクリーンショット (915).png",
+      "sha256": "1c7f042db5f89b826a4a9a3dac68f2243c6b1012cc74390beb9579cbada32618",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-21",
+      "file": "Q10/スクリーンショット (916).png",
+      "sha256": "bbb0abfbe7726529b060866e1967d4f0fa299e03378c8908e1e829b3ca45d2a7",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-22",
+      "file": "Q10/スクリーンショット (917).png",
+      "sha256": "a4430fbf3bc485587d3e97dbd1ac775be90f9bc3522892e4a42cf235e9c84290",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-23",
+      "file": "Q10/スクリーンショット (918).png",
+      "sha256": "d0593c710da986941bf9cc9c32285fe19f267a5b5ba7d8b4f5c16a6f18433b3f",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-24",
+      "file": "Q10/スクリーンショット (919).png",
+      "sha256": "1c50a140fc2f471f858534145636d52defc82f85d9dd17c5e12bd869a318bc1e",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-25",
+      "file": "Q10/スクリーンショット (920).png",
+      "sha256": "c0db96da379b98bfe531281d9eb85e0d13ae0e8d29b65d529bac4df09e7f8de3",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-26",
+      "file": "Q10/スクリーンショット (921).png",
+      "sha256": "00a139bdfbf3129d067bd355ac7649f2863094b3ce24ba9adc1d7fa06909f8bb",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-27",
+      "file": "Q10/スクリーンショット (922).png",
+      "sha256": "7d9b75a0607e73de9e64e6437958db79f8164931f47f0a0754a2dbd85d70e1dd",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-28",
+      "file": "Q10/スクリーンショット (923).png",
+      "sha256": "b0cb5a733b8d3e5399f41903b797ac7789a4618506dde151cafff5622b174831",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-29",
+      "file": "Q10/スクリーンショット (924).png",
+      "sha256": "8b1b06be6f4eba4fd980becdcaaa23e756fd6f75dad4b360dbbd659132f58974",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-30",
+      "file": "Q10/スクリーンショット (925).png",
+      "sha256": "574296254df8dd25fd0f24b88eb16a6bd06d034ec30bf4176afa3fc61b021ef8",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-31",
+      "file": "Q10/スクリーンショット (926).png",
+      "sha256": "f98ce7b1ceae01194de871151548a4a681e27cb8c707352e4bace7dc6c73d814",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-32",
+      "file": "Q10/スクリーンショット (927).png",
+      "sha256": "b79e39fdd1ccb2f893f3fefa3568019782fda6478393239814535ac992fb90ff",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-33",
+      "file": "Q10/スクリーンショット (928).png",
+      "sha256": "5b5f03ced41602ede28c81d9ec7ad7a6376c8815ffedbdc7f2f86ec028ada535",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-34",
+      "file": "Q10/スクリーンショット (929).png",
+      "sha256": "5009df642f2cdfe1685b2bd1fbb7e5194749edfaf32bc4ff45524ef39b890961",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-35",
+      "file": "Q10/スクリーンショット (930).png",
+      "sha256": "aeb4e7257ca1a58c761c27cfcf3c9004b339e4c5cad922da6426245b9b3db13a",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-36",
+      "file": "Q10/スクリーンショット (931).png",
+      "sha256": "f5812f0a61a202a26d5a96cb80d132acf635906bbc6b12d45b2abd9971b48b61",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-37",
+      "file": "Q10/スクリーンショット (932).png",
+      "sha256": "7e6fe4eac935a98c9157b88b28b6e9c6fa91be1b5c14aa2390a6076369346c4d",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-38",
+      "file": "Q10/スクリーンショット (933).png",
+      "sha256": "9ce4860b2b655263bbb2b9cb95492e1eb34d847a84cfd4c11f41d7d7a564c728",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-39",
+      "file": "Q10/スクリーンショット (934).png",
+      "sha256": "56592af049cd05b80d11015a74fbd6e5160c6e39eae623e49b98b0cdc48afd73",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-40",
+      "file": "Q10/スクリーンショット (935).png",
+      "sha256": "3ee0cdc5dfb91def51ea7c2a96cbd24cc9a877b000318d3e91e4407eb3287a1f",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-41",
+      "file": "Q10/スクリーンショット (936).png",
+      "sha256": "a8ff0541e5a5879714e8297a32827cff11f1b454f149774b73c8d2328e6b79c1",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-42",
+      "file": "Q10/スクリーンショット (937).png",
+      "sha256": "6b25748a07b20881b8f83962be2ef132c2b30f6976be756fb7c06d40b7ed9891",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-43",
+      "file": "Q10/スクリーンショット (938).png",
+      "sha256": "f231d0fb93ceb98fc92a4f45a4b2acac8cc79b04d3f0def16f0325d1df05a476",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-44",
+      "file": "Q10/スクリーンショット (939).png",
+      "sha256": "a70da833bd81c9b76bfd8372d458fe99e62a97163198e80b87202099dea648ea",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-45",
+      "file": "Q10/スクリーンショット (940).png",
+      "sha256": "f7445e40c1f0c9074886a7af797f3211e6ab0ca7c29a780081d6cd2feee713e2",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-46",
+      "file": "Q10/スクリーンショット (941).png",
+      "sha256": "a74181147e6a5d28c66a550a043292c5ff4afb9df939c65c7a079237d60ddb77",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-47",
+      "file": "Q10/スクリーンショット (942).png",
+      "sha256": "0bc2abc0112c7bdcbc96b3eb92f7d1e7425fd96b3882b3a369304b8a2eb30122",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-48",
+      "file": "Q10/スクリーンショット (943).png",
+      "sha256": "1a09f232d726922cfc439d7c8a38e8ebb093a9e4e06fd332f376fa4ab8a3cc24",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-49",
+      "file": "Q10/スクリーンショット (944).png",
+      "sha256": "ba55c26525d70eed3feea9d5537c195740e034e0af11d1a81f812626f2128528",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-50",
+      "file": "Q10/スクリーンショット (945).png",
+      "sha256": "68065ec4e5c18a6349e49a8ee63691c8d2d5b5c51eac4afa8be5bdd7bfe7bc15",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-51",
+      "file": "Q10/スクリーンショット (946).png",
+      "sha256": "18c859b8b25e86a0dd0d70c749af19dc413ce6504ddcde7c4dae1b12b3249b27",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-52",
+      "file": "Q10/スクリーンショット (947).png",
+      "sha256": "e5beac0abedfda961965bddada1c147ebb0d8eae66694d3d7310f77994a3242f",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-53",
+      "file": "Q10/スクリーンショット (948).png",
+      "sha256": "da212ad90e4464e4360e662eab95966f0281f55585091de9d69bcff2aad6818b",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-54",
+      "file": "Q10/スクリーンショット (949).png",
+      "sha256": "bd0dba0a9d34a9fc5024b5367b813e78b2eae2b75f430a2152e1db905f6b0a76",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-55",
+      "file": "Q10/スクリーンショット (950).png",
+      "sha256": "477d6c052e5359c3201eafa7c1336ddacc3c982b7c251bf27c9ddd25291ee539",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-56",
+      "file": "Q10/スクリーンショット (951).png",
+      "sha256": "3eb7e2b804a25de1829ca45ee84f2795ac4650be4df3156b4a3dc96f104e34a7",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-57",
+      "file": "Q10/スクリーンショット (952).png",
+      "sha256": "0b0d0b641291c5519249831338a6d35a5f3e5fbf93e6a23da2697ae0718809a0",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-58",
+      "file": "Q10/スクリーンショット (953).png",
+      "sha256": "c4208843d90d5c2f1d50c7a6fbc5e4c339ab5b86b546aa7b37d8810c810aee89",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-59",
+      "file": "Q10/スクリーンショット (954).png",
+      "sha256": "39fe469e6f345c85cf1deeb5dff4380b84bb2b1793d5bdfe28681f4a7b8ba3b6",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-60",
+      "file": "Q10/スクリーンショット (955).png",
+      "sha256": "ae764577eebe6d11fb448a7f1b7844fcb00c2018eb46deed4c1de69e0c43d356",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-61",
+      "file": "Q10/スクリーンショット (956).png",
+      "sha256": "005021846b2eccf1748a58668cb6b384d0aed6d7d081d9acb84e16790fb4bd16",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-62",
+      "file": "Q10/スクリーンショット (957).png",
+      "sha256": "e9e41d86f12a531c95c149d96daecd65ef186d4d6bbd4fcb0d04b5da6539d347",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-63",
+      "file": "Q10/スクリーンショット (958).png",
+      "sha256": "d83707e4a39674806b223ceabd53b193f0e91b7a036777b33df2fa135bf8ff59",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-64",
+      "file": "Q10/スクリーンショット (959).png",
+      "sha256": "ab99a9a5a8b4f89c189d72c73408c25a1abad5d5c90febff0fbe51507c4dfffa",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-65",
+      "file": "Q10/スクリーンショット (960).png",
+      "sha256": "dd87b2460be1af655ed96556bff0cc899682cb4302ce1142113e7952fa91eda9",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-66",
+      "file": "Q10/スクリーンショット (961).png",
+      "sha256": "52425f164b4a2c5f8de8458b424dffaf8efdb8ecc302a617c7df929de669b20e",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-67",
+      "file": "Q10/スクリーンショット (962).png",
+      "sha256": "246153995972a610151d9a13d04901c402b637883a402eebe43370f01878b865",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-68",
+      "file": "Q10/スクリーンショット (963).png",
+      "sha256": "e1f3072cde4bb1eb31f4647c224b87634c41d1b73e1e544734bd090ef6b2ad7e",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-69",
+      "file": "Q10/スクリーンショット (964).png",
+      "sha256": "967cfe7ee8d0294b967b41aebee2a0c219ab595e5b2bfe817360563df0abcb78",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q10-70",
+      "file": "Q10/スクリーンショット (965).png",
+      "sha256": "a43be9ba566835f9ccec7b3cfe628bf273396cc6ca9eb931063650a89b41ba31",
+      "textFile": "data/Q10.txt"
+    },
+    {
+      "id": "Q11-01",
+      "file": "Q11/スクリーンショット (966).png",
+      "sha256": "a8abc67c2189d2700b2adf32bad758ec3da3258493f223a72873455e05e24342",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-02",
+      "file": "Q11/スクリーンショット (967).png",
+      "sha256": "f934b9d6d7e4dd46d4c3cf6507812374197fb6eaad7647b497ff7ed630516a41",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-03",
+      "file": "Q11/スクリーンショット (968).png",
+      "sha256": "666510438bf7dace9fe7311de39ef46993c89adcc11756f582be0690e938778a",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-04",
+      "file": "Q11/スクリーンショット (969).png",
+      "sha256": "75c77458e149fe9964ca1a0ee8a347e31b322cf92b9dd7cffa3e24dc5c23ae12",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-05",
+      "file": "Q11/スクリーンショット (970).png",
+      "sha256": "92c2a1c5471a3b4546e320cfd7de9bb2d8a483daa0f34753ba8172c0c3044427",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-06",
+      "file": "Q11/スクリーンショット (971).png",
+      "sha256": "b8593feec54f68f19069daca0af8b14fe82ee096077ee68ff65d3872a97ecb80",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-07",
+      "file": "Q11/スクリーンショット (972).png",
+      "sha256": "7c449aeb0246d59aa0a45b431fdbab072ae57f748529406500fa1aab2ec5b36c",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-08",
+      "file": "Q11/スクリーンショット (973).png",
+      "sha256": "19dd0b218543703f1a0a0e3b4cc3fe2e654e672b1c319079044ee0309d0bf2d9",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-09",
+      "file": "Q11/スクリーンショット (974).png",
+      "sha256": "7380258ef83fed452fee989c44979a83f1c39763db681abc19d105361eea44da",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-10",
+      "file": "Q11/スクリーンショット (975).png",
+      "sha256": "e9f4b69a3bc7cd52a7a0a01beaa2df1966cdf372cad06325f8abcb22084471a5",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-11",
+      "file": "Q11/スクリーンショット (976).png",
+      "sha256": "8033dd858559f1f093646f6049b87695afdf2199ae7f148dabec002dcbbf9b99",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-12",
+      "file": "Q11/スクリーンショット (977).png",
+      "sha256": "8e081b697b03af3452ffc72f40711a462b323c91d132df3b88dd70d7f4a43ba7",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-13",
+      "file": "Q11/スクリーンショット (978).png",
+      "sha256": "f8d3200c1ed9f562560ba0c08a705c15059e5a3f4c35e44a1056e69bf27d6d01",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-14",
+      "file": "Q11/スクリーンショット (979).png",
+      "sha256": "e0dcf3492795ada7aa635d27bc7b0c8392b836ac1bb6874941df6d7c0e4675a3",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-15",
+      "file": "Q11/スクリーンショット (980).png",
+      "sha256": "965d1eda19be68f971fcd4b50759324bf99ff675599319133192f2741ccb71de",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-16",
+      "file": "Q11/スクリーンショット (981).png",
+      "sha256": "7ee99c8231966357015d24050b09de8b24dee8f0564bd6406e314df3b296c302",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-17",
+      "file": "Q11/スクリーンショット (982).png",
+      "sha256": "1a9303cde09d8ce905f2dd1bd546206ed9c348d78404604ab47ce1607ddb1442",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-18",
+      "file": "Q11/スクリーンショット (983).png",
+      "sha256": "820fb779ca10defde5d7049d77edbadc3a8c910c57ff74ac12a7f6a0b5966d82",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-19",
+      "file": "Q11/スクリーンショット (984).png",
+      "sha256": "d2b886de9c2797a1c865aabe7a2b10a200221e04b52451d5034d21e73a2601c4",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-20",
+      "file": "Q11/スクリーンショット (985).png",
+      "sha256": "17579ba38d285b5979c4285658d337ad38a4bdc674008e5bffcce73385276da1",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-21",
+      "file": "Q11/スクリーンショット (986).png",
+      "sha256": "c3bbe45bf19b8e32cddb123a749750360ef6b4e17200942a19fe6cce4f134cba",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-22",
+      "file": "Q11/スクリーンショット (987).png",
+      "sha256": "5067f01aec81559b7d4ec51557831d0aa9ac72bab13feef17b87ff6b9c57c0d8",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-23",
+      "file": "Q11/スクリーンショット (988).png",
+      "sha256": "a8dea53a632d8842150e91dda1dcd4211bacfce7537cc6fe526c88994a2e61ac",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-24",
+      "file": "Q11/スクリーンショット (989).png",
+      "sha256": "c4fc12373bf8147a70fb559a611f7be1e3e1ab980a31160d3996b2a7ad8daf18",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-25",
+      "file": "Q11/スクリーンショット (990).png",
+      "sha256": "12a99de8a418cf9688fbffa18212e319fd2a8f5968af3202910fcd79983f4ae9",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-26",
+      "file": "Q11/スクリーンショット (991).png",
+      "sha256": "ff261ea33b96b3d7eae037aabcf35e7d18e74f193698ec7abb21038cc2ea8295",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-27",
+      "file": "Q11/スクリーンショット (992).png",
+      "sha256": "abbf9304bdd6853b3213fe43b453cd4125873abba07690a1f7cb0ef27a6308dc",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-28",
+      "file": "Q11/スクリーンショット (993).png",
+      "sha256": "7280bc65535833759ebf9cf9fda62b63626451c2ce2d2c27b9ff7e54af573b42",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-29",
+      "file": "Q11/スクリーンショット (994).png",
+      "sha256": "3861994af10d7c646e0fed8ea52ced741f68630a3311acd3ac9af56545e05503",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-30",
+      "file": "Q11/スクリーンショット (995).png",
+      "sha256": "ea056de3c86b328a745f3f49b62414f6cd12d767787ad537796ece7aee0be037",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-31",
+      "file": "Q11/スクリーンショット (996).png",
+      "sha256": "692bceaacea0fa30d5dc23070827d5c09ed4fbcae5943d093fdf649b1c3fbcee",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-32",
+      "file": "Q11/スクリーンショット (997).png",
+      "sha256": "bcd1ef3bda753f305d3057e581aae78183e99c9726b5fd5e6ece41b94f21f578",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-33",
+      "file": "Q11/スクリーンショット (998).png",
+      "sha256": "671e6cf235d22c828e20af158ccf3c96ed3b39f2cce441ef9764bd76d8beadc0",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-34",
+      "file": "Q11/スクリーンショット (999).png",
+      "sha256": "1b4d16d5ccc2f3eae464d6feab12c5c212179737be2adf2df2667962aec10ba8",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-35",
+      "file": "Q11/スクリーンショット (1000).png",
+      "sha256": "d8bc1ef8a5a1d872658888e208effdff552817475757a8c2cad58343de3432e0",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-36",
+      "file": "Q11/スクリーンショット (1001).png",
+      "sha256": "07724b5c5c165a746741d1ea536a0ddc2bfb17fa2f996ec46726a8f3482a00f0",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-37",
+      "file": "Q11/スクリーンショット (1002).png",
+      "sha256": "28d7826feb45ec8ade7584d9da8e5343c69e38085b73f992b7105125fa30a7c1",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-38",
+      "file": "Q11/スクリーンショット (1003).png",
+      "sha256": "04f205f3bd9479cf0dc307daf193691d71f3c299498cb3b6823ebdb6fe81ef99",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-39",
+      "file": "Q11/スクリーンショット (1004).png",
+      "sha256": "ca852e012440b785df45f718d15ab624e9698af6fba186ab0c6a3d81f5ba0d9d",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-40",
+      "file": "Q11/スクリーンショット (1005).png",
+      "sha256": "9b277f9e1bb5433f291840b45f936a7c13f443236f088084aca606ee75f1f1c8",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-41",
+      "file": "Q11/スクリーンショット (1006).png",
+      "sha256": "e3bc816c478ee2f279412366a95ac90e9fc1243a381a935a26637436f37e847b",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-42",
+      "file": "Q11/スクリーンショット (1007).png",
+      "sha256": "b672981341924ce309049d8fa72bb31098e3235340c2bb473838066ce68104cd",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-43",
+      "file": "Q11/スクリーンショット (1008).png",
+      "sha256": "0238397e3311483d0971a6db6f6c1687660e43bdbc7f2093b508dcea7b59a03c",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-44",
+      "file": "Q11/スクリーンショット (1009).png",
+      "sha256": "be280d8f9b3347a77e74493c1663ed2fa99ca829f7d6fe4dd2d071c37d45130d",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-45",
+      "file": "Q11/スクリーンショット (1010).png",
+      "sha256": "ac40528ef6741e35a3d31b66f30607f6b15622e6cbcbea2b1a6ece3f7666f788",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-46",
+      "file": "Q11/スクリーンショット (1011).png",
+      "sha256": "2e7d013ef1efb970b0984ac01449f06dcf2a582b4e5e92b9e960fdf017cc3b29",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-47",
+      "file": "Q11/スクリーンショット (1012).png",
+      "sha256": "458cd245d71596b058c7ec6719c152c3f5a7ebc3e3dd63dd078ea826d7a4b173",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-48",
+      "file": "Q11/スクリーンショット (1013).png",
+      "sha256": "3a0090924ef78084534fd097fcc8d83eedf033835bdfb2da413cbeb3ba72ea81",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-49",
+      "file": "Q11/スクリーンショット (1014).png",
+      "sha256": "ca4fe843f95f929f04dcc62797f5106ecc933a5bedc2c5a9158ec3288e7faf5f",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-50",
+      "file": "Q11/スクリーンショット (1015).png",
+      "sha256": "966e54b99db096bb4cdc3c84c6fb0110f4d71a205e6d45561f3d71e09b44d2e7",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-51",
+      "file": "Q11/スクリーンショット (1016).png",
+      "sha256": "13e4cf039301497d006fe59b7e22759f9a990a8aa656a7d50e9500e4e0d71395",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-52",
+      "file": "Q11/スクリーンショット (1017).png",
+      "sha256": "2cd1da4b6fc2b14898f7a7a42cbb906e4a9e3cfe1606e9c46fa508a2f747df81",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-53",
+      "file": "Q11/スクリーンショット (1018).png",
+      "sha256": "8883d8c2852b5f0ceac57adf342cb557bc274e55699ddfa810246fd5cf84dd2a",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-54",
+      "file": "Q11/スクリーンショット (1019).png",
+      "sha256": "0c078d3b6932de9e2e117b945fdebd0e02c39afd0ef5d869b41a43a8baad08c6",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-55",
+      "file": "Q11/スクリーンショット (1020).png",
+      "sha256": "f0d331e7e176c8dd7c0a4d0772ab2e0f2ab9ae58c8df54c93881016305d8a6ee",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-56",
+      "file": "Q11/スクリーンショット (1021).png",
+      "sha256": "42d9fcec015fdd9deb07ed86c0880f578a097aeedd2c97ef3db320e52b3ff83e",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-57",
+      "file": "Q11/スクリーンショット (1022).png",
+      "sha256": "b69c148f8b413a2af3b61eb93f63aafd0e427de30436cca4a5dcd8c6c7bfc9fc",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-58",
+      "file": "Q11/スクリーンショット (1023).png",
+      "sha256": "b60bf82192fa8bc1872f10a1f84e7b7753065378a6b3a01c220133ce58b121d5",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-59",
+      "file": "Q11/スクリーンショット (1024).png",
+      "sha256": "98745ccfa348476cf3b062646fadc66737f653e91f0cbd70d52fb453e0fc6291",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-60",
+      "file": "Q11/スクリーンショット (1025).png",
+      "sha256": "4eff9acdd07665815fb04061fe995e999670ceab510a3d9256a60473622d8cbe",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-61",
+      "file": "Q11/スクリーンショット (1026).png",
+      "sha256": "c755b9ce6bfa1e073f2ae3bf3ebcc3e7a785ed38a83abd614ef5e83cdc9f8e03",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-62",
+      "file": "Q11/スクリーンショット (1027).png",
+      "sha256": "02cf96032f3148f78f2de2fa5a2c5b1ea96b4f03f03a88f77bdec7eca69ec908",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-63",
+      "file": "Q11/スクリーンショット (1028).png",
+      "sha256": "b74f6d00eaa7671deb155cded55f9c64b5309d83c6a2219acd28dd3414831067",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-64",
+      "file": "Q11/スクリーンショット (1029).png",
+      "sha256": "144ab31f9b24a2b08c4c0221fa8848281335a3b090af2f7dbc9d2c698181524c",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-65",
+      "file": "Q11/スクリーンショット (1030).png",
+      "sha256": "53ad611c7d8de1420b26a3a6b35e338c7abf38513a5eaa7e1edd0aa77a9bc986",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-66",
+      "file": "Q11/スクリーンショット (1031).png",
+      "sha256": "03d88049fb98f05f96500706f5ab3c39e93c2ef1cc9864f67e90bc0aba2f4357",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-67",
+      "file": "Q11/スクリーンショット (1032).png",
+      "sha256": "fe04a9ab3b957c788d9340e9b5967a7685b187733fc00582e5361b39a5f9d098",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-68",
+      "file": "Q11/スクリーンショット (1033).png",
+      "sha256": "c423cf6dc29b2cd03b6e2bd704a4f4a57cd739bd9df7fc79b0482feac1b77695",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-69",
+      "file": "Q11/スクリーンショット (1034).png",
+      "sha256": "f23e0f381d6516c71025247ab001bae00ac5ebb11378f00398cae507dc6a4ba2",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q11-70",
+      "file": "Q11/スクリーンショット (1035).png",
+      "sha256": "c23d790f60fc481ec62d5314d415082199add6d9f94a264df19b89c314cae83c",
+      "textFile": "data/Q11.txt"
+    },
+    {
+      "id": "Q12-01",
+      "file": "Q12/スクリーンショット (1036).png",
+      "sha256": "4dda797e52e73a8450e5a2aaffb6075bb43d99ae67896bb2ba8788b031669d21",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-02",
+      "file": "Q12/スクリーンショット (1037).png",
+      "sha256": "95d967fa565f76c69a33d5fa0a7230fda197225221eced22ae25b3986a9b9d0c",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-03",
+      "file": "Q12/スクリーンショット (1038).png",
+      "sha256": "2f611cab4e3473e0a0253fbc8f1d89939bf8597b08eeac0cd88af5e7097fe5f2",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-04",
+      "file": "Q12/スクリーンショット (1039).png",
+      "sha256": "8ad23203b9b68dfde5463390d45c6ea95bdc9649c46be925750cd105ebf6bde7",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-05",
+      "file": "Q12/スクリーンショット (1040).png",
+      "sha256": "a8f7ed7605100169c7dc3ffb1df3832f786fbeb104e14882b9e45e9e2b1e9644",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-06",
+      "file": "Q12/スクリーンショット (1041).png",
+      "sha256": "e98b1adb397fa937d368e257201f03da4f72fcf5dda97a5445a54a0c6297dfa6",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-07",
+      "file": "Q12/スクリーンショット (1042).png",
+      "sha256": "33606087bd8cc53e81718eeb2a99c02998a4302b5a8234c8b441e0d47c104e84",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-08",
+      "file": "Q12/スクリーンショット (1043).png",
+      "sha256": "8e7516e9bae83e7b2ffbab9c6ab8dbbf6dbd2ea053302dee18e41b8081d0629c",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-09",
+      "file": "Q12/スクリーンショット (1044).png",
+      "sha256": "bb17ee783f39bac923a4631fbbc0b63b9508f4562b78b9f1f0a4321713d98301",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-10",
+      "file": "Q12/スクリーンショット (1045).png",
+      "sha256": "f83951ebf2e7d5d7f26e4103f8166185ade0ed7af279a0c0f5d5f88ecc616fcd",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-11",
+      "file": "Q12/スクリーンショット (1046).png",
+      "sha256": "828f6ddead4ad04cf03e7960a2d316eafe65262fe3c13e7b6496549db0520573",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-12",
+      "file": "Q12/スクリーンショット (1047).png",
+      "sha256": "3144f4c2e5e9604d470c456ca2c76479be55d5a582d53b1f4bfa519caf154cd0",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-13",
+      "file": "Q12/スクリーンショット (1048).png",
+      "sha256": "17708c5a4618341fa78dcf68e340c14a19e92d53b1e985e254b27405b36b584f",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-14",
+      "file": "Q12/スクリーンショット (1049).png",
+      "sha256": "04e76b2bf8fc8e496d12b242947766790ba2bfc5fee802b04e4608ba7f29a396",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-15",
+      "file": "Q12/スクリーンショット (1050).png",
+      "sha256": "4aadc25e83ee8b243d335f78796e014ead61d525e3f5c8dff7ea8bc22c928fb8",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-16",
+      "file": "Q12/スクリーンショット (1051).png",
+      "sha256": "de166a28e37ef7f3dd63aabbd48dd53f40df3e124867e6559db9f59005e0779b",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-17",
+      "file": "Q12/スクリーンショット (1052).png",
+      "sha256": "f491bed568effb7747ea36addd985f6790c60c044c89fa248eee161a74714fda",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-18",
+      "file": "Q12/スクリーンショット (1053).png",
+      "sha256": "fac1711e8f1d4700826fbeb888dee4217c47a32eaf9a01f3a7cb62b3d876f48b",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-19",
+      "file": "Q12/スクリーンショット (1054).png",
+      "sha256": "bb8397fc788b0d759208f909370ad9d22f95ddb970942922d8dccdb2f82a625e",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-20",
+      "file": "Q12/スクリーンショット (1055).png",
+      "sha256": "6be4e8d8b0456949ae064489d68eeb29a71f1d5f952c32c510cb4396d47bbece",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-21",
+      "file": "Q12/スクリーンショット (1056).png",
+      "sha256": "62b78ea4698803964c02f01f7e72cc710bef7ac20b31aea66064302576fa152b",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-22",
+      "file": "Q12/スクリーンショット (1057).png",
+      "sha256": "7d8db21263c036634a322a6ea7a9e2127c43db518331e9b423a5e4367b666947",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-23",
+      "file": "Q12/スクリーンショット (1058).png",
+      "sha256": "c8ac46de32302fffafee3b8969a39462384123feee1137bbbf4680c1ebf9b6ef",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-24",
+      "file": "Q12/スクリーンショット (1059).png",
+      "sha256": "60d38e7ba3b0c50b347a00226c1b31d9f9f0dd0df0747f521b931b18511e2929",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-25",
+      "file": "Q12/スクリーンショット (1060).png",
+      "sha256": "9920a86e005dd36ec9fd480d0d538a3639081a2502ccda6c06ba3d6bbbdbb5bb",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-26",
+      "file": "Q12/スクリーンショット (1061).png",
+      "sha256": "88e3c9b5fc72e9fca682841414746b3b790e256901b37a0da46d5996354a462b",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-27",
+      "file": "Q12/スクリーンショット (1062).png",
+      "sha256": "0cf65d88770319186f1cad2c1fff1e99d75d8f231add034436c602f3fcdb81fc",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-28",
+      "file": "Q12/スクリーンショット (1063).png",
+      "sha256": "d8f3c212b8f8fc2321b6b981caf57902748201149c339cba6da28a74fc421c89",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-29",
+      "file": "Q12/スクリーンショット (1064).png",
+      "sha256": "391c7eff41b8c0fa15cad72a6a14d06cb4afa426a1983481e6ac4ef0428e2776",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-30",
+      "file": "Q12/スクリーンショット (1065).png",
+      "sha256": "97b451d034e51e92eeb024e7a48fc437d030f9fad6c2933f13c17bfdd45433f6",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-31",
+      "file": "Q12/スクリーンショット (1066).png",
+      "sha256": "6cd17f618791cd56a626f8015a4106de9a11b2833424bb7fd1b5104f6550e031",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-32",
+      "file": "Q12/スクリーンショット (1067).png",
+      "sha256": "b8c599caca0c7731a8e1d35a1b288318a1d335a70a38e44f686d46acc3a73d55",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-33",
+      "file": "Q12/スクリーンショット (1068).png",
+      "sha256": "c8b7a8bed1c9318c7bb40be54ca482c04499583a514ffe14625c208cc3fb4388",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-34",
+      "file": "Q12/スクリーンショット (1069).png",
+      "sha256": "288f621e08071b82c564916b56eb3dbbe0b8a36ac9dacfce63c829868004c298",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-35",
+      "file": "Q12/スクリーンショット (1070).png",
+      "sha256": "6f1261cd0eb6c6ef785c7b196782dcb2ab558960cc4002e1a48449af4a4b5e75",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-36",
+      "file": "Q12/スクリーンショット (1071).png",
+      "sha256": "87eb3ac410e8d6766ef6e6f1722f6d013cf033b0972481700065073333c7a604",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-37",
+      "file": "Q12/スクリーンショット (1072).png",
+      "sha256": "c81da91d4d95d568e7b7b2e1b6013fd67ee15a27493ba3c1ee6d12e34d8d179a",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-38",
+      "file": "Q12/スクリーンショット (1073).png",
+      "sha256": "f81c9418099f0cd9f0c4cd3a4df5e2b8c05a998253a07e407f0beb6c9c22249c",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-39",
+      "file": "Q12/スクリーンショット (1074).png",
+      "sha256": "fe917fec8e7fe2b7194d17ebf528a2fd01f6b36394c2551a332bf3c39086d12d",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-40",
+      "file": "Q12/スクリーンショット (1075).png",
+      "sha256": "b4980be0b162c2baec082a02699bffc57a3560ed2107ac3868bffe0745a30dac",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-41",
+      "file": "Q12/スクリーンショット (1076).png",
+      "sha256": "16ff1aee4ee909a31125eeaf9c8755955e2a108a4ffbca50eda41c6197d29b57",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-42",
+      "file": "Q12/スクリーンショット (1077).png",
+      "sha256": "75386fae2a9b2af3063fc5695f833115cb4a3f56cbd9de475e64b40166b2fa57",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-43",
+      "file": "Q12/スクリーンショット (1078).png",
+      "sha256": "d48c563d90ee44dfc0a993d5b88d9a6b005e74b5e90e2379bc96171b0ac38d94",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-44",
+      "file": "Q12/スクリーンショット (1079).png",
+      "sha256": "cc376210223198bc37d6f9f626851df6a9966c120c8161ea9b4edc7f92b9cc05",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-45",
+      "file": "Q12/スクリーンショット (1080).png",
+      "sha256": "d0dec0743271bd04c77f1363047883348f73c65f3e8bafae9905c0bcc7c9c0e2",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-46",
+      "file": "Q12/スクリーンショット (1081).png",
+      "sha256": "5fd2ec40f460e5a37b0ee1105178d45930eaf36d6fcc00429f56bd002a4d06c8",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-47",
+      "file": "Q12/スクリーンショット (1082).png",
+      "sha256": "de23043ed4bed2b2f134050d3e569b9e9bf269139de4f3f098e294d9772ea8ab",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-48",
+      "file": "Q12/スクリーンショット (1083).png",
+      "sha256": "7987ba53c3ae78de04caa02cdb28314dac524faf83dc92394023959e692a673d",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-49",
+      "file": "Q12/スクリーンショット (1084).png",
+      "sha256": "35c868dfb310ee820a5aef07861ee354b71af281ab445fd8319fc881e6c1a5ee",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-50",
+      "file": "Q12/スクリーンショット (1085).png",
+      "sha256": "36e322160a77d46d7f1e285b78acec1b068d6b250bc492dc688dfdeb0db60208",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-51",
+      "file": "Q12/スクリーンショット (1086).png",
+      "sha256": "ed6dfbb796c76d958c597931045f56e58dbcb2e609503171f38e3d3cf4ee46bd",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-52",
+      "file": "Q12/スクリーンショット (1087).png",
+      "sha256": "9045c73172b7464ee669f72da6b1cb20ea4c0df440ca4eef123ee7f62dd20750",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-53",
+      "file": "Q12/スクリーンショット (1088).png",
+      "sha256": "7471d7ea6bc358597982ea4aecc3341a9a0eee3e2ce74adfd3e0f635d874a899",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-54",
+      "file": "Q12/スクリーンショット (1089).png",
+      "sha256": "4beb11397654302146d826680fc2933d00e2f8eb6d4567195d7aceadf78c36e2",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-55",
+      "file": "Q12/スクリーンショット (1090).png",
+      "sha256": "8d53c4eae2f5584b2060c0f5841509df6bf43d53889969e49e2f4a86a61566d2",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-56",
+      "file": "Q12/スクリーンショット (1091).png",
+      "sha256": "6c6f019f5221abca7e3ce80d705e6aa329015cabce646ca8d700ef6c4cfb1ab3",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-57",
+      "file": "Q12/スクリーンショット (1092).png",
+      "sha256": "d2168d7ea9ce7d5aad8d8a2743f27f5819557314be8865824b6ae20b8c532629",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-58",
+      "file": "Q12/スクリーンショット (1093).png",
+      "sha256": "8bfc2af016cd4e9b1595a8cd26662330530be436a54b5cd28ae38baecf62e88c",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-59",
+      "file": "Q12/スクリーンショット (1094).png",
+      "sha256": "9b998f219b69947a2222c056befa6939e6fdeb741eb034c273a36f7a8fbeb002",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-60",
+      "file": "Q12/スクリーンショット (1095).png",
+      "sha256": "58a538583dff440c3c5bebb87b474cbca1e9b64cf2172886217e6f06742ecb6b",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-61",
+      "file": "Q12/スクリーンショット (1096).png",
+      "sha256": "ece81250c22249c021013545eb8bd5d1a13ee3c250262bbb0408ae562b92cf25",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-62",
+      "file": "Q12/スクリーンショット (1097).png",
+      "sha256": "c63d9eb01cd049349d4c5442c3d68e86bfb9f5492f457842260783723c0acdc0",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-63",
+      "file": "Q12/スクリーンショット (1098).png",
+      "sha256": "7ab7cf7925beb7db92b3e7048bcc7629edccb280a91ed0b64e65b40d7ad4c461",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-64",
+      "file": "Q12/スクリーンショット (1099).png",
+      "sha256": "590b00434ec289c27047b7fda7137822bf7d26b8ac05ad25ca75333a9a4bb3fc",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-65",
+      "file": "Q12/スクリーンショット (1100).png",
+      "sha256": "ae697fe4ad3e85676af6854680c1f33be403c0fcdbda161b90c34d577daab8f2",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-66",
+      "file": "Q12/スクリーンショット (1101).png",
+      "sha256": "8351f1a85ce1cb6f72806c37fb381dc7d01f50657be09b6fd628a465544f0c48",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-67",
+      "file": "Q12/スクリーンショット (1102).png",
+      "sha256": "7c30f264ad730fdbe0a7fdf290a776cbbd71aaeed9335cf8f69dcfb535ca6c22",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-68",
+      "file": "Q12/スクリーンショット (1103).png",
+      "sha256": "a743d20f0840920259dd5685260f153aa53a0e23745315bf612ba14820116d33",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-69",
+      "file": "Q12/スクリーンショット (1104).png",
+      "sha256": "08944d174f13e89790c1be008b22ae4f157a82bbf5909bdc6b6e62fcd9971372",
+      "textFile": "data/Q12.txt"
+    },
+    {
+      "id": "Q12-70",
+      "file": "Q12/スクリーンショット (1105).png",
+      "sha256": "12b557ca03ca42bb106fa9d337853d4995893258bc638723edab67763fdef7ae",
+      "textFile": "data/Q12.txt"
+    }
+  ]
+}

@@ -47,7 +47,12 @@ function wrong(ui,id){const q=ui.ctx.window.AZ_QUESTIONS.find(q=>q.id===id);choo
 const plain=values=>Array.from(values);
 const sameMembers=(a,b)=>assert.deepEqual([...a].sort(),[...b].sort());
 let ui=session();
-assert.equal(ui.data('start').length,7);assert.ok(ui.data('review','all')[0].disabled);
+const allQuestions=Array.from(ui.ctx.window.AZ_QUESTIONS);
+const groupNames=[...new Set(allQuestions.map(q=>q.group))];
+const totalQuestions=allQuestions.length;
+const mixedSizes=[...new Set([...Array.from({length:Math.floor(totalQuestions/30)},(_,i)=>(i+1)*30),totalQuestions])];
+assert.equal(ui.data('start').length,groupNames.length);assert.ok(ui.data('review','all')[0].disabled);
+assert.ok(ui.app.innerHTML.includes(`Q1〜${groupNames.at(-1)}の全${totalQuestions}問`));
 // Exercise every correct and incorrect answer using canonical IDs behind shuffled buttons.
 for(const q of ui.ctx.window.AZ_QUESTIONS) {
   ui.go(q.id);
@@ -56,7 +61,8 @@ for(const q of ui.ctx.window.AZ_QUESTIONS) {
   if(q.choices[0].text==='はい')assert.deepEqual(order,[0,1],q.id+': fixed yes/no');
   choose(ui,Array.from(q.accepted[0]));
   assert.ok(ui.app.innerHTML.includes('✓ 正解です'),q.id+': correct answer');
-  assert.ok(ui.app.innerHTML.includes(q.focus),q.id+': learning point');
+  const displayedFocus=q.focus.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  assert.ok(ui.app.innerHTML.includes(displayedFocus),q.id+': learning point');
   assert.ok(ui.app.innerHTML.includes('用語の意味と役割'),q.id+': definitions');
   for(const i of q.accepted[0])assert.ok(ui.app.innerHTML.includes(`${String.fromCharCode(65+order.indexOf(i))}：`),q.id+': displayed answer label');
   assert.ok(ui.data('choice').every(c=>c.disabled),q.id+': answered choices locked');
@@ -109,7 +115,7 @@ ui.go('Q1-02');assert.ok(ui.app.innerHTML.includes('× 不正解です'),'Legacy
 const groupOrders=new Set(),optionOrders=new Set();
 for(let seed=1;seed<=20;seed++){
   sharedStorage.clear();ui=session('',false,seed);
-  for(const group of ['Q1','Q2','Q3','Q4','Q5','Q6','Q7']){
+  for(const group of groupNames){
     ui.go('');ui.data('start',group)[0].click();
     sameMembers(ui.saved().orders[group],ui.ctx.window.AZ_QUESTIONS.filter(q=>q.group===group).map(q=>q.id));
   }
@@ -127,20 +133,20 @@ sharedStorage.set(KEY,JSON.stringify({orders:{Q1:['Q1-01','Q1-01']},choiceOrders
 ui=session('#Q1-07');assert.equal(ui.saved().orders.Q1.length,70);
 sameMembers(ui.saved().choiceOrders['Q1-07'],[0,1,2,3]);
 for(const value of ['{bad json','null','[]',JSON.stringify({answers:[],last:{},review:false}),JSON.stringify({answers:{},review:{ids:['bad'],answers:{},scope:'all'}})]){
-  sharedStorage.set(KEY,value);ui=session();assert.equal(ui.data('start').length,7);
+  sharedStorage.set(KEY,value);ui=session();assert.equal(ui.data('start').length,groupNames.length);
 }
 ui=session('',true);ui.go('Q7-01');choose(ui,[0]);assert.ok(ui.app.innerHTML.includes('✓ 正解です'));
 // Integrated quizzes sample every group without replacement and keep independent answers.
 function startMixed(ui,size){ui.go('');ui.get('mixed-count').change(String(size));ui.get('mixed-start').click();}
 const samples=new Set();
-for(const size of [...Array.from({length:15},(_,i)=>(i+1)*30),460]) {
+for(const size of mixedSizes) {
   sharedStorage.clear();ui=session();startMixed(ui,size);
   const ids=ui.saved().mixed.ids;
   assert.equal(ids.length,size);assert.equal(new Set(ids).size,size);
   assert.ok(ids.every(id=>ui.ctx.window.AZ_QUESTIONS.some(q=>q.id===id)));
   assert.ok(ui.app.innerHTML.includes('統合問題'));
   assert.equal(ui.ctx.location.hash,'#mixed-'+ids[0]);
-  if(size===460)sameMembers(ids,ui.ctx.window.AZ_QUESTIONS.map(q=>q.id));
+  if(size===totalQuestions)sameMembers(ids,ui.ctx.window.AZ_QUESTIONS.map(q=>q.id));
 }
 for(let seed=1;seed<=20;seed++) {
   sharedStorage.clear();ui=session('',false,seed);startMixed(ui,30);
@@ -187,5 +193,23 @@ for(const mixed of [false,{ids:['bad'],answers:{}},{ids:['Q1-01'],answers:{}},{i
 sharedStorage.clear();ui=session('',true);ui.get('mixed-count').change('60');ui.get('mixed-start').click();
 assert.ok(ui.app.innerHTML.includes('1 / 60'));right(ui,ui.ctx.location.hash.slice(7));
 assert.ok(ui.app.innerHTML.includes('✓ 正解です'),'Integrated quiz works with storage blocked');
-console.log('Passed 460 correct and 460 incorrect answer flows, shuffled labels, fixed yes/no, all 7 group permutations, restart/review randomization, persistence, legacy answer migration, reset, navigation and storage recovery.');
-console.log('Passed all 16 integrated quiz sizes, unique sampling, full pool coverage, independent grading, results, retry, review, resume, restart and storage recovery.');
+// Multi-digit groups must support navigation, results, persistence and scoped review.
+// The former full-pool size must survive addition of new sets.
+const previousPool=allQuestions.filter(q=>Number(q.group.slice(1))<=7).map(q=>q.id);
+sharedStorage.set(KEY,JSON.stringify({version:2,answers:{'Q2-01':{selected:[0]}},mixed:{ids:previousPool,answers:{'Q1-02':{selected:[0]}},choiceOrders:{}}}));
+ui=session('#mixed-Q1-02');
+assert.deepEqual(ui.saved().mixed.ids,previousPool);
+assert.ok(ui.saved().answers['Q2-01'],'Existing ordinary answers survive new sets');
+assert.ok(ui.data('choice').every(c=>c.disabled),'Existing mixed answer survives new sets');
+ui.go('');assert.ok(ui.app.innerHTML.includes(`value="${previousPool.length}"`),'Previous attempt size remains selectable');
+ui.get('mixed-continue').click();assert.ok(ui.ctx.location.hash.startsWith('#mixed-'));
+for(const group of groupNames.filter(group=>Number(group.slice(1))>=10)) {
+  sharedStorage.clear();ui=session();ui.data('start',group)[0].click();
+  const ids=ui.saved().orders[group];wrong(ui,ids[0]);
+  ui=session('#'+ids[0]);assert.ok(ui.app.innerHTML.includes('× 不正解です'));
+  ui.go('');review(ui,group);assert.deepEqual(ui.saved().review.ids,[ids[0]]);
+  right(ui,ids[0]);ui.get('next').click();assert.equal(ui.ctx.location.hash,'#done-review');
+  ui.go(ids.at(-1));ui.get('next').click();assert.equal(ui.ctx.location.hash,'#done-'+group);
+}
+console.log(`Passed ${totalQuestions} correct and incorrect answer flows, all ${groupNames.length} group permutations, multi-digit group navigation/review, persistence and storage recovery.`);
+console.log(`Passed all ${mixedSizes.length} integrated quiz sizes, unique sampling, full pool coverage, independent grading, results, retry, review, resume and restart.`);

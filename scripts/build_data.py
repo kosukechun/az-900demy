@@ -22,6 +22,7 @@ SOURCES = {
 }
 SOURCES.update(json.loads((ROOT/'data/reference-sources.json').read_text(encoding='utf-8')))
 META = json.loads((ROOT/'data/content-meta.json').read_text(encoding='utf-8'))
+TRANSCRIPTIONS = {item['id']: item for item in json.loads((ROOT/'data/screenshot-transcriptions.json').read_text(encoding='utf-8'))['items']}
 POINTS = dict(line.split('|', 1) for line in (ROOT/'data/learning-points.tsv').read_text(encoding='utf-8').splitlines())
 GLOSSARY = []
 for line in (ROOT/'data/glossary.tsv').read_text(encoding='utf-8').splitlines():
@@ -92,7 +93,12 @@ def build():
                     break
         revision = META.get('answerRevisions', {}).get(q['id'], 2 if q['id'] in META['revisedIds'] else 1)
         if revision > 1: q['revision'] = revision
-        q['checkedAt'] = META['checkedAt']
+        q['checkedAt'] = META.get('groupCheckedAt', {}).get(q['group'], META['checkedAt'])
+        if q['id'] in TRANSCRIPTIONS:
+            q['origin'] = dict(type='transcribed-screenshot', file=TRANSCRIPTIONS[q['id']]['file'])
+        source_group = META.get('sourceGroups', {}).get(q['group'], {})
+        if source_group.get('type') == 'web-topics':
+            q['origin'] = dict(type='original-topic-exercise', url=source_group['url'], question=source_group['firstQuestion'] + q['number'] - 1)
         if q['group']=='Q7':
             q['checkedAt']=META['checkedAt']
             pages=[2,2,3,3,4,4,4,5,5,5,6,6,6,6,7,7,7,8,8,8,9,9,9,10,10,11,11,11,12,12,13,13,14,14,15,15,15,16,16,16]
